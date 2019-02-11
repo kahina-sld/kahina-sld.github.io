@@ -1,0 +1,81 @@
+div.code pre .hll { background-color: #ffffcc }
+div.code pre  { background: #ffffff; }
+div.code pre .c { color: #888888; font-style: italic } /* Comment */
+div.code pre .err { border: 1px solid #FF0000 } /* Error */
+div.code pre .k { font-weight: bold } /* Keyword */
+div.code pre .ch { color: #888888; font-style: italic } /* Comment.Hashbang */
+div.code pre .cm { color: #888888; font-style: italic } /* Comment.Multiline */
+div.code pre .cp { color: #888888; font-weight: bold } /* Comment.Preproc */
+div.code pre .cpf { color: #888888; font-style: italic } /* Comment.PreprocFile */
+div.code pre .c1 { color: #888888; font-style: italic } /* Comment.Single */
+div.code pre .cs { color: #888888; font-weight: bold } /* Comment.Special */
+div.code pre .kc { font-weight: bold } /* Keyword.Constant */
+div.code pre .kd { font-weight: bold; font-style: italic } /* Keyword.Declaration */
+div.code pre .kn { font-weight: bold } /* Keyword.Namespace */
+div.code pre .kp { font-weight: bold } /* Keyword.Pseudo */
+div.code pre .kr { font-weight: bold } /* Keyword.Reserved */
+div.code pre .kt { font-weight: bold } /* Keyword.Type */
+div.code pre .s { color: #666666; font-style: italic } /* Literal.String */
+div.code pre .nb { font-weight: bold; font-style: italic } /* Name.Builtin */
+div.code pre .nc { color: #666666; font-weight: bold; font-style: italic } /* Name.Class */
+div.code pre .no { color: #666666; font-weight: bold; font-style: italic } /* Name.Constant */
+div.code pre .nf { color: #666666; font-weight: bold; font-style: italic } /* Name.Function */
+div.code pre .nn { color: #666666; font-weight: bold; font-style: italic } /* Name.Namespace */
+div.code pre .nv { color: #666666; font-weight: bold; font-style: italic } /* Name.Variable */
+div.code pre .ow { font-weight: bold } /* Operator.Word */
+div.code pre .sb { color: #666666; font-style: italic } /* Literal.String.Backtick */
+div.code pre .sc { color: #666666; font-style: italic } /* Literal.String.Char */
+div.code pre .sd { color: #666666; font-style: italic } /* Literal.String.Doc */
+div.code pre .s2 { color: #666666; font-style: italic } /* Literal.String.Double */
+div.code pre .se { color: #666666; font-style: italic } /* Literal.String.Escape */
+div.code pre .sh { color: #666666; font-style: italic } /* Literal.String.Heredoc */
+div.code pre .si { color: #666666; font-style: italic } /* Literal.String.Interpol */
+div.code pre .sx { color: #666666; font-style: italic } /* Literal.String.Other */
+div.code pre .sr { color: #666666; font-style: italic } /* Literal.String.Regex */
+div.code pre .s1 { color: #666666; font-style: italic } /* Literal.String.Single */
+div.code pre .ss { color: #666666; font-style: italic } /* Literal.String.Symbol */
+div.code pre .bp { font-weight: bold; font-style: italic } /* Name.Builtin.Pseudo */
+div.code pre .vc { color: #666666; font-weight: bold; font-style: italic } /* Name.Variable.Class */
+div.code pre .vg { color: #666666; font-weight: bold; font-style: italic } /* Name.Variable.Global */
+div.code pre .vi { color: #666666; font-weight: bold; font-style: italic } /* Name.Variable.Instance */
+
+table.code td .hll { background-color: #ffffcc }
+table.code td  { background: #ffffff; }
+table.code td .c { color: #888888; font-style: italic } /* Comment */
+table.code td .err { border: 1px solid #FF0000 } /* Error */
+table.code td .k { font-weight: bold } /* Keyword */
+table.code td .ch { color: #888888; font-style: italic } /* Comment.Hashbang */
+table.code td .cm { color: #888888; font-style: italic } /* Comment.Multiline */
+table.code td .cp { color: #888888; font-weight: bold } /* Comment.Preproc */
+table.code td .cpf { color: #888888; font-style: italic } /* Comment.PreprocFile */
+table.code td .c1 { color: #888888; font-style: italic } /* Comment.Single */
+table.code td .cs { color: #888888; font-weight: bold } /* Comment.Special */
+table.code td .kc { font-weight: bold } /* Keyword.Constant */
+table.code td .kd { font-weight: bold; font-style: italic } /* Keyword.Declaration */
+table.code td .kn { font-weight: bold } /* Keyword.Namespace */
+table.code td .kp { font-weight: bold } /* Keyword.Pseudo */
+table.code td .kr { font-weight: bold } /* Keyword.Reserved */
+table.code td .kt { font-weight: bold } /* Keyword.Type */
+table.code td .s { color: #666666; font-style: italic } /* Literal.String */
+table.code td .nb { font-weight: bold; font-style: italic } /* Name.Builtin */
+table.code td .nc { color: #666666; font-weight: bold; font-style: italic } /* Name.Class */
+table.code td .no { color: #666666; font-weight: bold; font-style: italic } /* Name.Constant */
+table.code td .nf { color: #666666; font-weight: bold; font-style: italic } /* Name.Function */
+table.code td .nn { color: #666666; font-weight: bold; font-style: italic } /* Name.Namespace */
+table.code td .nv { color: #666666; font-weight: bold; font-style: italic } /* Name.Variable */
+table.code td .ow { font-weight: bold } /* Operator.Word */
+table.code td .sb { color: #666666; font-style: italic } /* Literal.String.Backtick */
+table.code td .sc { color: #666666; font-style: italic } /* Literal.String.Char */
+table.code td .sd { color: #666666; font-style: italic } /* Literal.String.Doc */
+table.code td .s2 { color: #666666; font-style: italic } /* Literal.String.Double */
+table.code td .se { color: #666666; font-style: italic } /* Literal.String.Escape */
+table.code td .sh { color: #666666; font-style: italic } /* Literal.String.Heredoc */
+table.code td .si { color: #666666; font-style: italic } /* Literal.String.Interpol */
+table.code td .sx { color: #666666; font-style: italic } /* Literal.String.Other */
+table.code td .sr { color: #666666; font-style: italic } /* Literal.String.Regex */
+table.code td .s1 { color: #666666; font-style: italic } /* Literal.String.Single */
+table.code td .ss { color: #666666; font-style: italic } /* Literal.String.Symbol */
+table.code td .bp { font-weight: bold; font-style: italic } /* Name.Builtin.Pseudo */
+table.code td .vc { color: #666666; font-weight: bold; font-style: italic } /* Name.Variable.Class */
+table.code td .vg { color: #666666; font-weight: bold; font-style: italic } /* Name.Variable.Global */
+table.code td .vi { color: #666666; font-weight: bold; font-style: italic } /* Name.Variable.Instance */

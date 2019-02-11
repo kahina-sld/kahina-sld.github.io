@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      Profiler – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search" />
+        <link rel="help" href="TracGuide" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/Profiler?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="http://kahina.org/trac/wiki" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide">Help/Guide</a></li><li><a href="../about">About Trac</a></li><li class="last"><a href="../prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="http://kahina.org/trac/wiki">Wiki</a></li><li><a href="../timeline">Timeline</a></li><li><a href="../roadmap">Roadmap</a></li><li><a href="../report">View Tickets</a></li><li class="last"><a href="../search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="http://kahina.org/trac/wiki">wiki:</a><a class="pathentry" href="Profiler" title="View Profiler">Profiler</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart">Start Page</a></li><li><a href="TitleIndex">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/Profiler?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="Profiler">Profiler</h1>
+<p>
+An execution profiler is a tool that helps in analyzing the runtime performance of a program by measuring the number of times that individual parts of the program are executed and/or the time spent while executing each of these parts. This data can be used by developers to decide which parts of the program to optimize, and where restructuring the program could avoid doing unnecessary work. For example, in logic programming, if a predicate fails very frequently, this indicates computations that do not lead to a result and, depending on the program and the data, may be avoided by changing the clause order of a predicate, or changing the goal order in a clause.
+</p>
+<p>
+Kahina's execution profiler for logic programs counts the number of times each step type (predicate) is called or redone, exits or fails. This is always done automatically as the debugger information from the logic programming system to which Kahina is connected (e.g. TRALE or SWI-Prolog) is recorded. The count information is also implicitly present in the control flow tree and can be computed from it post hoc. The profiler does not yet record the time that passes from entering a step to leaving it, although <a class="new ticket" href="../ticket/33" title="enhancement: Measure time in profiler (new)">this is a planned feature</a>.
+</p>
+<h2 id="Profiles">Profiles</h2>
+<p>
+A profile of (part of) a program is represented as a table whose rows represent step types (predicates). The number of calls, fails, exits and redos of each step type is shown. For additional viewing comfort, the step types may be assigned categories in a manner specified by the concrete layer (e.g. the TRALE layer or the Prolog layer).
+</p>
+<div style="border: 1px solid grey; padding: 10px; background-color: #FFFFDD">
+<h3 style="margin-left: 0">TRALE example</h3>
+</div><p>
+For TRALE, steps are currently classified into three categories: <tt>rule</tt> (rule applications), <tt>goal</tt> (goal calls) and <tt>general</tt> (everything else). Future version may have a more fine-grained set of categories, e.g. the one used in <a class="ext-link" href="http://www.ale.cs.toronto.edu/docs/man/ale_trale_man/ale_trale_man-node70.html"><span class="icon">​</span>the documentation of ALE's source level debugger</a>.
+</p>
+<p>
+Here is an example profile, made during a parse of the phrase <em>der Mann</em> with a rather heavy-weight grammar:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/Profiler/Prenzlgram-profile.png"><img src="../raw-attachment/wiki/Profiler/Prenzlgram-profile.png" /></a>
+</p>
+
+<p>
+Different profiles are available in Kahina:
+</p>
+<ul><li>The <strong>full profile</strong> is the profile of the whole program run currently being recorded by Kahina. Show it by clicking <strong>Full profile</strong> in the <strong>Profiler</strong> menu.
+</li><li>A <strong>subtree profile</strong> counts only the calls, fails, exits and redos of steps within a certain part of the <a class="missing wiki">ControlFlowTree?</a>. This can be useful for assessing the performance of certain parts of a program. Remember that the control flow tree is actually a combined representation of two trees, the search tree and the call tree. So a subtree profile is defined by choosing a root node and then either traversing the search subtree or the call subtree rooted in that node.
+<ul><li>Show a <strong>search subtree profile</strong> by first selecting the root node of the desired subtree and then clicking <strong>Profile search subtree</strong> in the <strong>Profiler</strong> menu. A search subtree profile may be useful if you know that when control flow hit the root node, a "wrong" choice was made that will not lead to a solution. The profile then shows you the amount of unneccessary work done by the system after making the wrong decision and before failing and backtracking back past the wrong decision.
+</li><li>Show a <strong>call subtree profile</strong> by first selecting the root node of the desired subtree and then clicking <strong>Profile call subtree</strong> in the <strong>Profiler</strong> menu. A call subtree profile may be useful for assessing the amount of work that executing a certain step requires, including all substeps.
+</li></ul></li></ul></div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/Profiler?action=diff&amp;version=8" title="Version 8 by ke: typo">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-04-23T16%3A16%3A15%2B02%3A00&amp;precision=second" title="See timeline at Apr 23, 2011, 4:16:15 PM">8 years ago</a></span>
+            <span class="trac-print">Last modified on Apr 23, 2011, 4:16:15 PM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(3)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="http://kahina.org/trac/attachment/wiki/Profiler/Prenzlgram-warn-edit.png" title="View attachment">Prenzlgram-warn-edit.png</a><a href="http://kahina.org/trac/raw-attachment/wiki/Profiler/Prenzlgram-warn-edit.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="35313 bytes">34.5 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-07T21%3A24%3A40%2B01%3A00&amp;precision=second" title="See timeline at Nov 7, 2010, 9:24:40 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="http://kahina.org/trac/attachment/wiki/Profiler/Prenzlgram-warn-warn.png" title="View attachment">Prenzlgram-warn-warn.png</a><a href="http://kahina.org/trac/raw-attachment/wiki/Profiler/Prenzlgram-warn-warn.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7411 bytes">7.2 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-07T21%3A28%3A31%2B01%3A00&amp;precision=second" title="See timeline at Nov 7, 2010, 9:28:31 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/Profiler/Prenzlgram-profile.png" title="View attachment">Prenzlgram-profile.png</a><a href="../raw-attachment/wiki/Profiler/Prenzlgram-profile.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="52207 bytes">51.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-07T22%3A11%3A04%2B01%3A00&amp;precision=second" title="See timeline at Nov 7, 2010, 10:11:04 PM">8 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/Profiler/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/Profiler?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

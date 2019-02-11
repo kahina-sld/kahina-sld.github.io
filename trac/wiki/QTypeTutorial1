@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      QTypeTutorial1 – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search" />
+        <link rel="help" href="TracGuide" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/QTypeTutorial1?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="http://kahina.org/trac/wiki" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide">Help/Guide</a></li><li><a href="../about">About Trac</a></li><li class="last"><a href="../prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="http://kahina.org/trac/wiki">Wiki</a></li><li><a href="../timeline">Timeline</a></li><li><a href="../roadmap">Roadmap</a></li><li><a href="../report">View Tickets</a></li><li class="last"><a href="../search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="http://kahina.org/trac/wiki">wiki:</a><a class="pathentry" href="QTypeTutorial1" title="View QTypeTutorial1">QTypeTutorial1</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart">Start Page</a></li><li><a href="TitleIndex">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/QTypeTutorial1?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="KahinaforQTypeTutorialPart1:FirstSteps">Kahina for QType Tutorial Part 1: First Steps</h1>
+<p>
+It is still possible to execute operations such as compiling grammars and parsing sentences from the console,
+but in this sequence of tutorials, we will exclusively use the new GUI to show how these operations are performed in it.
+In this first tutorial, you will learn how to start Kahina, how to load projects, and how to compile grammars.
+</p>
+<h3 id="StartingKahinainMainMode">Starting Kahina in Main Mode</h3>
+<p>
+If Kahina for QType is <a class="wiki" href="InstallQType">correctly installed</a>, all that is required to start the Kahina GUI is to issue the command 
+<strong><tt>gui</tt></strong> at the QType prompt. Depending on the version of Kahina you are running, there might now be considerable
+output on the console, before a screen-filling window with many GUI components is built up. Welcome to Kahina.
+</p>
+<h3 id="LoadingaTutorialProject">Loading a Tutorial Project</h3>
+<p>
+In Kahina, a QType grammar is always bundled in a <strong>project</strong> together with a range of settings that determine the user interface layout as well as the tracing behavior. To be able to rely on a standardized and somewhat simplified environment for this tutorial, we have predefined several example projects. For the first three tutorials, our example project will be based on the example grammar <tt>shieb4.qtg</tt>, which Kahina will look for in the <tt>GRM/QTG</tt> directory of your QType distribution.
+</p>
+<p>
+A list of all predefined projects can be found in the menu under <strong>Project -&gt; Open Project -&gt; Predefined Projects</strong>. The list should contain a project named <strong>QType Tutorials 1-3</strong>, which we shall need for the purposes of this and the following two tutorials. In order to open this project, you need to click on its list entry, which will cause the Kahina GUI to shortly disappear and be rebuilt with a different layout. Your Kahina window should now look roughly like this:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial1/tutorial-project-opened.png"><img src="../raw-attachment/wiki/QTypeTutorial1/tutorial-project-opened.png" style="margin-right:auto; display:block; margin-left:auto" /></a>
+</p>
+<h3 id="AFirstTouroftheViewComponents">A First Tour of the View Components</h3>
+<p>
+Before we go any further, it is worthwhile to take a first cursory look at Kahina's GUI components. From now on, these components will often be referred to using the terminology we introduce here, so this is an important step towards familiarizing yourself with Kahina, which will make it a lot easier to understand the explanations in subsequent tutorials. 
+</p>
+<p>
+Just below the menu, we have the <strong>control panel</strong>, a row of buttons which will later allow you to issue commands to the underlying QType instance while tracing. The exact meaning of these commands will be discussed in <a class="wiki" href="QTypeTutorial2">QTypeTutorial2</a>. The two buttons on the right will be used in <a class="wiki" href="QTypeTutorial3">QTypeTutorial3</a> for flipping backward and forward through the <strong>selection history</strong>, much like the Back and Forward buttons in a browser.
+</p>
+<p>
+The component at the right border of the Kahina window is the <strong>message console</strong>, which will essentially display an interactive variant of a usual Prolog trace during the debugging process, but will often enhance this trace with additional information. At the moment, only one step is mentioned, the symbolic <strong>query root</strong>, standing for the underlying QType process which is currently waiting for orders. The message console plays an important role in all subsequent tutorials.
+</p>
+<p>
+The query root is also the only step which shows up in the <strong>step tree</strong> just below the control panel. The step tree display is separated into two views representing different levels of detail: the <strong>overview tree</strong> on the left and the <strong>detail tree</strong> on the right. At the moment, both views display the same single tree root. Parent-child relationships in the step tree are expressed by indentation. As you will learn in <a class="wiki" href="QTypeTutorial3">QTypeTutorial3</a>, the step tree gives access to both the call structure and the search structure of a Prolog process.
+</p>
+<p>
+The <strong>source display</strong> is an integrated source code editor which serves to display relevant bits of QType's source code and/or the grammar file, indicating by highlights which lines of the code are involved in the current computation. As we have not started any computation yet, the source display remains empty for now.
+</p>
+<p>
+The <strong>goal display</strong> will contain graphical representations of the goal being called. This will especially become relevant for goals whose arguments represent feature structures, as it includes an elegant feature structure visualization. Parse trees will also be displayed in this view.
+</p>
+<h3 id="CompilingtheGrammar">Compiling the Grammar</h3>
+<p>
+To compile the grammar defined by the project, activate the menu item Grammar -&gt; Compile. Kahina now switches to a tracing mode which would allow you to explore in minute detail how the grammar is compiled. The compilation process for this grammar in full detail consists of more than tracing 25.000 steps.
+</p>
+<p>
+While this level of detail can be useful for debugging grammars which do not compile, in this tutorial we are not interested in the internals of this process.
+We will therefore skip the entire compilation step, by telling Kahina to let QType compile the grammar under the hood without informing the Kahina instance about the internals.
+To skip the current step, you can either press the 'S' key (TODO), or press the skip button in the control panel:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial1/skip-button-hint.png"><img src="../raw-attachment/wiki/QTypeTutorial1/skip-button-hint.png" /></a>
+</p>
+<p>
+After the skip command was issued, Kahina will wait until QType has finished the compilation.
+Once the skip was completed, the display of the compilation step in the control flow tree will change its color from black to green,
+the signal color indicating that a step was successfully completed. The situation at the end of this tutorial should therefore look roughly like this:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial1/tutorial-grammar-compiled.png"><img src="../raw-attachment/wiki/QTypeTutorial1/tutorial-grammar-compiled.png" style="margin-right:auto; display:block; margin-left:auto" /></a>
+</p>
+<h3 id="FurtherSteps">Further Steps</h3>
+<p>
+We are now ready to inspect a parse process. Continue to <a class="wiki" href="QTypeTutorial2">QTypeTutorial2</a> to learn about parsing and tracing.
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/QTypeTutorial1?action=diff&amp;version=34" title="Version 34 by ke">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T12%3A58%3A05%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 12:58:05 PM">6 years ago</a></span>
+            <span class="trac-print">Last modified on Oct 7, 2012, 12:58:05 PM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(3)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial1/tutorial-project-opened.png" title="View attachment">tutorial-project-opened.png</a><a href="../raw-attachment/wiki/QTypeTutorial1/tutorial-project-opened.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="21558 bytes">21.1 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-04T12%3A38%3A25%2B02%3A00&amp;precision=second" title="See timeline at Oct 4, 2012, 12:38:25 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial1/skip-button-hint.png" title="View attachment">skip-button-hint.png</a><a href="../raw-attachment/wiki/QTypeTutorial1/skip-button-hint.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="6945 bytes">6.8 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-04T13%3A01%3A10%2B02%3A00&amp;precision=second" title="See timeline at Oct 4, 2012, 1:01:10 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial1/tutorial-grammar-compiled.png" title="View attachment">tutorial-grammar-compiled.png</a><a href="../raw-attachment/wiki/QTypeTutorial1/tutorial-grammar-compiled.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="42008 bytes">41.0 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-04T13%3A36%3A17%2B02%3A00&amp;precision=second" title="See timeline at Oct 4, 2012, 1:36:17 PM">6 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/QTypeTutorial1/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/QTypeTutorial1?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<breakpoint name="5-6-minitree" type="0" color="#64C0DA" active="true">
+<treePattern>
+<patternNode>
+<pattern type="caption" rel="contains">
+<intVal>0</intVal><stringVal regex="true">5</stringVal></pattern><children>
+<patternNode>
+<pattern type="caption" rel="contains">
+<intVal>0</intVal><stringVal regex="true">6</stringVal></pattern></patternNode></children>
+</patternNode></treePattern></breakpoint>

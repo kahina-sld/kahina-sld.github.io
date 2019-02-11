@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      QTypeTutorial5 – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search" />
+        <link rel="help" href="TracGuide" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/QTypeTutorial5?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="http://kahina.org/trac/wiki" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide">Help/Guide</a></li><li><a href="../about">About Trac</a></li><li class="last"><a href="../prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="http://kahina.org/trac/wiki">Wiki</a></li><li><a href="../timeline">Timeline</a></li><li><a href="../roadmap">Roadmap</a></li><li><a href="../report">View Tickets</a></li><li class="last"><a href="../search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="http://kahina.org/trac/wiki">wiki:</a><a class="pathentry" href="QTypeTutorial5" title="View QTypeTutorial5">QTypeTutorial5</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart">Start Page</a></li><li><a href="TitleIndex">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/QTypeTutorial5?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="KahinaforQTypeTutorialPart5:UsingControlPoints">Kahina for QType Tutorial Part 5: Using Control Points</h1>
+<p>
+This tutorial assumes that you have learned about control agents in <a class="wiki" href="QTypeTutorial4">QTypeTutorial4</a>. In this tutorial, you will finally start to define your own control agents. Since the default control agent profiles that come with Kahina for QType will normally be all you need for simplifying tracing processes, here you will learn about a type of control agent which comes in very handy when you are only interested in QType's behavior at a specific point, which will often be the case during debugging.
+</p>
+<p>
+While the control agents you have seen in the predefined profile of <a class="wiki" href="QTypeTutorial4">QTypeTutorial4</a> had sensors listening for patterns on step labels, many other kinds of sensors are conceivable. Note that interesting predicates will usually be called at many different places in a Prolog program, and during debugging it will often be useful to distinguish between these places. One particularly useful kind of sensor therefore listens for the trace to arrive at a particular line in the source code. In Kahina terminology, control agents with such line-based sensors are called <strong>control points</strong>.  Control points increase the degree of fine-grainedness possible for sensor patterns, as distinctions between different calls to the same predicate are not straightforward to model using patterns on a string representation of a goal. Moreover, defining a tracing action to be executed every time that a line in the source code is touched is a particularly simple and easy-to-understand type of control automation.
+</p>
+<p>
+For this tutorial, we will again base our discussion on the project <strong>QType Tutorial 4-5</strong>, which you are asked to load now. To demonstrate the usefulness of control points in understanding and sifting through longer parses, we will parse a much longer sentence this time. After compiling the grammar, open the <strong>Grammar -&gt; Parse example</strong> menu and choose the sentence <strong>uther has persuaded knights to storm cornwall</strong>. 
+</p>
+<h3 id="Definingabreakpoint">Defining a break point</h3>
+<p>
+Control points are a very simple type of control agent for the user to create because no interaction with the control agent profile editor is required to define them. Control points can be defined directly via the context menu of the source code editor. We shall begin by creating a <strong>break point</strong>, an agent whose sensor listens for a source code line, and whose actuator sends out a break command just as if the user had clicked on the Pause button during a leap. The name of this type of agents is of course not a coincidence, as its behavior effectively emulates a line-based breakpoint as you would define it in a usual Prolog tracer.
+</p>
+<p>
+Assume that we are interested in the exact behavior of the rule for trivial verb phrases in our example grammar. In the current version of Kahina, you need to issue the creep command twice, so that the <tt>lexentry_existence/2</tt> call gets auto-completed, and select the <tt>db_word/4</tt> step in the detail view in order to make the grammar file <tt>shieb4.qtg</tt> appear as a tab in the source code view (this will be more user-friendly in the final version):
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial5/db_word_step_selected.png"><img src="../raw-attachment/wiki/QTypeTutorial5/db_word_step_selected.png" /></a>
+</p>
+<p>
+Scroll up in the source code display until you arrive at the section where the syntax rules are defined. With a right click on the definition of the relevant rule (the middle one, as indicated by the comments), you open a context menu which allows you to add a break point, which is what you should do now.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial5/source-context-menu.png"><img src="../raw-attachment/wiki/QTypeTutorial5/source-context-menu.png" /></a>
+</p>
+<p>
+Let us check whether the break point was registered in the correct control agent profile. In the control agent profile editor, switch to the <strong>Break</strong> tab. You should see an entry called <strong>shieb4.qtg:112</strong> in this list. Clicking on the entry, you will see a very simple sensor description on the right side of the list. In the current version of Kahina, this description only consists of the complete path to the source code file followed by a colon and the line number the sensor is watching out for.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial5/break-point-display.png"><img src="../raw-attachment/wiki/QTypeTutorial5/break-point-display.png" /></a>
+</p>
+<p>
+Note that Kahina cannot deduce any relevant semantic information about the code line you selected. You therefore might want to rename your new break agent for easier identification, especially if you are planning to define more than one break point at the same time. Names can be changed via the agent list's context menu, which you open with a right click on the relevant list entry. In this menu, use the <strong>Rename</strong> option to give the break point a more telling name like "trivial verb phrase rule".
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial5/rename-context-menu.png"><img src="../raw-attachment/wiki/QTypeTutorial5/rename-context-menu.png" /></a>
+</p>
+<h3 id="Leapingbetweenbreakpointmatches">Leaping between break point matches</h3>
+<p>
+After adding the break point, we can now observe the new behavior of the <strong>Leap</strong> command. After issuing it for the first time, Kahina should almost immediately fast-forward you to the first call of <tt>db_rule/4</tt> which retrieves the trivial verb phrase rule, and automatically exit the leap mode there:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial5/break-point-match.png"><img src="../raw-attachment/wiki/QTypeTutorial5/break-point-match.png" /></a>
+</p>
+<p>
+We encourage you to creep around a little to see the consequences of this attempted rule application. Once you have seen enough, issue the <strong>Leap</strong> command again and again, jumping between all the relevant calls to <tt>db_rule/4</tt>. If you have experience with Prolog debugging using a standard tracer, this workflow pattern will appear very familiar. If you have not used breakpoints in your Prolog tracer that much, this might be a good time to play around a little more with different break points. Note that you can define any number of break points, watching several points of interest in the grammar code at the same time.
+</p>
+<h3 id="Othertypesofcontrolpoints">Other types of control points</h3>
+<p>
+You will have noticed that the context menu for each source code lines contains additional entries for creating other types of control points. Each of the agents so created will show up in the respective tab of the control agent profile editor. Depending on the commands issued by their actuators, these control agents will be called <strong>creep points</strong>, <strong>skip points</strong>, <strong>fail points</strong>, and <strong>complete points</strong>, respectively. Depending on our own experiences as well as user demand, additional control point types might be added to this list in the future.
+</p>
+<p>
+These different types of control points provide a very flexible method of very locally influencing Kahina's behavior, with a range of possible usage scenarios. For instance, in order to temporarily deactivate a phrase structure rule, you could put a fail point on the source code line where it is defined. If you only want a specific call of some predicate to be auto-completed for possible later inspection, but another less interesting call to be skipped, this can be achieved by putting complete and skip points on the respective code lines. You will soon find it worthwhile and effective to spend some time thinking about a possible application of the control point system whenever you are confronted with a task that seems mechanic or burdensome during tracing or debugging.
+</p>
+<h3 id="Removingacontrolpoint">Removing a control point</h3>
+<p>
+In the current version of Kahina, it is not yet possible to remove or deactivate control points via the source code view. It also is not yet visible in the source code view whether a control point was defined for any given line. Both of these features are going to be present in the final release version of Kahina for QType.
+</p>
+<p>
+In the current version, all control agents including control points can only be removed via the control agent profile editor. To remove the breakpoint which we defined in this tutorial, you need to change to the <strong>Break</strong> tab of the editor, select the breakpoint, and right-click on it. The context menu showing up contains an entry named <strong>Remove</strong>. Clicking on this menu entry will deactivate and remove the breakpoint, reverting Kahina to the predefined behavior from the previous tutorial.
+</p>
+<p>
+In case you are wondering about the meaning of the <strong>signal color</strong> which is associated with every control agent and which can also be modified via this menu, this belongs to another feature which we yet to implement in Kahina for QType. The signal color will be used to mark the messages in the console which tell you when an agent's sensor has matched the current step, increasing the perspicuity of these special events in a trace.
+</p>
+<h3 id="FurtherSteps">Further Steps</h3>
+<p>
+You have now acquired first experiences with defining your own control agents. In <a class="wiki" href="QTypeTutorial6">QTypeTutorial6</a>, you will learn how to define more complex control agents using the control agent editor, and how to administer control agent profiles. You will also learn how to define your own projects, finally giving you the freedom to go beyond the one example grammar to which we have constrained ourselves so far.
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/QTypeTutorial5?action=diff&amp;version=26" title="Version 26 by jd">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-10T10%3A53%3A52%2B02%3A00&amp;precision=second" title="See timeline at Oct 10, 2012, 10:53:52 AM">6 years ago</a></span>
+            <span class="trac-print">Last modified on Oct 10, 2012, 10:53:52 AM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(5)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial5/db_word_step_selected.png" title="View attachment">db_word_step_selected.png</a><a href="../raw-attachment/wiki/QTypeTutorial5/db_word_step_selected.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="103049 bytes">100.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-08T18%3A45%3A42%2B02%3A00&amp;precision=second" title="See timeline at Oct 8, 2012, 6:45:42 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial5/break-point-display.png" title="View attachment">break-point-display.png</a><a href="../raw-attachment/wiki/QTypeTutorial5/break-point-display.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="10906 bytes">10.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-08T19%3A07%3A53%2B02%3A00&amp;precision=second" title="See timeline at Oct 8, 2012, 7:07:53 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial5/source-context-menu.png" title="View attachment">source-context-menu.png</a><a href="../raw-attachment/wiki/QTypeTutorial5/source-context-menu.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="17403 bytes">17.0 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-08T19%3A08%3A02%2B02%3A00&amp;precision=second" title="See timeline at Oct 8, 2012, 7:08:02 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial5/break-point-match.png" title="View attachment">break-point-match.png</a><a href="../raw-attachment/wiki/QTypeTutorial5/break-point-match.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="110426 bytes">107.8 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-09T18%3A14%3A05%2B02%3A00&amp;precision=second" title="See timeline at Oct 9, 2012, 6:14:05 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial5/rename-context-menu.png" title="View attachment">rename-context-menu.png</a><a href="../raw-attachment/wiki/QTypeTutorial5/rename-context-menu.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="15686 bytes">15.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-10T10%3A48%3A21%2B02%3A00&amp;precision=second" title="See timeline at Oct 10, 2012, 10:48:21 AM">6 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/QTypeTutorial5/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/QTypeTutorial5?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

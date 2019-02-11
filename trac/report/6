@@ -1,0 +1,2597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      {6} All Tickets By Milestone  (Including closed) – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search" />
+        <link rel="help" href="../wiki/TracGuide" />
+        <link rel="alternate" href="http://kahina.org/trac/report/6?asc=1&amp;format=rss&amp;USER=anonymous" type="application/rss+xml" class="rss" title="RSS Feed" /><link rel="alternate" href="http://kahina.org/trac/report/6?asc=1&amp;format=csv&amp;USER=anonymous" type="text/plain" title="Comma-delimited Text" /><link rel="alternate" href="http://kahina.org/trac/report/6?asc=1&amp;format=tab&amp;USER=anonymous" type="text/plain" title="Tab-delimited Text" /><link rel="alternate" href="http://kahina.org/trac/report?id=6&amp;format=sql" type="text/plain" title="SQL Query" />
+        <link rel="up" href="../report" title="Available Reports" />
+        <link rel="next" href="http://kahina.org/trac/report/6?asc=1&amp;USER=anonymous&amp;page=2" title="Next Page" />
+        <link rel="start" href="http://kahina.org/trac/wiki" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/report.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="../wiki/TracGuide">Help/Guide</a></li><li><a href="../about">About Trac</a></li><li class="last"><a href="../prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/wiki">Wiki</a></li><li><a href="../timeline">Timeline</a></li><li><a href="../roadmap">Roadmap</a></li><li class="active"><a href="../report">View Tickets</a></li><li class="last"><a href="../search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="../report">Available Reports</a></li><li class="last"><a href="../query">Custom Query</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="report">
+      <h1>{6} All Tickets By Milestone  (Including closed)
+        <span class="numrows">(137 matches)</span>
+      </h1>
+      <form method="get" action="6">
+        <div id="prefs">
+          <div>
+            <label>
+              Max items per page
+              <input type="text" name="max" size="10" value="100" />
+            </label>
+          </div>
+          <div class="buttons">
+            <input type="submit" value="Update" />
+          </div>
+        </div>
+      </form>
+      <div id="description">
+        <p>
+A more complex example to show how to make advanced reports.
+</p>
+
+      </div>
+      <div class="buttons">
+      </div>
+      <h2 class="report-result">
+        Results <span class="numresults">(1 - 100 of 137)</span>
+      </h2>
+      <div class="paging">
+      <span>
+        <span class="current">1</span>
+      </span>
+      <span>
+        <a href="http://kahina.org/trac/report/6?asc=1&amp;USER=anonymous&amp;page=2" title="Page 2">2</a>
+      </span>
+    <span class="next">
+      <a href="http://kahina.org/trac/report/6?asc=1&amp;USER=anonymous&amp;page=2" title="Next Page">→</a>
+    </span>
+</div>
+      <table class="listing tickets">
+          <thead>
+        <tr class="trac-columns">
+          <th>
+            <a href="http://kahina.org/trac/report/6?sort=ticket&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Ticket
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=summary&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Summary
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=component&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Component
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=status&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Status
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=resolution&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Resolution
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=version&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Version
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=type&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Type
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=priority&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Priority
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=owner&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Owner
+            </a>
+          </th><th>
+            <a href="http://kahina.org/trac/report/6?sort=modified&amp;asc=1&amp;USER=anonymous&amp;page=1">
+              Modified
+            </a>
+          </th>
+        </tr>
+          </thead>
+          <tbody>
+              <tr class="color3-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/28">#28</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/28">Filter hidden steps from main tree view</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 7, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/29">#29</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/29">Blocked goals tree summary</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/39">#39</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/39">Keyboard shortcuts</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">assigned
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 10, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/40">#40</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/40">Chart display</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">task
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/41">#41</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/41">KahinaTextView/KahinaTextViewPanel don't support model changes</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Oct 17, 2010
+                          </td>
+              </tr>
+              <tr class="color3-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/51">#51</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/51">Saving and restoring user data</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/54">#54</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/54">build in a rudimentary online help system</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/9">#9</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/9">Explicitly visualize that different invocations of the same step belong together</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">assigned
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 18, 2013
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/20">#20</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/20">Show solutions as complete parse trees</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/25">#25</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/25">Layered tree view needs rethinking</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 8, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/30">#30</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/30">Tooltips for node labels</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Oct 11, 2010
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/33">#33</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/33">Measure time in profiler</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/36">#36</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/36">Less failed edges</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/42">#42</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/42">Support multiple source files in TRALE's debugger</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/43">#43</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/43">Warn user of hidden features</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/44">#44</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/44">Keep zoom factor in feature structure view</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">assigned
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/45">#45</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/45">Source code view: open files as soon as they are used</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/58">#58</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/58">source code highlighting</a>
+                          </td>
+                          <td class="component">kahina-swi
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/59">#59</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/59">variable bindings on redo</a>
+                          </td>
+                          <td class="component">kahina-swi
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/61">#61</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/61">marking the parent node is broken</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/62">#62</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/62">Handle TRALE errors and display them in Kahina</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 12, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/66">#66</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/66">Closing GUI should lead to abortion, but (sometimes) leads to NullPointerException if done while fast-forwarding/auto-completing</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/71">#71</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/71">Step counters in window title and view title are inconsistent.</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/72">#72</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/72">No step counter when loading a session from a file</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/104">#104</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/104">Breakpoint (skip point, ...) editors show breakpoints (skip points, ...) from previous session</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 26, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/105">#105</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/105">rethink transmission of step information/step data to bridge</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 27, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/107">#107</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/107">unhide substructures that contain highlights by default</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 27, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/108">#108</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/108">preserve hide/show state of substructures as rendered by GraleJ</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 27, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/109">#109</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/109">breakpoints match too often</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Dec 27, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/120">#120</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/120">Selecting a step with layer X in a list tree view panel with layer Y where X &lt; Y should not change the root</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Apr 4, 2012
+                          </td>
+              </tr>
+              <tr class="color4-even" style=";">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/137">#137</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/137">tree-node re-entrancies are not shown</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">new
+                          </td>
+                          <td class="resolution">
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 23, 2013
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/134">#134</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/134">Hardcoded paths in predefined projects should be eliminated</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Aug 16, 2013
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/133">#133</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/133">New changes break TraleSLD</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 19, 2013
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/135">#135</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/135">TRALE should not have to be started from grammar directory in order for projects to work</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 19, 2013
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/136">#136</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/136">Compilation of webcourse grammar fails</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 19, 2013
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/132">#132</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/132">Doc says TraleSLD requires SP4, #285 seems to work with SP3, what gives?</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 18, 2013
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/131">#131</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/131">Doc says TraleSLD requires SP4, #285 seems to work with SP3, what gives?</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">duplicate
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">May 1, 2013
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/130">#130</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/130">NullPointerException on trying to create a control agent in a new project before starting the compilation</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Oct 19, 2012
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/129">#129</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/129">Loading a new project does not abort the current session</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Oct 10, 2012
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/128">#128</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/128">show source code location for top-level goals</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Oct 7, 2012
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/126">#126</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/126">KAHINA_HOME not set error message appears twice</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Oct 5, 2012
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/127">#127</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/127">Handling of invalid QType commands broken when tracer active</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">worksforme
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Oct 5, 2012
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/121">#121</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/121">Show result of parse in GUI</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 2, 2012
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/118">#118</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/118">"parse" and "parse example" grammar menu entries should be greyed out between call and exit of compile_grammar/1</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 26, 2012
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/116">#116</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/116">Factor "breakpoint profile" out</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 25, 2012
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/117">#117</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/117">Abortion from GUI does not work properly in all cases</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 12, 2012
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/112">#112</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/112">Make "more solutions" prompt controllable from GUI</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 12, 2012
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/124">#124</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/124">halt command in QType broken?</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">worksforme
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 9, 2012
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/125">#125</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/125">Step counter updates are too frequent</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 8, 2012
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/123">#123</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/123">"Register example" events never seem to hit the KahinaCommander that should process them</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 8, 2012
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/114">#114</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/114">Relevant and less relevant QType steps</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 8, 2012
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/122">#122</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/122">restart, recompile und ein zweiter Parse funktionieren nicht</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jun 8, 2012
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/119">#119</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/119">Children of compile_grammar/1 steps have no line information associated with them</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">May 6, 2012
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/115">#115</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/115">"parse example" should be greyed out when GUI control is inactive</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Mar 4, 2012
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/113">#113</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/113">Parse examples from "Parse example" submenu</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jan 15, 2012
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/111">#111</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/111">FS: handle non-empty Prolog lists specially</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jan 15, 2012
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/110">#110</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/110">GUI control: system hangs after confirming at "more solutions" prompt after parse</a>
+                          </td>
+                          <td class="component">kahina-qtype
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jan 2, 2012
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/106">#106</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/106">auto-complete of cons steps does not work</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">
+                          </td>
+                          <td class="date">Dec 27, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/65">#65</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/65">TRALE feature structures: trouble with constraint applications</a>
+                          </td>
+                          <td class="component">trale-sld
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">worksforme
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Dec 27, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/18">#18</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/18">More efficient foreign method calls</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">wontfix
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/5">#5</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/5">Orientation of the "straight line of success"</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">wontfix
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/55">#55</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/55">Update/redraw views when there are no steps</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">wontfix
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/50">#50</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/50">KahinaMainWindow is not general enough</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/35">#35</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/35">Failed edges and fail cascades</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">wontfix
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/31">#31</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/31">Debugging more than parsing processes in trale-sld</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">wontfix
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/8">#8</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/8">application-specific enrichments of "paging" boxes</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">wontfix
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/7">#7</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/7">Search tree layout: "paging" if there are many children</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">wontfix
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/6">#6</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/6">Search tree layout: auto-folding the descendants of siblings to save space</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">wontfix
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/69">#69</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/69">List tree view: choice between primary siblings should default to last (= most recent) sibling</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Dec 9, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/103">#103</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/103">kahinasicstus and kahinaqtype don't handle cyclic terms</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Dec 8, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/102">#102</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/102">"Error in Jasper meta call" while applying lexical rules during grammar compilation</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Oct 17, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/75">#75</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/75">kahinaqtype: module kahinasicstus sometimes loaded even if trace/notrace commands are never issued</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Oct 15, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/101">#101</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/101">Test</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Oct 15, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/74">#74</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/74">Some Things You Need To Know About H-1B Visas</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Sep 28, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/73">#73</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/73">Some Things You Need To Know About They would-1B Visas</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Sep 19, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/68">#68</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/68">Occasional GUI freeze and eventual heap overflow after leaping through a full cp/1 run with QType</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Aug 3, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/56">#56</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/56">exception thrown when creating new breakpoint (no serious consequences)</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 7, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/15">#15</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/15">make DatabaseManager and friends persistable</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 7, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/11">#11</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/11">Change child sets in memory tree to child lists</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 7, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/52">#52</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/52">Creep points can't be deactivated or removed</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 7, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/2">#2</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/2">Kahina should contain even more spam.</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/53">#53</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/53">improving About dialogue layout</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/47">#47</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/47">After the GUI is closed, it is immediately shown again</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/17">#17</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/17">View component showing all blocked goals</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">duplicate
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/38">#38</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/38">Replace source code view with JEdit window</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/24">#24</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/24">Tree patterns are saved incomplete</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/27">#27</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/27">Selected secondary edges should be thicker</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/26">#26</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/26">Show cornerstone nodes in context</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/13">#13</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/13">notify bridge of blocking/unblocking via Japser interface</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/34">#34</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/34">Warn points</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/19">#19</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/19">Number of daughters of a rule</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/49">#49</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/49">Compile/parse/recompile from GUI</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/14">#14</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/14">change Jasper interface to match Kahina API</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/4">#4</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/4">Search tree layout: "straight line of success"</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/22">#22</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/22">Scrolling problems</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color4-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/57">#57</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/57">Vertically align redo steps with their original steps, maybe connect them with a horizontal line</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color4-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/46">#46</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/46">jEdit log clutters up System.err</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">minor
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Jul 6, 2011
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/60">#60</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/60">Green Smoke Reviews</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">invalid
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">somebody
+                          </td>
+                          <td class="date">Jul 3, 2011
+                          </td>
+              </tr>
+              <tr class="color3-even" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/48">#48</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/48">Profiler tables need sum row</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">fixed
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">enhancement
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">ke
+                          </td>
+                          <td class="date">Nov 3, 2010
+                          </td>
+              </tr>
+              <tr class="color3-odd" style="color: #777; background: #ddd; border-color: #ccc;;">
+                          <td class="ticket">
+                            <a title="View ticket" href="../ticket/37">#37</a>
+                          </td>
+                          <td class="summary">
+                            <a title="View ticket" href="../ticket/37">Breakpoint export/import</a>
+                          </td>
+                          <td class="component">core
+                          </td>
+                          <td class="status">closed
+                          </td>
+                          <td class="resolution">worksforme
+                          </td>
+                          <td class="version">
+                          </td>
+                          <td class="type">defect
+                          </td>
+                          <td class="priority">major
+                          </td>
+                          <td class="owner">jd
+                          </td>
+                          <td class="date">Nov 2, 2010
+                          </td>
+              </tr>
+          </tbody>
+      </table>
+      <div class="paging">
+      <span>
+        <span class="current">1</span>
+      </span>
+      <span>
+        <a href="http://kahina.org/trac/report/6?asc=1&amp;USER=anonymous&amp;page=2" title="Page 2">2</a>
+      </span>
+    <span class="next">
+      <a href="http://kahina.org/trac/report/6?asc=1&amp;USER=anonymous&amp;page=2" title="Next Page">→</a>
+    </span>
+</div>
+      <div id="help"><strong>Note:</strong>
+        See <a href="../wiki/TracReports">TracReports</a> for help on using and creating reports.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://kahina.org/trac/report/6?asc=1&amp;format=rss&amp;USER=anonymous" class="rss">RSS Feed</a>
+        </li><li>
+          <a rel="nofollow" href="http://kahina.org/trac/report/6?asc=1&amp;format=csv&amp;USER=anonymous">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="http://kahina.org/trac/report/6?asc=1&amp;format=tab&amp;USER=anonymous">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://kahina.org/trac/report?id=6&amp;format=sql">SQL Query</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

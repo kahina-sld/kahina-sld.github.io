@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      WarnPoints – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search" />
+        <link rel="help" href="TracGuide" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/WarnPoints?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="http://kahina.org/trac/wiki" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide">Help/Guide</a></li><li><a href="../about">About Trac</a></li><li class="last"><a href="../prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="http://kahina.org/trac/wiki">Wiki</a></li><li><a href="../timeline">Timeline</a></li><li><a href="../roadmap">Roadmap</a></li><li><a href="../report">View Tickets</a></li><li class="last"><a href="../search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="http://kahina.org/trac/wiki">wiki:</a><a class="pathentry" href="WarnPoints" title="View WarnPoints">WarnPoints</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart">Start Page</a></li><li><a href="TitleIndex">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/WarnPoints?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h2 id="Warnpoints">Warn points</h2>
+<p>
+Warn points allow for automatizing certain profiling tasks. With them, you can just let a program run, but stop automatically once the number of calls to a certain predicate (or the number of times a more complex control flow tree constellation has arisen) exceeds a predefined threshold. For example, you can define a number of calls to a certain predicate that you wouldn't expect your program to exceed, and if it does, this is indicatory of a problem. Moreover, the point at which execution is automatically halted because the threshold has been exceeded may indicate the part of execution where things go wrong, for example through infinite recursion.
+</p>
+<p>
+The warn point system has been integrated with Kahina's <a class="wiki" href="BreakpointSystem">BreakpointSystem</a>. This allows to combine arbitrary tree patterns with thresholds, although in typical cases a one-node tree pattern will do. A warn point is a breakpoint paired with a threshold and a counter. The counter starts at 0 and is incremented every time there is a match. Unlike a breakpoint match, a warn point match has no visible effect until the counter hits the threshold. Then, the counter is reset to 0 and Kahina shows the usual breakpoint match behavior: if Kahina is in auto-complete or leap mode, it goes into stop mode, thereby pausing execution of the program. Additionally, a dialog opens indicating which warn point has matched.
+</p>
+<p>
+Warn points are defined through the warn point editor. This editor is like the other breakpoint editors, except that it has an additional input field for specifiying the threshold.
+</p>
+<div style="border: 1px solid grey; padding: 10px; background-color: #FFFFDD">
+<h3 style="margin-left: 0">TRALE example</h3>
+</div><p>
+<a style="padding:0; border:none" href="../attachment/wiki/WarnPoints/Prenzlgram-warn-edit.png"><img src="../raw-attachment/wiki/WarnPoints/Prenzlgram-warn-edit.png" /></a>
+</p>
+<p>
+Let's say your grammar contains the predicate <tt>tree_append/3</tt> and you want to be warned if it is called 1000 times. You can define a warn point as follows:
+</p>
+<ol><li>Click <strong>Warn points (call tree)</strong> in the <strong>Breakpoints</strong> menu. (Since we are only defining a one-node tree pattern, it does not matter if we choose the call or step tree.)
+</li><li>Click <strong>New</strong>.
+</li><li>In the <strong>Node constraint</strong> area, select <strong>step label</strong> and <strong>contains</strong> and enter <tt>tree_append/3</tt>.
+</li><li>Enter a catchy <strong>Name</strong> for the warn point, such as <tt>1000x tree_append/3</tt>.
+</li><li>In the <strong>Warn after</strong> field, enter the threshold <tt>1000</tt>.
+</li><li>Click <strong>Apply and quit</strong> in the <strong>Profile</strong> window.
+</li></ol><p>
+Now start the parse by clicking the leap (fast forward) button. After 1000 calls to <tt>tree_append/3</tt>, leaping stops and the following window appears:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/WarnPoints/Prenzlgram-warn-warn.png"><img src="../raw-attachment/wiki/WarnPoints/Prenzlgram-warn-warn.png" /></a>
+</p>
+
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/WarnPoints?action=diff&amp;version=1" title="Version 1 by jd">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-08T20%3A15%3A04%2B01%3A00&amp;precision=second" title="See timeline at Nov 8, 2010, 8:15:04 PM">8 years ago</a></span>
+            <span class="trac-print">Last modified on Nov 8, 2010, 8:15:04 PM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(4)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="http://kahina.org/trac/attachment/wiki/WarnPoints/Prenzlgram-warn-edit.2.png" title="View attachment">Prenzlgram-warn-edit.2.png</a><a href="http://kahina.org/trac/raw-attachment/wiki/WarnPoints/Prenzlgram-warn-edit.2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="35313 bytes">34.5 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-08T20%3A17%3A40%2B01%3A00&amp;precision=second" title="See timeline at Nov 8, 2010, 8:17:40 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="http://kahina.org/trac/attachment/wiki/WarnPoints/Prenzlgram-warn-warn.2.png" title="View attachment">Prenzlgram-warn-warn.2.png</a><a href="http://kahina.org/trac/raw-attachment/wiki/WarnPoints/Prenzlgram-warn-warn.2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7411 bytes">7.2 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-08T20%3A17%3A49%2B01%3A00&amp;precision=second" title="See timeline at Nov 8, 2010, 8:17:49 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/WarnPoints/Prenzlgram-warn-edit.png" title="View attachment">Prenzlgram-warn-edit.png</a><a href="../raw-attachment/wiki/WarnPoints/Prenzlgram-warn-edit.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="35313 bytes">34.5 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-08T20%3A18%3A40%2B01%3A00&amp;precision=second" title="See timeline at Nov 8, 2010, 8:18:40 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/WarnPoints/Prenzlgram-warn-warn.png" title="View attachment">Prenzlgram-warn-warn.png</a><a href="../raw-attachment/wiki/WarnPoints/Prenzlgram-warn-warn.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7411 bytes">7.2 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-08T20%3A18%3A48%2B01%3A00&amp;precision=second" title="See timeline at Nov 8, 2010, 8:18:48 PM">8 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/WarnPoints/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/WarnPoints?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

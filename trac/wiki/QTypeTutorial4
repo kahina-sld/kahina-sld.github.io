@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      QTypeTutorial4 – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search" />
+        <link rel="help" href="TracGuide" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/QTypeTutorial4?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="http://kahina.org/trac/wiki" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide">Help/Guide</a></li><li><a href="../about">About Trac</a></li><li class="last"><a href="../prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="http://kahina.org/trac/wiki">Wiki</a></li><li><a href="../timeline">Timeline</a></li><li><a href="../roadmap">Roadmap</a></li><li><a href="../report">View Tickets</a></li><li class="last"><a href="../search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="http://kahina.org/trac/wiki">wiki:</a><a class="pathentry" href="QTypeTutorial4" title="View QTypeTutorial4">QTypeTutorial4</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart">Start Page</a></li><li><a href="TitleIndex">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/QTypeTutorial4?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="KahinaforQTypeTutorialPart4:ControlAgents">Kahina for QType Tutorial Part 4: Control Agents</h1>
+<p>
+This tutorial only assumes that you know how to compile grammars and trace parsing processes in Kahina for QType. The most direct way to acquire this knowledge is to work through the tutorials <a class="wiki" href="QTypeTutorial1">QTypeTutorial1</a> and <a class="wiki" href="QTypeTutorial2">QTypeTutorial2</a>. In this tutorial, you will start to gather some experience with the use of <strong>control agents</strong>, which is Kahina's powerful mechanism for automatizing tracing processes and defining helpful system behavior. However, you will not yet learn how to specify control agents. Instead, we will focus on exploring how the control agent system works with the help of a predefined <strong>control agent profile</strong>.
+</p>
+<h3 id="LoadingtheTutorialProject">Loading the Tutorial Project</h3>
+<p>
+This control agent profile is defined together with a slightly altered window layout in a project which will be used for this and the next tutorial. To proceed with this tutorial, open the submenu under <strong>Project -&gt; Open Project -&gt; Predefined Projects</strong> and select the entry <strong>QType Tutorial 4-5</strong>. As usual, this will cause the GUI to be rebuilt with a slightly different layout.
+</p>
+<p>
+You might notice that a new view component has appeared. Before you can start to learn about its significance, you will need to compile the grammar as usual, that is, by clicking the <strong>Grammar -&gt; Compile</strong> menu entry and skipping over the <tt>compile_grammar/1</tt> step which appears. When the compilation has finished, your Kahina window should look roughly like this:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial4/project-loaded-and-compiled.png"><img src="../raw-attachment/wiki/QTypeTutorial4/project-loaded-and-compiled.png" /></a>
+</p>
+<h3 id="StartingaPredefinedExampleParse">Starting a Predefined Example Parse</h3>
+<p>
+So far, we have always started our parses via the <strong>Grammar -&gt; Parse ...</strong> dialogue. As you might have noticed, there is also a submenu <strong>Grammar -&gt; Parse example</strong> which lets you select from a list of parses. These listed sentences are retreived from QType during the grammar compilation process, and they exactly correspond to the test sentences specified in the respective grammar. In future versions of Kahina, it will be possible to define additional example sentences as part of a project file, but for now the only mechanism to add example sentences is by editing the grammar file.
+</p>
+<p>
+The list of sentences that comes with our example grammar contains many interesting examples. For explaining the control agent system, we will again restrict ourselves to a very simple test case. To proceed, start the parse of <em>uther sleeps</em> by clicking on the menu entry <strong>Grammar -&gt; Parse example -&gt; uther sleeps</strong>.
+</p>
+<h3 id="TheControlAgentProfile">The Control Agent Profile</h3>
+<p>
+A tracing <strong>control agent</strong> in Kahina is best seen as a simple autonomous agent consisting of a <strong>sensor</strong> which can detect patterns in individual steps or in the step tree, and an <strong>actuator</strong> which can react to pattern matches in the sensor by issuing tracing commands. The terminology is borrowed from the field of artificial intelligence with a reason, since control agents are a method of describing and implementing intelligent behavior with the purpose of automatizing parts of the tracing and thereby of the grammar debugging process.
+</p>
+<p>
+According to the tracing command it issues, a control agent will often simply be called a <strong>creep agent</strong>, a <strong>skip agent</strong> etc. For convenience, control agents which issue the same tracing command are commonly grouped together in <strong>control agent profiles</strong>. Individual control agents as well as control agent profiles can be stored and loaded within or separately of projects. In later tutorials, you will learn how to define simple control agents and how to administer control agent profiles, whereas in this tutorial, you will only see some pre-defined examples of what control agents can be made to do. 
+</p>
+<p>
+Together with the tutorial project, a useful set of control agent profiles for the purposes of QType debugging has already been loaded. These control agents have quite some impact on the behavior and especially on the speed of tracing processes. We will now discuss these changes and their advantages while going through the trace of <em>uther sleeps</em>, while also discussing from a more general perspective the typical usage scenarios of the occurring agent types.
+</p>
+<h3 id="ObservingtheBehaviorofaCompleteAgent">Observing the Behavior of a Complete Agent</h3>
+<p>
+Turning to the new view component, we see that it contains a tab for each tracing command. These <strong>control agent profile editors</strong> will later become the place where you administer the various control agents, but for now, we will only use the editors to take a look at the predefined agents that came with the project. If you switch to the <strong>Complete</strong> tab, you will see a list of <strong>complete agents</strong>, with only one entry named "complete lexentry". When you select an agent from this list, you will see a representation of that agent's sensor on the right of the profile editor window. The pattern box says that this complete agent is listening for steps whose label contains the string <tt>lexentry_existence</tt>. 
+</p>
+<p>
+We see the consequences of this complete point being active when we start creeping into the trace. After the second creep, we will suddenly see three new steps in the overview tree, all of which are colored in green. As you will have guessed, this is exactly what would have happened if you had issued the auto-complete command after the last creep operation. The sensor of the "complete lexentry" agent has detected that the new step is a call to the predicate <tt>lexentry_existence/2</tt>, causing the actuator to fire and an auto-complete command to be issued:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial4/first-complete.png"><img src="../raw-attachment/wiki/QTypeTutorial4/first-complete.png" /></a>
+</p>
+<p>
+You will soon see that this type of control automation makes tracing a lot faster, because simple criteria can be used to automatize stereotypical tracing actions. A grammar engineer will simply always want to skip or auto-complete any <tt>lexentry_existence/2</tt> calls, and the control agent system gives him or her the possibility to automate this action, doing away with some of the strain of always paying close attention to avoid mistakes, and minimizing consideration time.
+</p>
+<h3 id="ObservingtheBehaviorofaSkipAgent">Observing the Behavior of a Skip Agent</h3>
+<p>
+The other agent types work in a manner analogous to complete agents. The next step is a call to <tt>mgu/2</tt>, which matches the pattern detected by the sensor of the skip agent of name "skip mgu", causing its actuator to issue a skip command. Looking at the <strong>Skip</strong> tab of the control agent profile editor, we see that skip agents are defined for step labels containing the strings "mgu" and "unify". This reflects the fact that a grammar implementor will generally not be interested in the inner workings of QType's feature logic engine, making it unnecessary to wait for the slow transmission of these step details from QType to Kahina.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial4/first-skip.png"><img src="../raw-attachment/wiki/QTypeTutorial4/first-skip.png" /></a>
+</p>
+<p>
+To make the occurring trace commands and their causes more transparent, the console displays an additional message whenever some non-creep command was issued, complete with the step at which it occurred, and the name of the agent. In the case where it was the user who issued the non-creep command, the agent string "User" is used. Note that for the automated skip we just witnessed, two messages show up in the console. The first one informs us that a skip command was successfully issued when the <tt>mgu/2</tt> step was called, and the second one informs us that the sensor of the skip point matched again when we entered the step's exit port. However, since skip operations are not allowed at exit ports, the message merely contains a warning saying that the actuator failed to issue its command.
+</p>
+<h3 id="ObservingtheBehaviorofaCreepAgent">Observing the Behavior of a Creep Agent</h3>
+<p>
+The reason why sensors are not only allowed to match at call ports becomes clear when we encounter the match of a creep agent. As you will find out by inspecting the control agents listed in the <strong>Creep</strong> tab of the control agent profile editor, there are two pre-defined creep agents. The first one is listening for steps with labels containing "<tt>db_word</tt>", and the second one issues a creep command whenever it sees a step with label "<tt>db_rule</tt>". The latter creep agent becomes active as soon as we descend into the top-level call to <tt>lc/6</tt>: 
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial4/first-creep.png"><img src="../raw-attachment/wiki/QTypeTutorial4/first-creep.png" /></a>
+</p>
+<p>
+On the message console, you can see that the creep agent has in fact issued a creep command twice, because its sensor matched once at the call port and again at the exit port. For steps which do not require any subgoals to be called, a creep agent will therefore cause the trace to "jump over" any matching call. This mechanism is used in the default control agent profile to automatically pass by any queries to the lexicon or the rule database even in creep mode.
+</p>
+<p>
+Now that we have discussed the behavior of all the control agents defined in the present tutorial project, the user should feel free to creep through the entire parse, getting a feeling for how these three simple control agent profiles together amount to an entirely different user experience while tracing. For sake of comparison, you can revert to <a class="wiki" href="QTypeTutorial2">QTypeTutorial2</a> in order to remind yourself how slow tracing was without the aid of control agents.
+</p>
+<h3 id="ActivatingandDeactivatingAgents">Activating and Deactivating Agents</h3>
+<p>
+There might be situations where at some point during the trace, you decide that you need to see the details skipped over by a skip agent, or that you want to pause and think at every invocation of a goal which a creep agent listens for. For such purposes, it is possible to deactivate and reactivate control agents at any point during a trace. This is done via the context menu which pops up when you right-click on one of the agents listed in the control agent profile editor:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial4/deactivate-context-menu.png"><img src="../raw-attachment/wiki/QTypeTutorial4/deactivate-context-menu.png" /></a>
+</p>
+<p>
+Deactivated control agents are marked by a hash sign in front of their name in the list. As long as the control agent is inactive, tracing will behave just as if the control agent were not present at all. You can also reactivate an inactive control agent at any point using the same popup menu. 
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial4/deactivated-skip-point.png"><img src="../raw-attachment/wiki/QTypeTutorial4/deactivated-skip-point.png" /></a>
+</p>
+<h3 id="FurtherSteps">Further Steps</h3>
+<p>
+While fail agents and warn agents are seldom-used mechanisms which we will not cover in the tutorials, we have so far failed to cover the very important topic of Break Agents. This type of agents makes it possible to emulate the behavior of Prolog-side breakpoints, making the Leap operation much more useful than before. Aside from the use of break agents, we will also learn how to define a very simple kind of control agent in <a class="wiki" href="QTypeTutorial5">QTypeTutorial5</a>. <a class="wiki" href="QTypeTutorial6">QTypeTutorial6</a> then explains how to make full use of the control agent system by defining and assembling new control agent profiles, making it possible to further customize Kahina's behavior.
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/QTypeTutorial4?action=diff&amp;version=28" title="Version 28 by ke">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-08T11%3A41%3A26%2B02%3A00&amp;precision=second" title="See timeline at Oct 8, 2012, 11:41:26 AM">6 years ago</a></span>
+            <span class="trac-print">Last modified on Oct 8, 2012, 11:41:26 AM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(6)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial4/project-loaded-and-compiled.png" title="View attachment">project-loaded-and-compiled.png</a><a href="../raw-attachment/wiki/QTypeTutorial4/project-loaded-and-compiled.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="53215 bytes">52.0 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T16%3A08%3A04%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 4:08:04 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial4/first-complete.png" title="View attachment">first-complete.png</a><a href="../raw-attachment/wiki/QTypeTutorial4/first-complete.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="55808 bytes">54.5 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T16%3A08%3A21%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 4:08:21 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial4/first-skip.png" title="View attachment">first-skip.png</a><a href="../raw-attachment/wiki/QTypeTutorial4/first-skip.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="59330 bytes">57.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T16%3A08%3A29%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 4:08:29 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial4/first-creep.png" title="View attachment">first-creep.png</a><a href="../raw-attachment/wiki/QTypeTutorial4/first-creep.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="72105 bytes">70.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T16%3A08%3A38%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 4:08:38 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial4/deactivate-context-menu.png" title="View attachment">deactivate-context-menu.png</a><a href="../raw-attachment/wiki/QTypeTutorial4/deactivate-context-menu.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="18297 bytes">17.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T21%3A56%3A41%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 9:56:41 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial4/deactivated-skip-point.png" title="View attachment">deactivated-skip-point.png</a><a href="../raw-attachment/wiki/QTypeTutorial4/deactivated-skip-point.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="13634 bytes">13.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T21%3A56%3A51%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 9:56:51 PM">6 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/QTypeTutorial4/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/QTypeTutorial4?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

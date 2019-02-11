@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      Roadmap – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="search" />
+        <link rel="help" href="wiki/TracGuide" />
+        <link rel="alternate" href="http://kahina.org/trac/roadmap?format=ics" type="text/calendar" class="ics" title="iCalendar" />
+        <link rel="start" href="http://kahina.org/trac/wiki" />
+        <link rel="stylesheet" href="chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="chrome/common/css/roadmap.css" type="text/css" />
+        <link rel="shortcut icon" href="chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="chrome/common/js/search.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../index.html"><img src="chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="wiki/TracGuide">Help/Guide</a></li><li><a href="about">About Trac</a></li><li class="last"><a href="prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/wiki">Wiki</a></li><li><a href="timeline">Timeline</a></li><li class="active"><a href="roadmap">Roadmap</a></li><li><a href="report">View Tickets</a></li><li class="last"><a href="search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <hr />
+      </div>
+    <div id="content" class="roadmap">
+      <form id="prefs" method="get" action="roadmap">
+        <div>
+          <input type="checkbox" id="showcompleted" name="show" value="completed" />
+          <label for="showcompleted">Show completed milestones</label>
+        </div>
+        <div>
+          <input type="checkbox" id="hidenoduedate" name="show" value="noduedate" />
+          <label for="hidenoduedate">Hide milestones with no due date</label>
+        </div>
+        <div class="buttons">
+          <input type="submit" value="Update" />
+        </div>
+      </form>
+      <h1>Roadmap</h1>
+      <div class="milestones">
+        <div class="milestone">
+          <div class="info trac-progress">
+            <h2><a href="milestone/milestone1">
+              Milestone: <em>milestone1</em>
+            </a></h2>
+              <p class="date">
+                No date set
+              </p>
+          </div>
+          <div class="description">
+            
+          </div>
+        </div><div class="milestone">
+          <div class="info trac-progress">
+            <h2><a href="milestone/milestone2">
+              Milestone: <em>milestone2</em>
+            </a></h2>
+              <p class="date">
+                No date set
+              </p>
+          </div>
+          <div class="description">
+            
+          </div>
+        </div><div class="milestone">
+          <div class="info trac-progress">
+            <h2><a href="milestone/milestone3">
+              Milestone: <em>milestone3</em>
+            </a></h2>
+              <p class="date">
+                No date set
+              </p>
+          </div>
+          <div class="description">
+            
+          </div>
+        </div><div class="milestone">
+          <div class="info trac-progress">
+            <h2><a href="milestone/milestone4">
+              Milestone: <em>milestone4</em>
+            </a></h2>
+              <p class="date">
+                No date set
+              </p>
+          </div>
+          <div class="description">
+            
+          </div>
+        </div>
+      </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="wiki/TracRoadmap">TracRoadmap</a> for help on using
+        the roadmap.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/roadmap?format=ics" class="ics">iCalendar</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="about"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      TracQuery – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search" />
+        <link rel="help" href="TracGuide" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/TracQuery?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="http://kahina.org/trac/wiki" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide">Help/Guide</a></li><li><a href="../about">About Trac</a></li><li class="last"><a href="../prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="http://kahina.org/trac/wiki">Wiki</a></li><li><a href="../timeline">Timeline</a></li><li><a href="../roadmap">Roadmap</a></li><li><a href="../report">View Tickets</a></li><li class="last"><a href="../search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="http://kahina.org/trac/wiki">wiki:</a><a class="pathentry" href="TracQuery" title="View TracQuery">TracQuery</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart">Start Page</a></li><li><a href="TitleIndex">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/TracQuery?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="TracTicketQueries">Trac Ticket Queries</h1>
+<p>
+</p><div class="wiki-toc"><h4>Table of Contents</h4><ul><li class="False"><a class="False" href="TracGuide">Index</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracInstall">Installation</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracInterfaceCustomization">Customization</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracPlugins">Plugins</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracUpgrade">Upgrading</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracIni">Configuration</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracAdmin">Administration</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracBackup">Backup</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracLogging">Logging</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracPermissions">Permissions</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracWiki">The Wiki</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/WikiFormatting">Wiki Formatting</a></li><li class="False"><a class="False" href="TracTimeline">Timeline</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracBrowser">Repository Browser</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracRevisionLog">Revision Log</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracChangeset">Changesets</a></li><li class="False"><a class="False" href="TracTickets">Tickets</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracWorkflow">Workflow</a></li><li class="False"><a class="False" href="TracRoadmap">Roadmap</a></li><li class="active"><a class="False" href="TracQuery">Ticket Queries</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracBatchModify">Batch Modify</a></li><li class="False"><a class="False" href="TracReports">Reports</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracRss">RSS Support</a></li><li class="False"><a class="False" href="http://kahina.org/trac/wiki/TracNotification">Notification</a></li></ul></div><p>
+</p>
+<p>
+In addition to <a class="wiki" href="TracReports">reports</a>, Trac provides support for <em>custom ticket queries</em>, which can be used to display tickets that meet specified criteria. 
+</p>
+<p>
+To configure and execute a custom query, switch to the <em>View Tickets</em> module from the navigation bar, and select the <em>Custom Query</em> link.
+</p>
+<h2 id="Filters">Filters</h2>
+<p>
+When you first go to the query page, the default filter will display tickets relevant to you:
+</p>
+<ul><li>If logged in then all open tickets, it will display open tickets assigned to you.
+</li><li>If not logged in but you have specified a name or email address in the preferences, then it will display all open tickets where your email (or name if email not defined) is in the CC list.
+</li><li>If not logged in and no name/email is defined in the preferences, then all open issues are displayed.
+</li></ul><p>
+Current filters can be removed by clicking the button to the left with the minus sign on the label. New filters are added from the pulldown lists at the bottom corners of the filters box; 'And' conditions on the left, 'Or' conditions on the right.  Filters with either a text box or a pulldown menu of options can be added multiple times to perform an <em>Or</em> on the criteria.
+</p>
+<p>
+You can use the fields just below the filters box to group the results based on a field, or display the full description for each ticket.
+</p>
+<p>
+After you have edited your filters, click the <em>Update</em> button to refresh your results.
+</p>
+<h2 id="NavigatingTickets">Navigating Tickets</h2>
+<p>
+Clicking on one of the query results will take you to that ticket. You can navigate through the results by clicking the <em>Next Ticket</em> or <em>Previous Ticket</em> links just below the main menu bar, or click the <em>Back to Query</em> link to return to the query page.  
+</p>
+<p>
+You can safely edit any of the tickets and continue to navigate through the results using the <em>Next/Previous/Back to Query</em> links after saving your results. When you return to the query <em>any tickets which were edited</em> will be displayed with italicized text. If one of the tickets was edited such that <span style="color: grey">it no longer matches the query criteria </span>, the text will also be greyed. Lastly, if <strong>a new ticket matching the query criteria has been created</strong>, it will be shown in bold. 
+</p>
+<p>
+The query results can be refreshed and cleared of these status indicators by clicking the <em>Update</em> button again.
+</p>
+<h2 id="SavingQueries">Saving Queries</h2>
+<p>
+Trac allows you to save the query as a named query accessible from the reports module. To save a query ensure that you have <em>Updated</em> the view and then click the <em>Save query</em> button displayed beneath the results.
+You can also save references to queries in Wiki content, as described below.
+</p>
+<p>
+<strong>Note:</strong> one way to easily build queries like the ones below, you can build and test the queries in the Custom report module and when ready - click <em>Save query</em>. This will build the query string for you. All you need to do is remove the extra line breaks.
+</p>
+<p>
+<strong>Note:</strong> you must have the <strong>REPORT_CREATE</strong> permission in order to save queries to the list of default reports. The <em>Save query</em> button will only appear if you are logged in as a user that has been granted this permission. If your account does not have permission to create reports, you can still use the methods below to save a query.
+</p>
+<h3 id="UsingTracLinks">Using <a class="wiki" href="http://kahina.org/trac/wiki/TracLinks">TracLinks</a></h3>
+<p>
+You may want to save some queries so that you can come back to them later. You can do this by making a link to the query from any Wiki page.
+</p>
+<pre class="wiki">[query:status=new|assigned|reopened&amp;version=1.0 Active tickets against 1.0]
+</pre><p>
+Which is displayed as:
+</p>
+<blockquote>
+<p>
+<a class="query" href="http://kahina.org/trac/query?status=new&amp;status=assigned&amp;status=reopened&amp;version=1.0&amp;order=priority">Active tickets against 1.0</a>
+</p>
+</blockquote>
+<p>
+This uses a very simple query language to specify the criteria, see <a class="wiki" href="TracQuery#QueryLanguage">Query Language</a>.
+</p>
+<p>
+Alternatively, you can copy the query string of a query and paste that into the Wiki link, including the leading <tt>?</tt> character:
+</p>
+<pre class="wiki">[query:?status=new&amp;status=assigned&amp;status=reopened&amp;group=owner Assigned tickets by owner]
+</pre><p>
+Which is displayed as:
+</p>
+<blockquote>
+<p>
+<a class="query" href="http://kahina.org/trac/query?status=new&amp;status=assigned&amp;status=reopened&amp;group=owner">Assigned tickets by owner</a>
+</p>
+</blockquote>
+<h3 id="Customizingthetableformat">Customizing the <em>table</em> format</h3>
+<p>
+You can also customize the columns displayed in the table format (<em>format=table</em>) by using <em>col=&lt;field&gt;</em>. You can specify multiple fields and what order they are displayed in by placing pipes (<tt>|</tt>) between the columns:
+</p>
+<pre class="wiki">[[TicketQuery(max=3,status=closed,order=id,desc=1,format=table,col=resolution|summary|owner|reporter)]]
+</pre><p>
+This is displayed as:
+</p><div xmlns="http://www.w3.org/1999/xhtml">
+  <h2 class="report-result">
+    Results <span class="numresults">(1 - 3 of 106)</span>
+  </h2>
+  <div class="paging">
+
+    
+    
+      <span>
+        <span class="current">1</span>
+      </span>
+      
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=2&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 2">2</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 3">3</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=4&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 4">4</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=5&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 5">5</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=6&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 6">6</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=7&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 7">7</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=8&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 8">8</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=9&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 9">9</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=10&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 10">10</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=11&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 11">11</a>
+      </span>
+    
+    <span class="next">
+      <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=2&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Next Page">→</a>
+    </span>
+
+</div>
+  
+  
+  
+    
+  
+  <table class="listing tickets">
+    <thead>
+      
+    <tr class="trac-columns">
+      <th class="id desc">
+        
+        <a title="Sort by Ticket (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=id">Ticket</a>
+      </th><th class="resolution">
+        
+        <a title="Sort by Resolution (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=resolution">Resolution</a>
+      </th><th class="summary">
+        
+        <a title="Sort by Summary (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=summary">Summary</a>
+      </th><th class="owner">
+        
+        <a title="Sort by Owner (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=owner">Owner</a>
+      </th><th class="reporter">
+        
+        <a title="Sort by Reporter (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=reporter">Reporter</a>
+      </th>
+    </tr>
+  
+    </thead>
+    
+      
+      <tbody>
+        
+        
+          
+            
+
+              <tr class="even prio3">
+                
+                  
+                    <td class="id"><a href="../ticket/136" title="View ticket" class="closed">#136</a></td>
+                    
+                  
+                
+                  
+                    
+                    <td class="resolution">
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      fixed
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="summary">
+                      <a href="../ticket/136" title="View ticket">Compilation of webcourse grammar fails</a>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="owner">
+                      
+                      
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="reporter">
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+              </tr>
+
+              
+                
+                  
+                  
+                
+              
+            
+          
+        
+          
+            
+
+              <tr class="odd prio3">
+                
+                  
+                    <td class="id"><a href="../ticket/135" title="View ticket" class="closed">#135</a></td>
+                    
+                  
+                
+                  
+                    
+                    <td class="resolution">
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      fixed
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="summary">
+                      <a href="../ticket/135" title="View ticket">TRALE should not have to be started from grammar directory in order for projects to work</a>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="owner">
+                      
+                      
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="reporter">
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+              </tr>
+
+              
+                
+                  
+                  
+                
+              
+            
+          
+        
+          
+            
+
+              <tr class="even prio3">
+                
+                  
+                    <td class="id"><a href="../ticket/134" title="View ticket" class="closed">#134</a></td>
+                    
+                  
+                
+                  
+                    
+                    <td class="resolution">
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      fixed
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="summary">
+                      <a href="../ticket/134" title="View ticket">Hardcoded paths in predefined projects should be eliminated</a>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="owner">
+                      
+                      
+                      
+                      
+                      jd
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="reporter">
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+              </tr>
+
+              
+                
+                  
+                  
+                
+              
+            
+          
+        
+        
+      </tbody>
+    
+  </table>
+  <div class="paging">
+
+    
+    
+      <span>
+        <span class="current">1</span>
+      </span>
+      
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=2&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 2">2</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 3">3</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=4&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 4">4</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=5&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 5">5</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=6&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 6">6</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=7&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 7">7</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=8&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 8">8</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=9&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 9">9</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=10&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 10">10</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=11&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Page 11">11</a>
+      </span>
+    
+    <span class="next">
+      <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=2&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Next Page">→</a>
+    </span>
+
+</div>
+</div><p>
+</p>
+<h4 id="Fullrows">Full rows</h4>
+<p>
+In <em>table</em> format you can also have full rows by using <em>rows=&lt;field&gt;</em>:
+</p>
+<pre class="wiki">[[TicketQuery(max=3,status=closed,order=id,desc=1,format=table,col=resolution|summary|owner|reporter,rows=description)]]
+</pre><p>
+This is displayed as:
+</p><div xmlns="http://www.w3.org/1999/xhtml">
+  <h2 class="report-result">
+    Results <span class="numresults">(1 - 3 of 106)</span>
+  </h2>
+  <div class="paging">
+
+    
+    
+      <span>
+        <span class="current">1</span>
+      </span>
+      
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=2&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 2">2</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 3">3</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=4&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 4">4</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=5&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 5">5</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=6&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 6">6</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=7&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 7">7</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=8&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 8">8</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=9&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 9">9</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=10&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 10">10</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=11&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 11">11</a>
+      </span>
+    
+    <span class="next">
+      <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=2&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Next Page">→</a>
+    </span>
+
+</div>
+  
+  
+  
+    
+  
+  <table class="listing tickets">
+    <thead>
+      
+    <tr class="trac-columns">
+      <th class="id desc">
+        
+        <a title="Sort by Ticket (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=id&amp;row=description">Ticket</a>
+      </th><th class="resolution">
+        
+        <a title="Sort by Resolution (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=resolution&amp;row=description">Resolution</a>
+      </th><th class="summary">
+        
+        <a title="Sort by Summary (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=summary&amp;row=description">Summary</a>
+      </th><th class="owner">
+        
+        <a title="Sort by Owner (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=owner&amp;row=description">Owner</a>
+      </th><th class="reporter">
+        
+        <a title="Sort by Reporter (ascending)" href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;order=reporter&amp;row=description">Reporter</a>
+      </th>
+    </tr>
+  
+    </thead>
+    
+      
+      <tbody>
+        
+        
+          
+            
+
+              <tr class="even prio3">
+                
+                  
+                    <td class="id"><a href="../ticket/136" title="View ticket" class="closed">#136</a></td>
+                    
+                  
+                
+                  
+                    
+                    <td class="resolution">
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      fixed
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="summary">
+                      <a href="../ticket/136" title="View ticket">Compilation of webcourse grammar fails</a>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="owner">
+                      
+                      
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="reporter">
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+              </tr>
+
+              
+                
+                  
+                  <tr class="fullrow">
+                    <th class="meta">Description</th>
+                    <td colspan="4">
+                      <p>
+p264360@pales:~/workspace/kahina/src/org/kahina/tralesld/test/webcourse$ trale -sd
+Using Trale system found in /home/p264360/dev/trale
+Starting Trale (no saved state) from sources with text-only interface
+</p>
+<blockquote>
+<p>
+Starting Trale
+</p>
+</blockquote>
+<p>
+% compiling /home/p264360/dev/trale/startup.pl...
+%  compiling /home/p264360/dev/trale/sics.pl...
+%   module site imported into user
+%   loading /home/p264360/lib/sicstus-3.12.11/library/lists.po...
+%   module lists imported into site
+%   loaded /home/p264360/lib/sicstus-3.12.11/library/lists.po in module lists, 0 msec 23056 bytes
+%   loading /home/p264360/lib/sicstus-3.12.11/library/system.po...
+%   module system imported into site
+%    loading foreign resource /home/p264360/lib/sicstus-3.12.11/library/x86_64-linux-glibc2.5/system.so in module system
+%   loaded /home/p264360/lib/sicstus-3.12.11/library/system.po in module system, 0 msec 47488 bytes
+%   loading /home/p264360/lib/sicstus-3.12.11/library/ordsets.po...
+%   module ordsets imported into site
+%   loaded /home/p264360/lib/sicstus-3.12.11/library/ordsets.po in module ordsets, 0 msec 24416 bytes
+%   loading /home/p264360/lib/sicstus-3.12.11/library/assoc.po...
+%   module assoc imported into site
+%    module lists imported into assoc
+%   loaded /home/p264360/lib/sicstus-3.12.11/library/assoc.po in module assoc, 0 msec 21872 bytes
+%   loading /home/p264360/lib/sicstus-3.12.11/library/charsio.po...
+%   module charsio imported into site
+%    loading foreign resource /home/p264360/lib/sicstus-3.12.11/library/x86_64-linux-glibc2.5/charsio.so in module charsio
+%   loaded /home/p264360/lib/sicstus-3.12.11/library/charsio.po in module charsio, 0 msec 13296 bytes
+%   compiling /home/p264360/dev/trale/sicstus_additions/printlength.pl...
+%   compiled /home/p264360/dev/trale/sicstus_additions/printlength.pl in module site, 0 msec 3168 bytes
+%   compiling /home/p264360/dev/trale/sicstus_additions/sets.pl...
+%   compiled /home/p264360/dev/trale/sicstus_additions/sets.pl in module site, 0 msec 720 bytes
+%   compiling /home/p264360/dev/trale/sicstus_additions/samsort.pl...
+%   compiled /home/p264360/dev/trale/sicstus_additions/samsort.pl in module site, 10 msec 14352 bytes
+%   compiling /home/p264360/dev/trale/sicstus_additions/graphs.pl...
+%   compiled /home/p264360/dev/trale/sicstus_additions/graphs.pl in module site, 0 msec 9296 bytes
+%   compiling /home/p264360/dev/trale/sicstus_additions/case_conv.pl...
+%   compiled /home/p264360/dev/trale/sicstus_additions/case_conv.pl in module site, 0 msec 9616 bytes
+%   compiling /home/p264360/dev/trale/sicstus_additions/strings.pl...
+%   compiled /home/p264360/dev/trale/sicstus_additions/strings.pl in module site, 0 msec 1168 bytes
+%  compiled /home/p264360/dev/trale/sics.pl in module site, 30 msec 265272 bytes
+%  compiling /home/p264360/dev/trale/trale.pl...
+%   compiling /home/p264360/dev/trale/ale.pl...
+%    loading /home/p264360/lib/sicstus-3.12.11/library/terms.po...
+%    module terms imported into user
+%     module assoc imported into terms
+%    loaded /home/p264360/lib/sicstus-3.12.11/library/terms.po in module terms, 0 msec 14496 bytes
+%    module lists imported into user
+%    module ordsets imported into user
+%    loading /home/p264360/lib/sicstus-3.12.11/library/ugraphs.po...
+%    module ugraphs imported into user
+%     module ordsets imported into ugraphs
+%     module lists imported into ugraphs
+%     module assoc imported into ugraphs
+%     loading /home/p264360/lib/sicstus-3.12.11/library/random.po...
+%     module random imported into ugraphs
+%      module assoc imported into random
+%      loading foreign resource /home/p264360/lib/sicstus-3.12.11/library/x86_64-linux-glibc2.5/random.so in module random
+%     loaded /home/p264360/lib/sicstus-3.12.11/library/random.po in module random, 0 msec 11184 bytes
+%    loaded /home/p264360/lib/sicstus-3.12.11/library/ugraphs.po in module ugraphs, 0 msec 92640 bytes
+%    module assoc imported into user
+%    module system imported into user
+</p>
+<p>
+ALE Version 4.0 alpha; September, 2006
+Copyright (C) 1992-1995, Bob Carpenter and Gerald Penn
+Copyright (C) 1998,1999,2001--2006 Gerald Penn           
+All rights reserved
+%   compiled /home/p264360/dev/trale/ale.pl in module user, 700 msec 1421232 bytes
+%   compiling /home/p264360/dev/trale/sics.pl...
+%    module site imported into user
+%    module lists imported into site
+%    module system imported into site
+%    module ordsets imported into site
+%    module assoc imported into site
+%    module charsio imported into site
+%    compiling /home/p264360/dev/trale/sicstus_additions/printlength.pl...
+%    compiled /home/p264360/dev/trale/sicstus_additions/printlength.pl in module site, 0 msec 2736 bytes
+%    compiling /home/p264360/dev/trale/sicstus_additions/sets.pl...
+%    compiled /home/p264360/dev/trale/sicstus_additions/sets.pl in module site, 0 msec 688 bytes
+%    compiling /home/p264360/dev/trale/sicstus_additions/samsort.pl...
+%    compiled /home/p264360/dev/trale/sicstus_additions/samsort.pl in module site, 0 msec 8400 bytes
+%    compiling /home/p264360/dev/trale/sicstus_additions/graphs.pl...
+%    compiled /home/p264360/dev/trale/sicstus_additions/graphs.pl in module site, 0 msec 7344 bytes
+%    compiling /home/p264360/dev/trale/sicstus_additions/case_conv.pl...
+%    compiled /home/p264360/dev/trale/sicstus_additions/case_conv.pl in module site, 0 msec 8192 bytes
+%    compiling /home/p264360/dev/trale/sicstus_additions/strings.pl...
+%    compiled /home/p264360/dev/trale/sicstus_additions/strings.pl in module site, 0 msec 944 bytes
+%   compiled /home/p264360/dev/trale/sics.pl in module site, 50 msec -14480 bytes
+%   compiling /home/p264360/dev/trale/utilities.pl...
+%   compiled /home/p264360/dev/trale/utilities.pl in module user, 0 msec 1728 bytes
+%   compiling /home/p264360/dev/trale/pth.pl...
+%    module type_hierarchy_compiler imported into user
+%    module site imported into type_hierarchy_compiler
+%    module lists imported into type_hierarchy_compiler
+%    module system imported into type_hierarchy_compiler
+%    module assoc imported into type_hierarchy_compiler
+%   compiled /home/p264360/dev/trale/pth.pl in module type_hierarchy_compiler, 40 msec 109952 bytes
+</p>
+<p>
+TRALE Version 1.0; June, 2005
+Copyright (C) 1999,2003--2005, Gerald Penn
+All rights reserved
+%   compiling /home/p264360/dev/trale/stcover.pl...
+%   compiled /home/p264360/dev/trale/stcover.pl in module user, 30 msec 60320 bytes
+</p>
+<p>
+{ALE: signature compiler will assume subtype covering}
+%  compiled /home/p264360/dev/trale/trale.pl in module user, 860 msec 1617536 bytes
+</p>
+<p>
+OSU TRALE Modules 1.0
+Copyright (C) 2002, Detmar Meurers
+Copyright (C) 2006, Gerald Penn
+All rights reserved
+</p>
+<p>
+%  compiling /home/p264360/dev/trale/fs2desc.pl...
+%  compiled /home/p264360/dev/trale/fs2desc.pl in module user, 0 msec 13504 bytes
+%  compiling /home/p264360/dev/trale/grammar_interface.pl...
+%  compiled /home/p264360/dev/trale/grammar_interface.pl in module user, 0 msec 33088 bytes
+%  compiling /home/p264360/dev/trale/feature_ordering.pl...
+%  compiled /home/p264360/dev/trale/feature_ordering.pl in module user, 10 msec 38672 bytes
+%  compiling /home/p264360/dev/trale/macro_utils.pl...
+%  compiled /home/p264360/dev/trale/macro_utils.pl in module user, 10 msec 29536 bytes
+%  compiling /home/p264360/dev/trale/extend_access.pl...
+%  compiled /home/p264360/dev/trale/extend_access.pl in module user, 0 msec 36432 bytes
+%  compiling /home/p264360/dev/trale/test_suite_handling.pl...
+%   compiling /home/p264360/dev/trale/chart_display/sic.pl...
+%   compiled /home/p264360/dev/trale/chart_display/sic.pl in module user, 0 msec 11440 bytes
+%   module charsio imported into user
+%  compiled /home/p264360/dev/trale/test_suite_handling.pl in module user, 10 msec 37360 bytes
+%  compiling /home/p264360/dev/trale/trale_extras.pl...
+%   compiling /home/p264360/dev/trale/toplevel.pl...
+%    module toplevel imported into user
+%   compiled /home/p264360/dev/trale/toplevel.pl in module toplevel, 0 msec 2976 bytes
+%  compiled /home/p264360/dev/trale/trale_extras.pl in module user, 10 msec 38592 bytes
+%  compiling /home/p264360/dev/trale/graphviz.pl...
+%  compiled /home/p264360/dev/trale/graphviz.pl in module user, 10 msec 29344 bytes
+%  compiling /home/p264360/dev/trale/chart_display/chart_display.pl...
+%   loading /home/p264360/lib/sicstus-3.12.11/library/sockets.po...
+%   module sockets imported into user
+%    loading foreign resource /home/p264360/lib/sicstus-3.12.11/library/x86_64-linux-glibc2.5/sockets.so in module sockets
+%   loaded /home/p264360/lib/sicstus-3.12.11/library/sockets.po in module sockets, 0 msec 41760 bytes
+%   loading /home/p264360/lib/sicstus-3.12.11/library/timeout.po...
+%   module timeout imported into user
+%    loading foreign resource /home/p264360/lib/sicstus-3.12.11/library/x86_64-linux-glibc2.5/timeout.so in module timeout
+%   loaded /home/p264360/lib/sicstus-3.12.11/library/timeout.po in module timeout, 0 msec 9024 bytes
+%   compiling /home/p264360/dev/trale/chart_display/statistics.pl...
+%   compiled /home/p264360/dev/trale/chart_display/statistics.pl in module user, 0 msec 12336 bytes
+%   compiling /home/p264360/dev/trale/chart_display/print_mrs.pl...
+%   compiled /home/p264360/dev/trale/chart_display/print_mrs.pl in module user, 10 msec 43168 bytes
+%   compiling /home/p264360/dev/trale/chart_display/lr_utils.pl...
+%   compiled /home/p264360/dev/trale/chart_display/lr_utils.pl in module user, 0 msec 2992 bytes
+%  compiled /home/p264360/dev/trale/chart_display/chart_display.pl in module user, 100 msec 372784 bytes
+%  compiling /home/p264360/dev/trale/save_results.pl...
+%  compiled /home/p264360/dev/trale/save_results.pl in module user, 0 msec 15824 bytes
+%  compiling /home/p264360/dev/trale/trale_emacs.pl...
+%  compiled /home/p264360/dev/trale/trale_emacs.pl in module user, 10 msec 16736 bytes
+</p>
+<p>
+TRALE Milca environment (version 3.0beta1)
+Copyright (C) 2002-6 Project MILCA A4
+All rights reserved
+</p>
+<p>
+%  compiling /home/p264360/dev/trale/trdebug.pl...
+%   compiling /home/p264360/dev/trale/trale-sld/interp.pl...
+%    compiling /home/p264360/dev/trale/trale-sld/tralesld_hooks.pl...
+%     loading /home/p264360/lib/sicstus-3.12.11/library/atts.po...
+%     module attributes imported into user
+%      module lists imported into attributes
+%     loaded /home/p264360/lib/sicstus-3.12.11/library/atts.po in module attributes, 0 msec 26144 bytes
+%     loading /home/p264360/lib/sicstus-3.12.11/library/jasper.po...
+%     module jasper imported into user
+%      module lists imported into jasper
+%      loading foreign resource /home/p264360/lib/sicstus-3.12.11/library/x86_64-linux-glibc2.5/jasper.so in module jasper
+%     loaded /home/p264360/lib/sicstus-3.12.11/library/jasper.po in module jasper, 0 msec 82608 bytes
+%     compiling /home/p264360/dev/trale/ghooks.pl...
+%      compiling /home/p264360/dev/trale/trale_patches.pl...
+%       compiling /home/p264360/dev/trale/grale_forall.pl...
+%       compiled /home/p264360/dev/trale/grale_forall.pl in module user, 0 msec 1056 bytes
+%      compiled /home/p264360/dev/trale/trale_patches.pl in module user, 0 msec 4304 bytes
+%      compiling /home/p264360/dev/trale/socket_interface.pl...
+%      compiled /home/p264360/dev/trale/socket_interface.pl in module user, 0 msec 8288 bytes
+%      compiling /home/p264360/dev/trale/unfill.pl...
+%      compiled /home/p264360/dev/trale/unfill.pl in module user, 0 msec 8512 bytes
+%      consulting /home/p264360/dev/trale/save_results.pl...
+%      consulted /home/p264360/dev/trale/save_results.pl in module user, 0 msec -4016 bytes
+%     compiled /home/p264360/dev/trale/ghooks.pl in module user, 120 msec 209792 bytes
+%    compiled /home/p264360/dev/trale/trale-sld/tralesld_hooks.pl in module user, 190 msec 341056 bytes
+</p>
+<p>
+ALE Source-Level Debugger Version 3.2.1; December, 2001
+Copyright (C) 1997--1999, 2001, Gerald Penn
+All rights reserved
+%   compiled /home/p264360/dev/trale/trale-sld/interp.pl in module user, 470 msec 832528 bytes
+%   compiling /home/p264360/dev/trale/trale-sld/trinterp.pl...
+%   compiled /home/p264360/dev/trale/trale-sld/trinterp.pl in module user, 0 msec 12784 bytes
+%  compiled /home/p264360/dev/trale/trdebug.pl in module user, 480 msec 847920 bytes
+</p>
+<p>
+{ALE: source-level debugger is active}
+% compiled /home/p264360/dev/trale/startup.pl in module user, 1590 msec 3413792 bytes
+SICStus 3.12.11 (x86_64-linux-glibc2.5): Tue May 10 14:16:47 CEST 2011
+Licensed to Kilian Personal
+| ?- dgo.
+Using classpath: [kahinatrunk(bin),trale_home(trale-sld/lib/jedit-textArea.jar),kahinatrunk(lib/gralej/gralej.jar),kahinatrunk(lib/gralej/lib/batik-util.jar),kahinatrunk(lib/gralej/lib/jlibeps.jar),kahinatrunk(lib/gralej/lib/batik-awt-util.jar),kahinatrunk(lib/gralej/lib/plugin.jar),kahinatrunk(lib/gralej/lib/batik-svggen.jar),kahinatrunk(lib/gralej/lib/tomato.jar)]
+New TraleSLDState() and empty signature
+Current heap size: 61276160
+Loading default project: test/webcourse/webcourse-project.xml
+</p>
+<blockquote>
+<p>
+Created new project org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@5829428e
+loaded project Web-based Course Section 3.2.3 as org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@5829428e
+</p>
+</blockquote>
+<p>
+Loading default project: test/ps94/ps94-project.xml
+</p>
+<blockquote>
+<p>
+Created new project org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@2fdb7df8
+loaded project Pollard &amp; Sag (1994), Chapter 8 as org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@2fdb7df8
+</p>
+</blockquote>
+<p>
+Loading default project: test/webcourse/webcourse-project.xml
+</p>
+<blockquote>
+<p>
+Created new project org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@442a15cd
+loaded project Web-based Course Section 3.2.3 as org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@442a15cd
+</p>
+</blockquote>
+<p>
+Loading default project: test/ps94/ps94-project.xml
+</p>
+<blockquote>
+<p>
+Created new project org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject@77827284?</a>
+loaded project Pollard &amp; Sag (1994), Chapter 8 as org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject@77827284?</a>
+</p>
+</blockquote>
+<p>
+Executing compile command:
+</p>
+<blockquote>
+<p>
+Current project: org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@56b61c3
+Compiling theory file: /home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl
+</p>
+</blockquote>
+<p>
+org.kahina.tralesld.TraleSLDInstance@…(/home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl)
+org.kahina.tralesld.TraleSLDInstance@…()=query dcompile_gram('/home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl').(Queue: [query send_signature.])
+Loading default project: test/webcourse/webcourse-project.xml
+</p>
+<blockquote>
+<p>
+Created new project org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@5bf2af1c
+loaded project Web-based Course Section 3.2.3 as org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@5bf2af1c
+</p>
+</blockquote>
+<p>
+Loading default project: test/ps94/ps94-project.xml
+</p>
+<blockquote>
+<p>
+Created new project org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@3db158db
+loaded project Pollard &amp; Sag (1994), Chapter 8 as org.kahina.tralesld.data.project.<a class="missing wiki">TraleProject?</a>@3db158db
+</p>
+</blockquote>
+<p>
+Grammar registered.
+% consulting /home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl...
+%  consulting /home/p264360/dev/trale/feature_ordering.pl...
+%  consulted /home/p264360/dev/trale/feature_ordering.pl in module user, 0 msec -4064 bytes
+</p>
+<ul><li>clauses for user:(fun)/1 are not together
+</li><li>Approximate lines: 47-50, file: '/home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl'
+</li><li>clauses for user:if/2 are not together
+</li><li>Approximate lines: 50-54, file: '/home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl'
+</li><li>clauses for user: *&gt; /2 are not together
+</li><li>Approximate lines: 57-64, file: '/home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl'
+</li><li>clauses for user: ---&gt; /2 are not together
+</li><li>Approximate lines: 459-479, file: '/home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl'
+</li><li>clauses for user:(empty)/1 are not together
+</li><li>Approximate lines: 672-682, file: '/home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl'
+</li></ul><p>
+% consulted /home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl in module user, 10 msec 61520 bytes
+Reading signature file...
+signature
+Compiling type unification...
+{ALE: Warning: unary branch from move_rel to walk_rel}
+{ALE: Warning: assuming the following types are maximally specific: acc adv base by cat cont_rel direction_rel e_list fem fin first for functional future_rel give_rel ha_struc hc_struc here_rel hf_struc hs_struc inf it lexical like_rel loc masc minus ne_list neut nom nom_obj none nonloc noun pas past_rel perfect_rel phrase pl plus prep present_rel prp psp rain_rel ref sai_struc say_rel second sg synsem that there third to unmarked val verb walk_rel word }
+Compiling appropriateness...
+Compiling extensionality declarations...
+Computing signature modules...
+Compiling subtype covering constraints...
+Compiling functional descriptions...
+Indexing source files...
+Compiling type constraints...
+Computing most general satisfiers...
+Compiling type promotion...
+Compiling unification...
+Compiling definite clauses...
+{ALE: Warning: first disjunct unsatisfiable in: und_search_rel(_128017,(_128018,(move_rel;tense_rel)),_128019);fail}
+{ALE: Warning: first disjunct unsatisfiable in: und_search_rel(_128017,(_128018,(move_rel;tense_rel)),_128019);fail}
+{ALE: Warning: first disjunct unsatisfiable in: und_search_rel(_128017,(_128018,(move_rel;tense_rel)),_128019);fail}
+{ALE: Warning: first disjunct unsatisfiable in: und_search_rel(_128017,(_128018,(move_rel;tense_rel)),_128019);fail}
+{ALE: Warning: first disjunct unsatisfiable in: und_search_rel(_128017,(_128018,(move_rel;tense_rel)),_128019);fail}
+{ALE: Warning: first disjunct unsatisfiable in: und_search_rel(_128017,(_128018,(move_rel;tense_rel)),_128019);fail}
+Compiling lexical rules...
+Compiling lexicon...
+Collecting empty categories...
+Blocked: und_list_of_synsems/1
+! tralesld_hook_failed(tralesld_call(22,unify(feat(loc),'Local',loc(loc(_468),_471,cat(cat(_461),_464,head(_448,_453,_179,_455,_456,_457,_458,_459),max),max),_480),['/home/p264360/workspace/kahina/src/org/kahina/tralesld/test/webcourse/theory.pl'|454],d_add_to_lvar(_480,loc(loc(_468),_471,cat(cat(_461),_464,head(_448,_453,_179,_455,_456,_457,_458,_459),max),max),loc,feat(loc))))
+| ?- 
+</p>
+
+                    </td>
+                  </tr>
+                
+              
+            
+          
+        
+          
+            
+
+              <tr class="odd prio3">
+                
+                  
+                    <td class="id"><a href="../ticket/135" title="View ticket" class="closed">#135</a></td>
+                    
+                  
+                
+                  
+                    
+                    <td class="resolution">
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      fixed
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="summary">
+                      <a href="../ticket/135" title="View ticket">TRALE should not have to be started from grammar directory in order for projects to work</a>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="owner">
+                      
+                      
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="reporter">
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+              </tr>
+
+              
+                
+                  
+                  <tr class="fullrow">
+                    <th class="meta">Description</th>
+                    <td colspan="4">
+                      <blockquote class="citation">
+<p>
+Noch funktioniert die relative Definition von Theorie- und
+Signaturdateien nicht
+</p>
+</blockquote>
+<p>
+Das scheint auch der Grund für die Kompilierungsfehler zu sein. Der Ort
+der Signaturdatei wird ja in der Theoriedatei angegeben; TRALE
+interpretiert ihn leider relativ zu PWD.
+</p>
+<p>
+Workaround for now: trale -sdf vom Grammatikverzeichnis aus starten - so krieg ich die Grammatik kompiliert und "she walks" erfolgreich   geparst.
+</p>
+<p>
+Der einzige wirklich saubere Fix des Problems, der mir zu dieser späten Stunde einfällt, wäre auf der TRALE-Seite - kommt mir vor, dass signature/1 Pfade generell besser vom Theorieverzeichnis aus auflösen sollte. Oder zumindest sollte es Grammatikschreibern diese Option anbieten, etwa in dieser Form: 
+</p>
+
+                    </td>
+                  </tr>
+                
+              
+            
+          
+        
+          
+            
+
+              <tr class="even prio3">
+                
+                  
+                    <td class="id"><a href="../ticket/134" title="View ticket" class="closed">#134</a></td>
+                    
+                  
+                
+                  
+                    
+                    <td class="resolution">
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      fixed
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="summary">
+                      <a href="../ticket/134" title="View ticket">Hardcoded paths in predefined projects should be eliminated</a>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="owner">
+                      
+                      
+                      
+                      
+                      jd
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+                  
+                    
+                    <td class="reporter">
+                      
+                      
+                      ke
+                      
+                      
+                      
+                      
+                      
+                      
+                    </td>
+                  
+                
+              </tr>
+
+              
+                
+                  
+                  <tr class="fullrow">
+                    <th class="meta">Description</th>
+                    <td colspan="4">
+                      <p>
+Needs some changes in how <a class="missing wiki">KahinaInstance?</a> and its subclasses load projects.
+</p>
+
+                    </td>
+                  </tr>
+                
+              
+            
+          
+        
+        
+      </tbody>
+    
+  </table>
+  <div class="paging">
+
+    
+    
+      <span>
+        <span class="current">1</span>
+      </span>
+      
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=2&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 2">2</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=3&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 3">3</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=4&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 4">4</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=5&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 5">5</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=6&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 6">6</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=7&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 7">7</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=8&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 8">8</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=9&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 9">9</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=10&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 10">10</a>
+      </span>
+    
+      
+      <span>
+        <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=11&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id&amp;row=description" title="Page 11">11</a>
+      </span>
+    
+    <span class="next">
+      <a href="http://kahina.org/trac/query?status=closed&amp;max=3&amp;page=2&amp;col=id&amp;col=resolution&amp;col=summary&amp;col=owner&amp;col=reporter&amp;desc=1&amp;order=id" title="Next Page">→</a>
+    </span>
+
+</div>
+</div><p>
+</p>
+<h2 id="QueryLanguage">Query Language</h2>
+<p>
+<tt>query:</tt> <a class="wiki" href="http://kahina.org/trac/wiki/TracLinks">TracLinks</a> and the <tt>[[TicketQuery]]</tt> macro both use a mini “query language” for specifying query filters. Filters are separated by ampersands (<tt>&amp;</tt>). Each filter consists of the ticket field name, an operator and one or more values. More than one value are separated by a pipe (<tt>|</tt>), meaning that the filter matches any of the values. To include a literal <tt>&amp;</tt> or <tt>|</tt> in a value, escape the character with a backslash (<tt>\</tt>).
+</p>
+<p>
+The available operators are:
+</p>
+<table class="wiki">
+<tr><td> <strong><tt>=</tt></strong> </td><td> the field content exactly matches one of the values 
+</td></tr><tr><td> <strong><tt>~=</tt></strong> </td><td> the field content contains one or more of the values 
+</td></tr><tr><td> <strong><tt>^=</tt></strong> </td><td> the field content starts with one of the values 
+</td></tr><tr><td> <strong><tt>$=</tt></strong> </td><td> the field content ends with one of the values 
+</td></tr></table>
+<p>
+All of these operators can also be negated:
+</p>
+<table class="wiki">
+<tr><td> <strong><tt>!=</tt></strong> </td><td> the field content matches none of the values 
+</td></tr><tr><td> <strong><tt>!~=</tt></strong> </td><td> the field content does not contain any of the values 
+</td></tr><tr><td> <strong><tt>!^=</tt></strong> </td><td> the field content does not start with any of the values 
+</td></tr><tr><td> <strong><tt>!$=</tt></strong> </td><td> the field content does not end with any of the values 
+</td></tr></table>
+<p>
+The date fields <tt>created</tt> and <tt>modified</tt> can be constrained by using the <tt>=</tt> operator and specifying a value containing two dates separated by two dots (<tt>..</tt>). Either end of the date range can be left empty, meaning that the corresponding end of the range is open. The date parser understands a few natural date specifications like "3 weeks ago", "last month" and "now", as well as Bugzilla-style date specifications like "1d", "2w", "3m" or "4y" for 1 day, 2 weeks, 3 months and 4 years, respectively. Spaces in date specifications can be omitted to avoid having to quote the query string. 
+</p>
+<table class="wiki">
+<tr><td> <strong><tt>created=2007-01-01..2008-01-01</tt></strong> </td><td> query tickets created in 2007 
+</td></tr><tr><td> <strong><tt>created=lastmonth..thismonth</tt></strong> </td><td> query tickets created during the previous month 
+</td></tr><tr><td> <strong><tt>modified=1weekago..</tt></strong> </td><td> query tickets that have been modified in the last week 
+</td></tr><tr><td> <strong><tt>modified=..30daysago</tt></strong> </td><td> query tickets that have been inactive for the last 30 days 
+</td></tr></table>
+<hr />
+<p>
+See also: <a class="wiki" href="TracTickets">TracTickets</a>, <a class="wiki" href="TracReports">TracReports</a>, <a class="wiki" href="TracGuide">TracGuide</a>, <a class="wiki" href="http://kahina.org/trac/wiki/TicketQuery">TicketQuery</a>
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/TracQuery?action=diff&amp;version=5" title="Version 5 by trac">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2017-12-09T21%3A10%3A36%2B01%3A00&amp;precision=second" title="See timeline at Dec 9, 2017, 9:10:36 PM">14 months ago</a></span>
+            <span class="trac-print">Last modified on Dec 9, 2017, 9:10:36 PM</span>
+          </div>
+        
+        
+      </div>
+      
+
+    </div>
+    <script type="text/javascript">
+        jQuery.loadStyleSheet("/trac/chrome/common/css/report.css", "text/css");
+    </script>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/TracQuery?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>
