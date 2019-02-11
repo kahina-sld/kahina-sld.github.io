@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      ControlPanel – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/ControlPanel?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="ControlPanel.html" title="View ControlPanel">ControlPanel</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/ControlPanel?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="TheControlPanel">The Control Panel</h1>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/ControlPanel/ControlPanel.png.html"><img src="../raw-attachment/wiki/ControlPanel/ControlPanel.png" /></a>
+</p>
+<p>
+The control panel contains the buttons that are used to control the execution of the program being traced, step by step.
+</p>
+<table class="wiki">
+<tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/creep.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/creep.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/creep.png" title="source:trunk/src/org/kahina/core/gui/icons/creep.png" /></a></td><td><strong>Creep:</strong> The smallest possible step. If you keep clicking the creep button, you step through the execution of a program in all available detail. Depending on the state of the program, creep leeds to the creation of a new node with status <strong>called</strong> or <strong>redone</strong>, or to an existing node changing its status to <strong>failed</strong>, <strong>exited nondeterministically</strong>, <strong>exited deterministically</strong> or <strong>exception</strong>. In both cases, this node is automatically selected.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/roundskip.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/roundskip.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/roundskip.png" title="source:trunk/src/org/kahina/core/gui/icons/roundskip.png" /></a></td><td><strong>Auto-complete:</strong> Makes sense when the currently selected node has status <strong>called</strong> or <strong>redone</strong>: auto-complete will fast-forward, i.e. execution will keep creeping, until that node changes its status, i.e. its execution completes with success, failure or an exception.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/pause.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/pause.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/pause.png" title="source:trunk/src/org/kahina/core/gui/icons/pause.png" /></a></td><td><strong>Pause:</strong> Clicking this button interrupts a running auto-complete, i.e. the fast-forward stops, but the step being autocompleted is remembered. When pause is clicked again, auto-complete of this step is resumed.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/skip.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/skip.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/skip.png" title="source:trunk/src/org/kahina/core/gui/icons/skip.png" /></a></td><td><strong>Skip:</strong> Like auto-complete, but done on the Prolog side, i.e. the underlying Prolog debugger is told to skip execution of the step whose <strong>call</strong> or <strong>redo</strong> port was just seen. This has the advantage of being much more efficient since substeps are not transmitted to Kahina. This is of course also a disadvantage: the descendant steps of the skipped step are never shown, so use this with care. Skip cannot be paused. Also, it is only possible to skip the most recently called or redone step, not arbitrarily selected steps.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/reject.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/reject.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/reject.png" title="source:trunk/src/org/kahina/core/gui/icons/reject.png" /></a></td><td><strong>Fail:</strong> Forces the step just called or redone to fail without execution. Can be useful to test parts of a program that would not normally be executed.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/leap.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/leap.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/leap.png" title="source:trunk/src/org/kahina/core/gui/icons/leap.png" /></a></td><td><strong>Leap:</strong> Fast-forwards until creep, pause or stop is clicked. Can be useful for letting (large parts of) a program execute completely to inspect the execution later.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/stop.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/stop.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/stop.png" title="source:trunk/src/org/kahina/core/gui/icons/stop.png" /></a></td><td><strong>Stop:</strong> Stops auto-completing or leaping. The difference to pause is that auto-completing cannot be resumed afterwards.
+</td></tr></table>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/ControlPanel?action=diff&amp;version=11" title="Version 11 by jd: Adapted a few more image paths to the new repository structure.">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-07-18T00%3A16%3A50%2B02%3A00&amp;precision=second" title="See timeline at Jul 18, 2011, 12:16:50 AM">8 years ago</a></span>
+            <span class="trac-print">Last modified on Jul 18, 2011, 12:16:50 AM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/ControlPanel/ControlPanel.png.html" title="View attachment">ControlPanel.png</a><a href="../raw-attachment/wiki/ControlPanel/ControlPanel.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5319 bytes">5.2 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-11T22%3A48%3A34%2B02%3A00&amp;precision=second" title="See timeline at May 11, 2011, 10:48:34 PM">8 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/ControlPanel/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/ControlPanel?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

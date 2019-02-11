@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      QTypeTutorial2 – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/QTypeTutorial2?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="QTypeTutorial2.html" title="View QTypeTutorial2">QTypeTutorial2</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/QTypeTutorial2?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="KahinaforQTypeTutorialPart2:BasicTracing">Kahina for QType Tutorial Part 2: Basic Tracing</h1>
+<p>
+This tutorial assumes that the project <strong>QType Tutorials 1-3</strong> was opened, and that the grammar has already been compiled from within Kahina. The most direct way to match these prerequisites is to follow the instructions in <a class="wiki" href="QTypeTutorial1.html">QTypeTutorial1</a>. The basic terminology we use here to talk about interface components is also introduced there.
+</p>
+<p>
+In this tutorial, you will learn how to start a parse process, and how to use Kahina with roughly the functionality of a simple Prolog tracer.
+</p>
+<h3 id="StartingaParse">Starting a Parse</h3>
+<p>
+For our first parse, we will use <em>uther</em> as a very short test input. To start a parse, we select the menu item <strong>Grammar -&gt; Parse ...</strong> and enter the sentence to be parsed
+in the input prompt which appears:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/parse-uther.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/parse-uther.png" /></a>
+</p>
+<p>
+This causes QType to call the Prolog goal <tt>lc([uther])</tt>, but only entering its call port and transmitting step data to Kahina,
+then waiting for trace commands to be issued via the control panel. The contents of your Kahina window should look like this once the parse has been started:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step001.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step001.png" /></a>
+</p>
+<p>
+The first step shows up in the step tree as the child of a virtual root node which is labeled <tt>[query]</tt> to indicate that the control flow originated in a query performed by the user. The standard view of the step tree presents the call tree in two levels of detail. On the left side, the entire call structure of the parse execution is visualized by indentation. By default, the currently active step is selected and highlighted in yellow. The right side presents the call hierarchy below the currently selected step on the left side in more detail. The color of the text at the nodes provides information about the port in the procedural box model that a goal is currently at. At the moment, our single first step is colored in black to indicate that it has only entered the call port yet.
+</p>
+<p>
+The goal display shows the goal at the currently selected step in the control flow tree in a more human-readable fashion. The task of the step tree is to provide information on which steps are being performed in which order, whereas the goal view is the main display for step details. At the moment, we only see a slightly more optically pleasing representation of the instance of QType's top-level <tt>lc/1</tt> predicate which has just been called. 
+</p>
+<h3 id="TheProceduralBoxModelandColorCodes">The Procedural Box Model and Color Codes</h3>
+<p>
+In the step tree, nodes are colored according to the step state, which mostly corresponds to the port in Prolog's procedural box model that was last reached by the associated goal. In the following table, we give a list of the states by their internal names, which we will also use in this tutorial for convenience. The Color column explains the colors used by Kahina's default color model for Prolog debugging to indicate the different step states.
+</p>
+<table class="wiki">
+ <tr><td><b>State</b></td><td><b>Color</b></td><td><b>Meaning</b></td></tr>
+ <tr><td><tt>CALL</tt></td><td><span style="color: black">black</span> </td><td>The associated goal is at the call port, i.e. it has merely been invoked. </td></tr>
+ <tr><td><tt>EXIT</tt></td><td><span style="color: #99ff66">light green</span> </td><td>The associated goal has reached the exit port once, i.e. it was successfully completed but further solutions may exist.</td></tr>
+ <tr><td><tt>FAIL</tt></td><td><span style="color: #b73232">red</span> </td><td>The associated goal has reached the fail port, i.e. it has failed. </td></tr>
+ <tr><td><tt>REDO</tt></td><td><span style="color: blue">blue</span> </td><td>The associated goal is at the redo port, i.e. it has been reinvoked during backtracking.</td></tr>
+ <tr><td><tt>DET_EXIT</tt></td><td><span style="color: #669966">dark green</span> </td><td>The associated goal has reached the exit port deterministically, i.e. there can be no further solutions.</td></tr>
+ <tr><td><tt>EXCEPTION</tt></td><td><span style="color: #cc0099">pink</span> </td><td>The associated goal has failed because of a Prolog-side exception. </td></tr>
+</table>
+<h3 id="TheControlPanel">The Control Panel</h3>
+<p>
+The execution of the program being traced is controled via the buttons in the control panel. We start with a quick overview of the relevant buttons.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/control-panel.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/control-panel.png" /></a>
+</p>
+<table class="wiki">
+<tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/creep.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/creep.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/creep.png" title="source:trunk/src/org/kahina/core/gui/icons/creep.png" /></a></td><td><strong>Creep:</strong> The smallest possible step. If you keep clicking the creep button, you step through the execution of a program in all available detail. Depending on the state of the program, creep leads to the creation of a new node, or to an existing node changing its status. After each creep operation, the affected step will be automatically selected.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/reject.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/reject.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/reject.png" title="source:trunk/src/org/kahina/core/gui/icons/reject.png" /></a></td><td><strong>Fail:</strong> Forces the current goal to fail without execution. Can be useful to test parts of a program that would not normally be executed.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/roundskip.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/roundskip.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/roundskip.png" title="source:trunk/src/org/kahina/core/gui/icons/roundskip.png" /></a></td><td><strong>Auto-complete:</strong> Activates a fast-forward mode, i.e. execution will keep creeping, until the node where we started changes its status. Auto-completion can be aborted at any time by clicking on the auto-complete button again, or interrupted and resumed using the pause button.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/skip.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/skip.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/skip.png" title="source:trunk/src/org/kahina/core/gui/icons/skip.png" /></a></td><td><strong>Skip:</strong> Like auto-complete, but done on the Prolog side, i.e. the underlying Prolog debugger is told to skip execution of the step. This has the advantage of being much more efficient since substeps are not transmitted to Kahina. This is of course also a disadvantage: the descendant steps of the skipped step are never shown, so use this with care. Skip cannot be paused. Also, it is only possible to skip the most recently called or redone step, not arbitrarily selected steps.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/leap.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/leap.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/leap.png" title="source:trunk/src/org/kahina/core/gui/icons/leap.png" /></a></td><td><strong>Leap:</strong> Activates a fast-forward mode which can be interrupted at any time by clicking the button again. Can be useful for letting (large parts of) a program execute completely to inspect the execution later. The name <em>leap</em> is used because the command is typically used together with Kahina's control agent system (see <a class="wiki" href="QTypeTutorial4.html">QTypeTutorial4</a>) to emulate the behavior of a Prolog tracer's leap command.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/pause.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/pause.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/pause.png" title="source:trunk/src/org/kahina/core/gui/icons/pause.png" /></a></td><td><strong>Pause:</strong> Clicking this button interrupts a running auto-complete, i.e. the fast-forward stops, but the step being autocompleted is remembered. When pause is clicked again, auto-complete of this step is resumed.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/stop.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/stop.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/stop.png" title="source:trunk/src/org/kahina/core/gui/icons/stop.png" /></a></td><td><strong>Abort:</strong> Aborts the current program execution, equivalent to the 'a' command in a Prolog tracer.
+</td></tr></table>
+<p>
+Depending on the state of the underlying Prolog process (e.g. the state of the current goal), all buttons whose execution does not make sense will be greyed out.
+</p>
+<h3 id="AbortingaParse">Aborting a Parse</h3>
+<p>
+Before we start tracing, it is useful to know that at any point, you can click the <strong>Abort</strong> button to abort the trace. This will set back Kahina to the state at the beginning of this tutorial, except that the step data from the trace will still be displayed for inspection. The control panel will be greyed out to indicate that you are disconnected from the underlying Prolog process, and have no possibility to influence it other than by starting a new trace.
+</p>
+<p>
+In this tutorial, you will only need to abort the trace if you accidentally clicked a wrong button or get lost for some other reason. You may want to try aborting and and starting the same parse again right now, before you start losing tracing data by aborting. Notice that the displayed contents of the message console and the step tree are only reset once the new parse was started.
+</p>
+<h3 id="RestartingaParse">Restarting a Parse</h3>
+<p>
+As an alternative option for aborting the trace of a parsing process and starting the same parse from scratch, the <strong>Grammar</strong> menu offers the item <strong>Restart parse</strong>. In our case, this will have the same consequences as if you had clicked on the <strong>Abort</strong> button and had started the same parse again via <strong>Grammar -&gt; Parse ...</strong>, except that the grammar will first recompiled. Once the compilation has finished (e.g. after you skipped it), Kahina will automatically restart the last parse. Since we will not be making changes to any grammar files, this option will not be used in this tutorial. Nevertheless, you could still try this out now.
+</p>
+<h3 id="TheCreepCommand">The Creep Command</h3>
+<p>
+We will now go through the parse of "uther" in full detail and very slowly, making sure that the graphical tracer as well as the internals of QType which are relevant for debugging grammars with Kahina are presented in a very thorough fashion. A first-time user of a Kahina-based debugger should invest the time to patiently follow the remaining sections of this tutorial, although it might cause tracing to seem like a very slow and burdensome task. 
+</p>
+<p>
+The efforts will pay off, for after making sure that the exact procedure is once correctly understood,
+starting with <a class="wiki" href="QTypeTutorial4.html">QTypeTutorial4</a> we will introduce advanced features which allow a grammar developer to get into this much detail only at the places where it really matters.
+The strength of Kahina lies in the ability to dynamically fine-tune the degree of detail, which makes it possible to sift out relevant details from computations which are almost impossible to trace otherwise. In order to learn to make use of these abilities, however, it is recommendable to only use Kahina like a graphical variant of a classical Prolog tracer, until the concepts are thoroughly understood.
+</p>
+<p>
+So let us begin our first trace. Just like in a Prolog tracer, we can go through the goal resolution step-by-step by using the creep command.
+In Kahina, this operation is accessed via the keyboard shortcut 'C' or via the <strong>Creep</strong> button in the control panel.
+</p>
+<p>
+When we click the <strong>Creep</strong> button once, QType is asked to descend one layer into the computation, calling the first subgoal of <tt>lc([uther])</tt>. QType sends the information that it has now called the subgoal <tt>lc(top,[uther])</tt> back to Kahina, where it is displayed as a child of our first step in the step tree:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step002.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step002.png" /></a>
+</p>
+<p>
+Note that the new step is now twice indented, showing the child-parent relation to the call of <tt>lc([uther])</tt>. 
+Because the new node is automatically selected, the detail view on the right now only displays the new step.
+</p>
+<p>
+When we move forward by another <strong>Creep</strong>, we see that the first thing <tt>lc/2</tt> does is to call the predicate <tt>lexentry_existence/2</tt>, whose task is to check whether all the words in the sentence are defined in the grammar's lexicon. After one more <strong>Creep</strong>, we see that <tt>lexentry_existence/2</tt> calls <tt>db_word/4</tt> to retrieve the lexical entry for the first and only word on the list, <em>uther</em>:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step004.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step004.png" /></a>
+</p>
+<p>
+Note that the <tt>lexentry_existence/2</tt> step in the overview tree is now displayed in <strong>bold font</strong>, indicating that the step now contains substeps which are not displayed in the overview call tree, but can be seen in the detailed call tree if the step is selected. The bold font therefore gives the user a visual hint whether a step in the overview tree hides more steps which can be inspected by selecting it.
+</p>
+<p>
+In this step, we can also see that the goal display is color-coded: black color is used for predicates, grey color for Prolog constants, and green color highlights Prolog variables.
+</p>
+<p>
+The next step shows us that a lexical entry for <em>uther</em> was successfully retrieved, and it showcases both the code location display and the feature structure rendering abilities of the goal view:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step005.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step005.png" /></a>
+</p>
+<p>
+This is the first time that we can see a step leaving its procedural box via the exit port. The successful completion of the call to <tt>db_word/4</tt> puts the corresponding step into the <tt>DET_EXIT</tt> state, which is indicated by the dark green color of the corresponding node in the step tree. 
+</p>
+<p>
+Moreover, the goal display now represents the state of the predicate's arguments both before and after the call. The <strong>in</strong> part shows the state of the arguments at the call port (and is therefore identical to the structure we saw in the last step), whereas the new <strong>out</strong> part shows the instantiation of the arguments after reaching the exit port. As the second argument of <tt>db_word/4</tt> in the "out" part of the goal view, we can see the feature structure which represents the lexical entry for <em>uther</em> in the grammar. Note that the types of the feature logic receive a blue signal color in the goal display.
+</p>
+<p>
+Finally, the retrieval of this lexical entry was our first interaction with the grammar file. The code location view automatically displays the relevant file, highlighting the line which was relevant for the current step (in this case, a line defining a lexical entry for the string "uther" using the <tt>@name</tt> macro).
+</p>
+<p>
+Now that the word list has successfully been processed by <tt>lexentry_existence/2</tt>, the predicate is about to enter and exit its base case. Two <strong>Creep</strong> commands later, this innermost call has successfully and deterministically exited. Note that the source code view is back to highlighting the subgoal which led to the base case.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step007.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step007.png" /></a>
+</p>
+<p>
+After the next <strong>Creep</strong>, the base call to <tt>lexentry_existence/2</tt> reaches the exit port, causing the entire call hierarchy under it to be colored in dark green. Note that the yellow marking of the selected step in the call tree moves up as well, always marking the last step which reached one of the ports. On the message console, all the messages that concerned the selected step are highlighted, putting a bracket around all the steps which occurred between the ports. Note that the source code highlighting also moves back to the line where the base call to <tt>lexentry_existence/2</tt> was issued.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step008.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step008.png" /></a>
+</p>
+<p>
+This completes the first phase of the parse. QType has checked for the existence of lexical entries for all the words in the sentence, and we have been able to follow this process in considerable detail. In most cases, the user will not want to see all these details, meaning that the entire part of the trace we just completed will usually be skipped. However, in the case where unexpectedly some lexical entry could not be retrieved, it is useful to be able to check where the retrieval went wrong.
+</p>
+<h3 id="TheSkipCommand">The Skip Command</h3>
+<p>
+After another <strong>Creep</strong> step, the processing of <tt>lc(top,[uther])</tt> enters its next subgoal, a call to <tt>mgu/2</tt> in order to generate the most general satisfier of the description <tt>top</tt>. In the code view, we see that this is because we need the MGS of the trivial prediction <tt>top</tt> for QType's left-corner parsing scheme.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step009.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step009.png" /></a>
+</p>
+<p>
+The processing of this subgoal would take place entirely in the detail tree, reflecting that a user will not often be interested in the exact details of how a call to <tt>mgu/2</tt> is processed. We will soon enough see some parts of QType's feature logic mechanism at work, but for now, we will do what a grammar engineer will do in most cases for calls to <tt>mgu/2</tt>: we will skip over this goal, leaving the inner workings to the Prolog process and not cluttering up our step tree with the rather extensive details of its execution. After issuing the <strong>Skip</strong> command, your Kahina window should display roughly the following contents:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step010.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step010.png" /></a>
+</p>
+<p>
+Note that the <tt>mgu/2</tt> step is almost immediately put into the DET_EXIT state, and that the message console now contains a line saying that you (the user) have caused a skip operation at the <tt>mgu/2</tt> step. The details of the involved computation can be seen neither on the message console nor in the step tree. This shows the trade-off involved whenever you use the skip command: it is a lot faster than creeping through the details, but it also has the disadvantage that none of the computation details is transmitted to and accessible from Kahina. The goal display gives us information about the changes in the goal's arguments during its execution. The second argument was just an anonymous variable before, now it contains the trivial feature structure, which is indeed the most general satisfier of the trivial description <tt>top</tt>. 
+</p>
+<h3 id="TheFailCommand">The Fail Command</h3>
+<p>
+The next <strong>Creep</strong> command lets QType descend into the next phase of the parsing process, which is started by a call to the <tt>lc/5</tt> predicate. In its first two arguments, the <tt>lc/5</tt> predicate builds a constituent structure and a feature structure. The third argument receives the prediction feature structure (which is the trivial structure for this initial call), and the last two arguments are responsible for processing the list of input symbols:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step011.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step011.png" /></a>
+</p>
+<p>
+If we descend into this goal call using <strong>Creep</strong>, we see that the next step consists in retrieving the lexicon entry for <em>uther</em>. One more <strong>Creep</strong> that the corresponding call to <tt>db_word/2</tt> succeeds and retrieves a feature structure for <em>uther</em> which we can inspect in the goal view. The next <strong>Creep</strong> carries us onward to the next subgoal of <tt>lc/5</tt>, a call to <tt>check_link/2</tt> which serves to retrieve a category from the precompiled grammar for prediction within the left-corner parsing scheme. In our case, because the feature structure for <em>uther</em> is of type <tt>name</tt>, <tt>check_link/2</tt> will list all categories which can start with a constituent of type <tt>name</tt> according to the grammar.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step014.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step014.png" /></a>
+</p>
+<p>
+One <strong>Creep</strong> later, we see that <tt>check_link/2</tt> non-deterministically exits with <tt>check_link(name,s)</tt>, proposing that the left-corner parser should try to build a constituent of type <tt>s</tt> starting with the lexical entry for <em>uther</em>. After the next <strong>Creep</strong>, we see in the goal display that this information is handed on to a call of <tt>lc_complete/8</tt> as the 4th and 5th arguments. Since we have already consumed the entire input, the last three arguments are empty lists.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step016.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step016.png" /></a>
+</p>
+<p>
+Our knowledge of the left-corner parsing algorithm tells us that a completion cannot succeed when there is no input to consume. If you would creep through this execution of <tt>lc_complete/8</tt>, it would therefore fail eventually. However, if we already know that this goal will fail, there is no need any more to inspect how exactly this happens. In such a situation, we can tell Kahina to just give up proving the current goal by issuing the <strong>Fail</strong> command. As a result, the color of the associated step changes to red, and we can expect backtracking to happen in the next step.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step017.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step017.png" /></a>
+</p>
+<p>
+After another <strong>Creep</strong> command, you will see that QType has backtracked into our <tt>check_link/2</tt> step, which is now colored in blue because we have entered its <tt>REDO</tt> port. This is a situation where the two-layer tree display potentially becomes a little confusing, so let us discuss in detail what happened in this view. 
+</p>
+<p>
+If you do not fiddle about the step tree in any way during a trace, it will always display the part of the <strong>call tree</strong> that represents the hierarchy of goal calls leading to the current position in Prolog's search space. This means that during backtracking, the part of the call hierarchy below the last choicepoint will vanish and subsequently be replaced by the call structure which arises while Prolog explores the new branch in its search space.
+</p>
+<p>
+The interesting point now is that unlike other graphical debuggers, Kahina keeps the steps on failed branches accessible via a second dimension in the step tree. In addition to the call tree of the current goal invocation, the step tree also represents the <strong>search tree</strong> consisting of choice points and branches. At each choice point where multiple alternatives have been tried, the step tree view will display little arrows next to the step, which allow the user to flip between different branches of the search tree.
+</p>
+<p>
+This feature of Kahina goes beyond ordinary tracing by making it possible to inspect almost all details of a Prolog process even after the execution, which will be the main subject of <a class="wiki" href="QTypeTutorial3.html">QTypeTutorial3</a>. The reader should feel encouraged to flip back and forth between the current branch and the failed branch of the execution right now. It is not necessary to revert to the new branch before continuing, as with the next tracing command the step tree display will automatically flip back to the active branch.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step018.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step018.png" /></a>
+</p>
+<p>
+The next <strong>Creep</strong> lets <tt>check_link/2</tt> exit with a different variable binding. This time, the compiled grammar provides us with the (trivial) information that a structure of type <tt>name</tt> can also start a constituent of type <tt>name</tt>, which is of course exactly what we need here.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step019.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step019.png" /></a>
+</p>
+<p>
+One <strong>Creep</strong> later, we are back in <tt>lc_complete/8</tt> with much more promising arguments than the last time. The ensuing process of creating a constituent of type name out of a feature structure of that type might seem trivial, but it will of course still require QType to execute a number of steps.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step020.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step020.png" /></a>
+</p>
+<h3 id="TheAuto-CompleteCommand">The Auto-Complete Command</h3>
+<p>
+After another <strong>Creep</strong>, you will see in the source code display that QType has conveniently already entered the termination clause of <tt>lc_complete/8</tt>, where it tries to unify the predicted feature structure with the current constituent. The corresponding <tt>unify/2</tt> goal has already been called, and we could now step through the entire complex process of determining whether two feature structures which are already identical can actually be unified.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step021.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step021.png" /></a>
+</p>
+<p>
+Usually, one would want to skip calls to <tt>unify/2</tt> just as we skipped the call to <tt>mgu/2</tt> before. However, if a parse fails, the reasons for this failure will in most cases be failed unifications. While skipping over <tt>unify/2</tt> nodes will tell you whether unifications fail or succeed, they will not allow you to more closely inspect the reasons in case of failure. To avoid this, we can use the <strong>auto-complete</strong> command which combines some of the advantages of creeping and skipping. Unlike in skip mode, all the internal details of the step will be transferred to Kahina for later inspection. This makes the auto-complete operation a lot slower than skipping, but it is still a lot faster than creeping through the entire execution because Kahina will not update its various views during he process, saving a lot of execution time.
+</p>
+<p>
+You should now click on the <strong>Auto-Complete</strong> button to start the process. You will not see any updates to the step tree, the source code view or the goal display, but much information about the called steps will arrive at the message console. Note that you can interrupt and continue a running auto-complete operation at any point by using the <strong>Pause</strong> button. It is also possible to abort an auto-complete operation by clicking the <strong>Auto-Complete</strong> button again to unlock it. This will cause the operation to stop somewhere in the middle, and it will not be possible to resume the auto-complete operation because Kahina will have forgotten at which node you started it.
+</p>
+<p>
+After a few seconds, you should witness the views being updated, and the <tt>unify/2</tt> step now colored in dark green. Below this node, you should see a lot of new steps in the detail view of the step tree. These are the inner workings of the <tt>unify/2</tt> predicate, and being able to inspect them in such detail can be of great help in determining where some tricky unification went wrong. However, in our case we are happy that the unification succeeded as inspected, and that the <tt>out</tt> section of the goal display shows both arguments identified.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step022.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step022.png" /></a>
+</p>
+<h3 id="TheLeapCommand">The Leap Command</h3>
+<p>
+After the next <strong>Creep</strong>, you see that the next step of <tt>lc_complete/8</tt> involves using <tt>mgu/2</tt> to construct a constituent structure out of an empty goal list. The parsing process is essentially complete at this point, and the remaining steps mostly consist of assembling the final constituent and feature structures and handing them up to calling predicates. We are not interested in these details any more, so we want to get to the end result of the parse as fast as possible.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step023.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step023.png" /></a>
+</p>
+<p>
+For such situations, where we want to auto-complete entire processes without stopping whenever we get back to the step where we started auto-completion, Kahina offers the <strong>leap</strong> command. This commands starts the leap mode, which will become very useful once we know how to automatize the issuing of break commands. For the moment, we will only learn how to use in the spirit of a primitive cassette recorder's fast-forward mode.
+</p>
+<p>
+After clicking on the <strong>Leap</strong> button, you will again see a lot happening on the message console, but no updates to the other components. The leap mode can be interrupted at any point by clicking on the <strong>Leap</strong> button again to release it. If you keep leaping to the end of the trace, the result will look like this:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step025.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step025.png" /></a>
+</p>
+<p>
+Although the entire step tree seems to be colored in red now, this does not mean that the entire parse has failed. We are still at the last active branch, and we only see red because this last backtracking branch has failed.
+</p>
+<h3 id="InspectingaFinishedParse">Inspecting a Finished Parse</h3>
+<p>
+So how do we get to the parse results? The answer of course is that we need to navigate through the search dimension of our step tree using the little arrows provided. As a shortcut for going to the leftmost and rightmost branches, the tree displays have little buttons with double arrows at the upper left corner. After clicking on the double arrow to the left at the top of the overview tree, you should start to see a lot more green. We have actually switched back to the branch which we manually caused to fail earlier. However, we can see now that it was only a subbranch which we caused to fail. The calling <tt>lc/2</tt> goal succeeded in another branch.
+</p>
+<p>
+In the current version of Kahina, the parsing results are somewhat buried in the step details, but they are easy to find if you know where to look. The trick is to select the topmost invocation of <tt>lc/2</tt> right below the <tt>lexentry_existence/2</tt> check. The following screenshot shows which node to select in our case:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-step026.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-step026.png" /></a>
+</p>
+<p>
+The fact that the selected <tt>lc/2</tt> has exited means that we will have some structures to inspect in the goal display. You will see that in addition to the usual sections labeled <strong>in</strong> and <strong>out</strong>, we now have an <strong>fs</strong> section showing the final feature structure representing the sentence, and a constituent tree under the label <strong>cs</strong>.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial2/uther-result.png.html"><img src="../raw-attachment/wiki/QTypeTutorial2/uther-result.png" /></a>
+</p>
+<p>
+If multiple parses where found, each of these parses will correspond to one such <tt>lc/2</tt> node in the search tree. In future versions of Kahina, we are planning to make parsing results more conveniently accessible, probably with a list of pointers into the relevant positions of the step tree.
+</p>
+<h3 id="FurtherSteps">Further Steps</h3>
+<p>
+The next tutorial <a class="wiki" href="QTypeTutorial3.html">QTypeTutorial3</a> will make you familiar with post-mortem inspection in Kahina.
+But if you are more interested in Kahina's mechanisms for control automation, which make tracing a lot more enjoyable,
+you can also proceed to <a class="wiki" href="QTypeTutorial4.html">QTypeTutorial4</a> immediately.
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/QTypeTutorial2?action=diff&amp;version=81" title="Version 81 by ke">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T14%3A42%3A12%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 2:42:12 PM">6 years ago</a></span>
+            <span class="trac-print">Last modified on Oct 7, 2012, 2:42:12 PM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(23)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/control-panel.png.html" title="View attachment">control-panel.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/control-panel.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5511 bytes">5.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-04T14%3A42%3A46%2B02%3A00&amp;precision=second" title="See timeline at Oct 4, 2012, 2:42:46 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/parse-uther.png.html" title="View attachment">parse-uther.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/parse-uther.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7972 bytes">7.8 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T12%3A11%3A49%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 12:11:49 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step001.png.html" title="View attachment">uther-step001.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step001.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="20083 bytes">19.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T13%3A46%3A29%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 1:46:29 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step002.png.html" title="View attachment">uther-step002.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step002.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="27207 bytes">26.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T14%3A02%3A30%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 2:02:30 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step004.png.html" title="View attachment">uther-step004.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step004.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="35055 bytes">34.2 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T14%3A06%3A51%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 2:06:51 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step005.png.html" title="View attachment">uther-step005.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step005.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="48041 bytes">46.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T15%3A01%3A53%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 3:01:53 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step007.png.html" title="View attachment">uther-step007.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step007.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="46798 bytes">45.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T15%3A02%3A08%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 3:02:08 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step008.png.html" title="View attachment">uther-step008.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step008.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="51023 bytes">49.8 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T15%3A08%3A56%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 3:08:56 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step009.png.html" title="View attachment">uther-step009.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step009.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="45211 bytes">44.2 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T15%3A43%3A53%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 3:43:53 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step010.png.html" title="View attachment">uther-step010.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step010.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="50741 bytes">49.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T15%3A57%3A15%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 3:57:15 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step011.png.html" title="View attachment">uther-step011.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step011.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="52111 bytes">50.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T17%3A03%3A04%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 5:03:04 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step014.png.html" title="View attachment">uther-step014.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step014.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="58526 bytes">57.2 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T17%3A03%3A18%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 5:03:18 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step016.png.html" title="View attachment">uther-step016.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step016.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="67000 bytes">65.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T17%3A03%3A28%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 5:03:28 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step017.png.html" title="View attachment">uther-step017.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step017.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="69936 bytes">68.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T17%3A03%3A39%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 5:03:39 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step018.png.html" title="View attachment">uther-step018.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step018.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="68912 bytes">67.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T17%3A03%3A51%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 5:03:51 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step019.png.html" title="View attachment">uther-step019.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step019.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="69850 bytes">68.2 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T17%3A04%3A02%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 5:04:02 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step020.png.html" title="View attachment">uther-step020.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step020.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="74398 bytes">72.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-05T17%3A04%3A14%2B02%3A00&amp;precision=second" title="See timeline at Oct 5, 2012, 5:04:14 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step021.png.html" title="View attachment">uther-step021.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step021.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="75275 bytes">73.5 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T09%3A15%3A46%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 9:15:46 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step022.png.html" title="View attachment">uther-step022.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step022.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="97583 bytes">95.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T09%3A16%3A05%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 9:16:05 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step023.png.html" title="View attachment">uther-step023.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step023.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="95847 bytes">93.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T09%3A16%3A21%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 9:16:21 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step025.png.html" title="View attachment">uther-step025.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step025.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="79000 bytes">77.1 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T09%3A17%3A13%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 9:17:13 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-step026.png.html" title="View attachment">uther-step026.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-step026.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="86340 bytes">84.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T09%3A17%3A25%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 9:17:25 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial2/uther-result.png.html" title="View attachment">uther-result.png</a><a href="../raw-attachment/wiki/QTypeTutorial2/uther-result.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="23095 bytes">22.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T09%3A18%3A16%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 9:18:16 AM">6 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/QTypeTutorial2/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/QTypeTutorial2?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

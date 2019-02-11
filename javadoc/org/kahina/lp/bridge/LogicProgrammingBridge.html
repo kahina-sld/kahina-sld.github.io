@@ -20,7 +20,7 @@
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="topNav"><a name="navbar_top">
 <!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+</a><a href="LogicProgrammingBridge.html#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -36,10 +36,10 @@
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridgeEvent.html" title="class in org.kahina.lp.bridge"><span class="strong">Next Class</span></a></li>
+<li><a href="LogicProgrammingBridgeEvent.html" title="class in org.kahina.lp.bridge"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../index.html?org/kahina/lp/bridge/LogicProgrammingBridge.html" target="_top">Frames</a></li>
+<li><a href="http://kahina.org/javadoc/index.html?org/kahina/lp/bridge/LogicProgrammingBridge.html" target="_top">Frames</a></li>
 <li><a href="LogicProgrammingBridge.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -61,15 +61,15 @@
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="LogicProgrammingBridge.html#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="LogicProgrammingBridge.html#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="LogicProgrammingBridge.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="LogicProgrammingBridge.html#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="LogicProgrammingBridge.html#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="LogicProgrammingBridge.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_top">
@@ -86,7 +86,7 @@
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">org.kahina.core.bridge.KahinaBridge</a></li>
+<li><a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">org.kahina.core.bridge.KahinaBridge</a></li>
 <li>
 <ul class="inheritance">
 <li>org.kahina.lp.bridge.LogicProgrammingBridge</li>
@@ -100,16 +100,16 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../org/kahina/core/control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></dd>
+<dd><a href="../../core/control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../org/kahina/prolog/bridge/PrologBridge.html" title="class in org.kahina.prolog.bridge">PrologBridge</a>, <a href="../../../../org/kahina/tralesld/bridge/TraleSLDBridge.html" title="class in org.kahina.tralesld.bridge">TraleSLDBridge</a></dd>
+<dd><a href="../../prolog/bridge/PrologBridge.html" title="class in org.kahina.prolog.bridge">PrologBridge</a>, <a href="../../tralesld/bridge/TraleSLDBridge.html" title="class in org.kahina.tralesld.bridge">TraleSLDBridge</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="strong">LogicProgrammingBridge</span>
-extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></pre>
+extends <a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></pre>
 <div class="block">The logic programming bridge is the most important object that you work with
  when you connect a logic programming system to Kahina that has tracing
  capabilities following the procedure box model. Its public methods take
@@ -119,7 +119,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
  
  <p>
  Logic programming systems that have been connected to Kahina using
- specialized subclasses of <a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html" title="class in org.kahina.lp.bridge"><code>LogicProgrammingBridge</code></a> so far include
+ specialized subclasses of <a href="LogicProgrammingBridge.html" title="class in org.kahina.lp.bridge"><code>LogicProgrammingBridge</code></a> so far include
  TRALE, QType and, experimentally, SWI-Prolog and SICStus Prolog. The
  connection typically involves some Prolog code that hooks into the tracer of
  the respective LP system and calls Kahina's Java API via a Prolog/Java
@@ -129,8 +129,8 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
  A Kahina "session" corresponds to the execution of one query in a LP system.
  A new bridge is created, and all views are cleared, when a new session is
  started. A session is started by calling the
- <a href="../../../../org/kahina/core/KahinaInstance.html#startNewSession()"><code>KahinaInstance.startNewSession()</code></a> method of an instance of the
- <a href="../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core"><code>KahinaInstance</code></a> subclass that is specialized for the respective LP
+ <a href="../../core/KahinaInstance.html#startNewSession()"><code>KahinaInstance.startNewSession()</code></a> method of an instance of the
+ <a href="../../core/KahinaInstance.html" title="class in org.kahina.core"><code>KahinaInstance</code></a> subclass that is specialized for the respective LP
  system. This method returns the bridge for that session. The bridge is then
  used to transmit all tracing information about a query to Kahina.</div>
 </li>
@@ -153,39 +153,39 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#currentID">currentID</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#currentID">currentID</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#selectedID">selectedID</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#selectedID">selectedID</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#skipFlag">skipFlag</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#skipFlag">skipFlag</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#skipID">skipID</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#skipID">skipID</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../../org/kahina/lp/LogicProgrammingState.html" title="class in org.kahina.lp">LogicProgrammingState</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#state">state</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="../LogicProgrammingState.html" title="class in org.kahina.lp">LogicProgrammingState</a></code></td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#state">state</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected java.util.HashMap&lt;java.lang.Integer,java.lang.Integer&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#stepIDConv">stepIDConv</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#stepIDConv">stepIDConv</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#waitingForReturnFromSkip">waitingForReturnFromSkip</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#waitingForReturnFromSkip">waitingForReturnFromSkip</a></strong></code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_org.kahina.core.bridge.KahinaBridge">
 <!--   -->
 </a>
-<h3>Fields inherited from class&nbsp;org.kahina.core.bridge.<a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></h3>
-<code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html#kahina">kahina</a></code></li>
+<h3>Fields inherited from class&nbsp;org.kahina.core.bridge.<a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></h3>
+<code><a href="../../core/bridge/KahinaBridge.html#kahina">kahina</a></code></li>
 </ul>
 </li>
 </ul>
@@ -201,7 +201,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#LogicProgrammingBridge(org.kahina.lp.LogicProgrammingInstance)">LogicProgrammingBridge</a></strong>(<a href="../../../../org/kahina/lp/LogicProgrammingInstance.html" title="class in org.kahina.lp">LogicProgrammingInstance</a>&lt;?,?,?,?&gt;&nbsp;kahina)</code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="LogicProgrammingBridge.html#LogicProgrammingBridge(org.kahina.lp.LogicProgrammingInstance)">LogicProgrammingBridge</a></strong>(<a href="../LogicProgrammingInstance.html" title="class in org.kahina.lp">LogicProgrammingInstance</a>&lt;?,?,?,?&gt;&nbsp;kahina)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -220,7 +220,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#call(int)">call</a></strong>(int&nbsp;extID)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#call(int)">call</a></strong>(int&nbsp;extID)</code>
 <div class="block">Called, typically following a call to
  <code>#step(int, String, Stirng, String)</code> very soon, to indicate that
  the call port of the procedure box with the given ID has been reached.</div>
@@ -228,11 +228,11 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#canSkipOrAutocomplete()">canSkipOrAutocomplete</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#canSkipOrAutocomplete()">canSkipOrAutocomplete</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#convertStepID(int)">convertStepID</a></strong>(int&nbsp;extID)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#convertStepID(int)">convertStepID</a></strong>(int&nbsp;extID)</code>
 <div class="block">convert external step IDs to internal IDs corresponding to tree nodes
  uses entries in stepIDConv table, extending it together with the tree if
  no entry was found</div>
@@ -240,18 +240,18 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#deregister()">deregister</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#deregister()">deregister</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#end(int)">end</a></strong>(int&nbsp;extID)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#end(int)">end</a></strong>(int&nbsp;extID)</code>
 <div class="block">Call this to indicate that the top query succeeded or failed, providing
  the step ID of the top query.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#exception(int,%20java.lang.String)">exception</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#exception(int,%20java.lang.String)">exception</a></strong>(int&nbsp;extID,
          java.lang.String&nbsp;message)</code>
 <div class="block">Called to indicate that the exception port of the procedure box with the
  given ID has been reached.</div>
@@ -259,18 +259,18 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#exit(int,%20boolean)">exit</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#exit(int,%20boolean)">exit</a></strong>(int&nbsp;extID,
     boolean&nbsp;deterministic)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#exit(int,%20boolean,%20java.lang.String)">exit</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#exit(int,%20boolean,%20java.lang.String)">exit</a></strong>(int&nbsp;extID,
     boolean&nbsp;deterministic,
     java.lang.String&nbsp;newDescription)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#exit(int,%20boolean,%20java.lang.String,%20java.lang.String)">exit</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#exit(int,%20boolean,%20java.lang.String,%20java.lang.String)">exit</a></strong>(int&nbsp;extID,
     boolean&nbsp;deterministic,
     java.lang.String&nbsp;newDescription,
     java.lang.String&nbsp;newConsoleMessage)</code>
@@ -280,106 +280,106 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#fail(int)">fail</a></strong>(int&nbsp;extID)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#fail(int)">fail</a></strong>(int&nbsp;extID)</code>
 <div class="block">Called to indicate that the fail port of the procedure box with the given
  ID has been reached.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../../org/kahina/lp/LogicProgrammingStep.html" title="class in org.kahina.lp">LogicProgrammingStep</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#generateStep()">generateStep</a></strong>()</code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="../LogicProgrammingStep.html" title="class in org.kahina.lp">LogicProgrammingStep</a></code></td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#generateStep()">generateStep</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>char</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#getAction()">getAction</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#getAction()">getAction</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>char</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#getBridgeState()">getBridgeState</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#getBridgeState()">getBridgeState</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#getParentCandidateID()">getParentCandidateID</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#getParentCandidateID()">getParentCandidateID</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#isPaused()">isPaused</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#isPaused()">isPaused</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#isQueryRoot(int)">isQueryRoot</a></strong>(int&nbsp;stepID)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#isQueryRoot(int)">isQueryRoot</a></strong>(int&nbsp;stepID)</code>
 <div class="block">Call to check if a given step has the special property of being the query
  root, i.e.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#linkNodes(int,%20int)">linkNodes</a></strong>(int&nbsp;anchor,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#linkNodes(int,%20int)">linkNodes</a></strong>(int&nbsp;anchor,
          int&nbsp;target)</code>
 <div class="block">Introduces a "secondary edge" to the control flow tree, e.g.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#maybeUpdateStepCount(boolean)">maybeUpdateStepCount</a></strong>(boolean&nbsp;firstEncounter)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#maybeUpdateStepCount(boolean)">maybeUpdateStepCount</a></strong>(boolean&nbsp;firstEncounter)</code>
 <div class="block">Update step count in GUI.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#performBreakAction(java.lang.String)">performBreakAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#performBreakAction(java.lang.String)">performBreakAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#performCompleteAction(java.lang.String)">performCompleteAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#performCompleteAction(java.lang.String)">performCompleteAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#performCreepAction(java.lang.String)">performCreepAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#performCreepAction(java.lang.String)">performCreepAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#performFailAction(java.lang.String)">performFailAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#performFailAction(java.lang.String)">performFailAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#performSkipAction(java.lang.String)">performSkipAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#performSkipAction(java.lang.String)">performSkipAction</a></strong>(java.lang.String&nbsp;agentString)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#processControlEvent(org.kahina.core.control.KahinaControlEvent)">processControlEvent</a></strong>(<a href="../../../../org/kahina/core/control/KahinaControlEvent.html" title="class in org.kahina.core.control">KahinaControlEvent</a>&nbsp;e)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></strong>(<a href="../../../../org/kahina/core/control/KahinaEvent.html" title="class in org.kahina.core.control">KahinaEvent</a>&nbsp;e)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#processSelectionEvent(org.kahina.core.gui.event.KahinaSelectionEvent)">processSelectionEvent</a></strong>(<a href="../../../../org/kahina/core/gui/event/KahinaSelectionEvent.html" title="class in org.kahina.core.gui.event">KahinaSelectionEvent</a>&nbsp;e)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#processSystemEvent(org.kahina.core.control.KahinaSystemEvent)">processSystemEvent</a></strong>(<a href="../../../../org/kahina/core/control/KahinaSystemEvent.html" title="class in org.kahina.core.control">KahinaSystemEvent</a>&nbsp;e)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#processWarnEvent(org.kahina.core.control.KahinaWarnEvent)">processWarnEvent</a></strong>(<a href="../../../../org/kahina/core/control/KahinaWarnEvent.html" title="class in org.kahina.core.control">KahinaWarnEvent</a>&nbsp;e)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#processControlEvent(org.kahina.core.control.KahinaControlEvent)">processControlEvent</a></strong>(<a href="../../core/control/KahinaControlEvent.html" title="class in org.kahina.core.control">KahinaControlEvent</a>&nbsp;e)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#redo(int)">redo</a></strong>(int&nbsp;extID)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></strong>(<a href="../../core/control/KahinaEvent.html" title="class in org.kahina.core.control">KahinaEvent</a>&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#processSelectionEvent(org.kahina.core.gui.event.KahinaSelectionEvent)">processSelectionEvent</a></strong>(<a href="../../core/gui/event/KahinaSelectionEvent.html" title="class in org.kahina.core.gui.event">KahinaSelectionEvent</a>&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#processSystemEvent(org.kahina.core.control.KahinaSystemEvent)">processSystemEvent</a></strong>(<a href="../../core/control/KahinaSystemEvent.html" title="class in org.kahina.core.control">KahinaSystemEvent</a>&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#processWarnEvent(org.kahina.core.control.KahinaWarnEvent)">processWarnEvent</a></strong>(<a href="../../core/control/KahinaWarnEvent.html" title="class in org.kahina.core.control">KahinaWarnEvent</a>&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#redo(int)">redo</a></strong>(int&nbsp;extID)</code>
 <div class="block">Called to indicate that the redo port of the procedure box with the given
  ID has been reached.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#registerLayer(int,%20int)">registerLayer</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#registerLayer(int,%20int)">registerLayer</a></strong>(int&nbsp;extID,
              int&nbsp;layer)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#registerStepSourceCodeLocation(int,%20java.lang.String,%20int)">registerStepSourceCodeLocation</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#registerStepSourceCodeLocation(int,%20java.lang.String,%20int)">registerStepSourceCodeLocation</a></strong>(int&nbsp;extID,
                               java.lang.String&nbsp;absolutePath,
                               int&nbsp;lineNumber)</code>
 <div class="block">Registers the source code location connected to a step for display in the
@@ -388,45 +388,45 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#select(int)">select</a></strong>(int&nbsp;extID)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#select(int)">select</a></strong>(int&nbsp;extID)</code>
 <div class="block">Call this to force the GUI to select the indicated step and update, e.g.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#selectIfPaused(int)">selectIfPaused</a></strong>(int&nbsp;stepID)</code>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#selectIfPaused(int)">selectIfPaused</a></strong>(int&nbsp;stepID)</code>
 <div class="block">Selects the given step and updates the GUI if the debugger is not
  currently leaping or autocompleting.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#setBridgeState(char)">setBridgeState</a></strong>(char&nbsp;bridgeState)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#setBridgeState(char)">setBridgeState</a></strong>(char&nbsp;bridgeState)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#setParentCandidateID(int)">setParentCandidateID</a></strong>(int&nbsp;parentCandidateID)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#setParentCandidateID(int)">setParentCandidateID</a></strong>(int&nbsp;parentCandidateID)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#step(int,%20java.lang.String)">step</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#step(int,%20java.lang.String)">step</a></strong>(int&nbsp;extID,
     java.lang.String&nbsp;type)</code>
-<div class="block">Variant of <a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)"><code>step(int, String, String, String)</code></a> that uses the same
+<div class="block">Variant of <a href="LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)"><code>step(int, String, String, String)</code></a> that uses the same
  string for type, description and console message.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String)">step</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String)">step</a></strong>(int&nbsp;extID,
     java.lang.String&nbsp;predicate,
     java.lang.String&nbsp;description)</code>
-<div class="block">Variant of <a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)"><code>step(int, String, String, String)</code></a> that uses the same
+<div class="block">Variant of <a href="LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)"><code>step(int, String, String, String)</code></a> that uses the same
  string for description and console message.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)">step</a></strong>(int&nbsp;extID,
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)">step</a></strong>(int&nbsp;extID,
     java.lang.String&nbsp;type,
     java.lang.String&nbsp;description,
     java.lang.String&nbsp;consoleMessage)</code>
@@ -436,11 +436,11 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#virtualRedo(int)">virtualRedo</a></strong>(int&nbsp;stepID)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#virtualRedo(int)">virtualRedo</a></strong>(int&nbsp;stepID)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#warning(java.lang.String)">warning</a></strong>(java.lang.String&nbsp;message)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="LogicProgrammingBridge.html#warning(java.lang.String)">warning</a></strong>(java.lang.String&nbsp;message)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -524,7 +524,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>state</h4>
-<pre>protected&nbsp;<a href="../../../../org/kahina/lp/LogicProgrammingState.html" title="class in org.kahina.lp">LogicProgrammingState</a> state</pre>
+<pre>protected&nbsp;<a href="../LogicProgrammingState.html" title="class in org.kahina.lp">LogicProgrammingState</a> state</pre>
 </li>
 </ul>
 </li>
@@ -541,7 +541,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LogicProgrammingBridge</h4>
-<pre>public&nbsp;LogicProgrammingBridge(<a href="../../../../org/kahina/lp/LogicProgrammingInstance.html" title="class in org.kahina.lp">LogicProgrammingInstance</a>&lt;?,?,?,?&gt;&nbsp;kahina)</pre>
+<pre>public&nbsp;LogicProgrammingBridge(<a href="../LogicProgrammingInstance.html" title="class in org.kahina.lp">LogicProgrammingInstance</a>&lt;?,?,?,?&gt;&nbsp;kahina)</pre>
 </li>
 </ul>
 </li>
@@ -561,7 +561,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <pre>public&nbsp;void&nbsp;deregister()</pre>
 <dl>
 <dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html#deregister()">deregister</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
+<dd><code><a href="../../core/bridge/KahinaBridge.html#deregister()">deregister</a></code>&nbsp;in class&nbsp;<code><a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -576,7 +576,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
         java.lang.String&nbsp;description,
         java.lang.String&nbsp;consoleMessage)</pre>
 <div class="block">For each new procedure box that is created, this method or one of its
- variants must first be called. It is separate from <a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#call(int)"><code>call(int)</code></a> for
+ variants must first be called. It is separate from <a href="LogicProgrammingBridge.html#call(int)"><code>call(int)</code></a> for
  historic reasons and for flexibility, e.g. it can be overloaded with
  various arguments representing all kinds of information about a step
  without touching the call method. Note however that information about a
@@ -601,7 +601,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <pre>public&nbsp;void&nbsp;step(int&nbsp;extID,
         java.lang.String&nbsp;predicate,
         java.lang.String&nbsp;description)</pre>
-<div class="block">Variant of <a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)"><code>step(int, String, String, String)</code></a> that uses the same
+<div class="block">Variant of <a href="LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)"><code>step(int, String, String, String)</code></a> that uses the same
  string for description and console message.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>extID</code> - </dd><dd><code>predicate</code> - </dd><dd><code>description</code> - </dd></dl>
 </li>
@@ -614,7 +614,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <h4>step</h4>
 <pre>public&nbsp;void&nbsp;step(int&nbsp;extID,
         java.lang.String&nbsp;type)</pre>
-<div class="block">Variant of <a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)"><code>step(int, String, String, String)</code></a> that uses the same
+<div class="block">Variant of <a href="LogicProgrammingBridge.html#step(int,%20java.lang.String,%20java.lang.String,%20java.lang.String)"><code>step(int, String, String, String)</code></a> that uses the same
  string for type, description and console message.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>extID</code> - </dd><dd><code>type</code> - </dd></dl>
 </li>
@@ -877,10 +877,10 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>generateStep</h4>
-<pre>protected&nbsp;<a href="../../../../org/kahina/lp/LogicProgrammingStep.html" title="class in org.kahina.lp">LogicProgrammingStep</a>&nbsp;generateStep()</pre>
+<pre>protected&nbsp;<a href="../LogicProgrammingStep.html" title="class in org.kahina.lp">LogicProgrammingStep</a>&nbsp;generateStep()</pre>
 <dl>
 <dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html#generateStep()">generateStep</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
+<dd><code><a href="../../core/bridge/KahinaBridge.html#generateStep()">generateStep</a></code>&nbsp;in class&nbsp;<code><a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -890,12 +890,12 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>processEvent</h4>
-<pre>public&nbsp;void&nbsp;processEvent(<a href="../../../../org/kahina/core/control/KahinaEvent.html" title="class in org.kahina.core.control">KahinaEvent</a>&nbsp;e)</pre>
+<pre>public&nbsp;void&nbsp;processEvent(<a href="../../core/control/KahinaEvent.html" title="class in org.kahina.core.control">KahinaEvent</a>&nbsp;e)</pre>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/control/KahinaListener.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/kahina/core/control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></code></dd>
+<dd><code><a href="../../core/control/KahinaListener.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../core/control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></code></dd>
 <dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
+<dd><code><a href="../../core/bridge/KahinaBridge.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -905,10 +905,10 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>processSystemEvent</h4>
-<pre>protected&nbsp;void&nbsp;processSystemEvent(<a href="../../../../org/kahina/core/control/KahinaSystemEvent.html" title="class in org.kahina.core.control">KahinaSystemEvent</a>&nbsp;e)</pre>
+<pre>protected&nbsp;void&nbsp;processSystemEvent(<a href="../../core/control/KahinaSystemEvent.html" title="class in org.kahina.core.control">KahinaSystemEvent</a>&nbsp;e)</pre>
 <dl>
 <dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html#processSystemEvent(org.kahina.core.control.KahinaSystemEvent)">processSystemEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
+<dd><code><a href="../../core/bridge/KahinaBridge.html#processSystemEvent(org.kahina.core.control.KahinaSystemEvent)">processSystemEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -918,10 +918,10 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>processWarnEvent</h4>
-<pre>protected&nbsp;void&nbsp;processWarnEvent(<a href="../../../../org/kahina/core/control/KahinaWarnEvent.html" title="class in org.kahina.core.control">KahinaWarnEvent</a>&nbsp;e)</pre>
+<pre>protected&nbsp;void&nbsp;processWarnEvent(<a href="../../core/control/KahinaWarnEvent.html" title="class in org.kahina.core.control">KahinaWarnEvent</a>&nbsp;e)</pre>
 <dl>
 <dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html#processWarnEvent(org.kahina.core.control.KahinaWarnEvent)">processWarnEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
+<dd><code><a href="../../core/bridge/KahinaBridge.html#processWarnEvent(org.kahina.core.control.KahinaWarnEvent)">processWarnEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -931,10 +931,10 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>processControlEvent</h4>
-<pre>protected&nbsp;void&nbsp;processControlEvent(<a href="../../../../org/kahina/core/control/KahinaControlEvent.html" title="class in org.kahina.core.control">KahinaControlEvent</a>&nbsp;e)</pre>
+<pre>protected&nbsp;void&nbsp;processControlEvent(<a href="../../core/control/KahinaControlEvent.html" title="class in org.kahina.core.control">KahinaControlEvent</a>&nbsp;e)</pre>
 <dl>
 <dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html#processControlEvent(org.kahina.core.control.KahinaControlEvent)">processControlEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
+<dd><code><a href="../../core/bridge/KahinaBridge.html#processControlEvent(org.kahina.core.control.KahinaControlEvent)">processControlEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -953,10 +953,10 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>processSelectionEvent</h4>
-<pre>protected&nbsp;void&nbsp;processSelectionEvent(<a href="../../../../org/kahina/core/gui/event/KahinaSelectionEvent.html" title="class in org.kahina.core.gui.event">KahinaSelectionEvent</a>&nbsp;e)</pre>
+<pre>protected&nbsp;void&nbsp;processSelectionEvent(<a href="../../core/gui/event/KahinaSelectionEvent.html" title="class in org.kahina.core.gui.event">KahinaSelectionEvent</a>&nbsp;e)</pre>
 <dl>
 <dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html#processSelectionEvent(org.kahina.core.gui.event.KahinaSelectionEvent)">processSelectionEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
+<dd><code><a href="../../core/bridge/KahinaBridge.html#processSelectionEvent(org.kahina.core.gui.event.KahinaSelectionEvent)">processSelectionEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../core/bridge/KahinaBridge.html" title="class in org.kahina.core.bridge">KahinaBridge</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1051,7 +1051,7 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar_bottom">
 <!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+</a><a href="LogicProgrammingBridge.html#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -1067,10 +1067,10 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../org/kahina/lp/bridge/LogicProgrammingBridgeEvent.html" title="class in org.kahina.lp.bridge"><span class="strong">Next Class</span></a></li>
+<li><a href="LogicProgrammingBridgeEvent.html" title="class in org.kahina.lp.bridge"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../index.html?org/kahina/lp/bridge/LogicProgrammingBridge.html" target="_top">Frames</a></li>
+<li><a href="http://kahina.org/javadoc/index.html?org/kahina/lp/bridge/LogicProgrammingBridge.html" target="_top">Frames</a></li>
 <li><a href="LogicProgrammingBridge.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
@@ -1092,15 +1092,15 @@ extends <a href="../../../../org/kahina/core/bridge/KahinaBridge.html" title="cl
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="LogicProgrammingBridge.html#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="LogicProgrammingBridge.html#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="LogicProgrammingBridge.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="LogicProgrammingBridge.html#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="LogicProgrammingBridge.html#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="LogicProgrammingBridge.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_bottom">

@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      QTypeTutorial3 – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/QTypeTutorial3?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="QTypeTutorial3.html" title="View QTypeTutorial3">QTypeTutorial3</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/QTypeTutorial3?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="KahinaforQTypeTutorialPart3:Post-MortemParseInspection">Kahina for QType Tutorial Part 3: Post-Mortem Parse Inspection</h1>
+<p>
+This tutorial again only assumes that the project <strong>QType Tutorials 1-3</strong> was opened, and that the grammar has already been compiled from within Kahina. The most direct way to match these prerequisites is to follow the instructions in <a class="wiki" href="QTypeTutorial1.html">QTypeTutorial1</a>. To understand the discussion in this tutorial, you should also have worked through <a class="wiki" href="QTypeTutorial2.html">QTypeTutorial2</a>. After learning there how Kahina can be used much like an ordinary Prolog tracer, in this tutorial you will start to learn how Kahina expands on these capabilities.
+</p>
+<h3 id="AFailingExampleParse">A Failing Example Parse</h3>
+<p>
+In this chapter, we will be dealing with <strong>post-mortem inspection</strong> of parses, which is our term for interactively exploring completed traces to find the reasons for failures and other unwanted behavior. To make this task more interesting, we will start by parsing an ungrammatical sentence. Our example will be the sentence <em>uther sleep</em>, which you are now asked to start parsing via the menu entry <strong>Grammar -&gt; Parse ...</strong>. For this toy sentence, it is of course easy to spot that the problem will be the lack of number agreement between the subject and the verb. But using this simple toy example, you will begin to learn how to locate such problems in a QType parse even after the trace was completed, giving you the tools to perform this kind of analysis in less simple cases as well.
+</p>
+<p>
+Before we can start our post-mortem inspection, we first need to fast-forward through the entire trace by pressing the <strong>Leap</strong> button and waiting until the parse has finished. This process can take about half a minute, which is arguably very slow for such a short sentence. However, we encourage you not to worry about this too much for now, since for tracing longer sentence you will want to rely on the advanced techniques introduced in later tutorials anyway. The completed parse should consists of 744 steps, which means that the title of your Kahina window should say something like <strong>Kahina for Qtype - QType Tutorials 1-3 (744)</strong>. The contents of the window will look like this:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-result.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-result.png" /></a>
+</p>
+<p>
+Unlike in the last tutorial, the red color has infested all branches of the search tree this time, causing a failure of the top-most parsing goal. This is of course what we intended, as it makes the process of analysing the trace quite a bit more interesting by giving us a problem to locate.
+</p>
+<h3 id="UsingtheMessageConsole">Using the Message Console</h3>
+<p>
+Before we get our hands dirty, let us summarize the different possibilites Kahina offers for navigating through the steps of a trace. You will already have noticed that almost none of Kahina's numerous view components is purely a display component. Instead, most of the components can also be used for navigation, each having a specific purpose in navigating the step database. Let us start our list with the message console. One important task of the console is to keep track of any non-creep decisions you made while tracing. This information is sometimes essential for understanding the trace behavior afterwards. Without seeing a hint in the message console, one could easily get confused about whether some step failed because none of its clauses applied, or because of a Fail command issued by the user.
+</p>
+<p>
+Otherwise, the contents of this display component resemble the output of a classical tracer. The difference is that whenever you select a line in the console message, all the other views will be updated to display the position and the details of the involved step. In addition, all the lines associated with the selected step will always be highlighted on the console. The message console will also jump to the event where the step was called for the first time. This allows you to quickly find a linear trace of the step's call environment, which is useful in some situations where the step tree can become a little confusing because of its interacting view dimensions.
+</p>
+<h3 id="NavigatingtheStepTree">Navigating the Step Tree</h3>
+<p>
+We have so far avoided to explain how the contents of the step tree are distributed among the overview tree and the detail tree for display. The layering mechanism is intended to split up the tree into meaningful units in order to keep it navigable even if thousands of nodes are involved. The splitting works by configuring certain step types to be treated as <strong>corner-stone nodes</strong>, which define the context boundaries at which the tree fragments at the display layers are pruned. The detail view always shows the part of the step tree below the corner-stone node that is currently selected in the overview tree, up to and including the next corner-stone nodes.
+</p>
+<p>
+For QType, calls to the following predicates are pre-configured to be treated as corner-stone nodes because they form the backbone of parsing processes:
+</p>
+<table class="wiki">
+<tr><td><strong><tt>lc/1</tt></strong></td><td>The top-level predicate for left-corner parsing.
+</td></tr><tr><td><strong><tt>lc/2</tt></strong></td><td>Driver predicate for left-corner parsing against a prediction, calls the lexicon check.
+</td></tr><tr><td><strong><tt>lc/6</tt></strong></td><td>Main worker predicate for left-corner parsing, retrieves lexical entries and makes predictions to be met by <tt>lc_complete/8</tt>.
+</td></tr><tr><td><strong><tt>lc_complete/8</tt></strong></td><td>Fetches rules according to the given left corner, calling <tt>lc_list/6</tt> to process the predicted sister constituents.
+</td></tr><tr><td><strong><tt>lc_list/5</tt></strong></td><td>Processes predicted left-corner sister constituents, recursively calling <tt>lc/6</tt> for this purpse.
+</td></tr></table>
+<p>
+The prime means of navigation in the tree is to select a node at one of the two layers, which will causes the step tree fragments at both layers to adapt, and a display of the step details of the selected step in all the other views. Normally, you will use the overview tree to understand the overall call structure, from time to time selecting corner-stone nodes of interest in order to inspect the intermediate steps in the detail view.
+When a node in the overview tree is displayed using a <strong>bold font</strong>, this gives you a visual hint that additional steps can be seen in the detail tree if you select it.
+The layering mechanism has the sometimes surprising consequence that if you select a corner-stone node in the detail view, the contents of that view will change almost entirely because it now displays the pruned tree fragment headed by the node you selected.
+</p>
+<p>
+We have not yet mentioned the purpose of the little minus signs you have so far seen next to every step label in the tree. These are a part of the tree display's <strong>collapsing</strong> mechanism. By double-clicking on any node, you can collapse the call structure under it. The entire call hierarchy under the node will vanish from the tree, and a small + sign will appear instead of the - sign next to the node. This mechanism becomes extremely useful as soon as the tree fragments become so large that the indentation alone will not suffice to understand the call structure. To decollapse a node and restore the call hierarchy below it, you simply double-click on it again.
+</p>
+<p>
+You are now invited to spend some time fooling around with the step tree, which is always useful for getting a feel for its sometimes complex behavior, and for understanding the ways in which the call tree and the search tree dimensions of the step tree interact. Do not expect do understand everything by only looking at the step tree, you will sometimes need to consult the source code display and the message console in order to fully understand the call structure.
+</p>
+<h3 id="TheSelectionHistory">The Selection History</h3>
+<p>
+A third possibility to navigate through the step database is to make use of the <strong>selection history</strong>. Kahina stores a list of the steps which were selected during tracing and/or inspection, and makes it possible to page through this exploration history. The reader should take the opportunity to try out this feature right now, carrying him or her backward and forward through the steps most recently inspected using the other navigation methods. Like in a browser history, selecting a step by some other method will destroy the selection history after current point in the past. For the future, we intend to extend the browser analogy by providing a bookmark function which allows the user to collect links to interesting steps in a separate list for later reference. The buttons for browsing the selection history are the rightmost two buttons in the control panel:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/control-panel.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/control-panel.png" /></a>
+</p>
+<table class="wiki">
+<tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/back.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/back.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/back.png" title="source:trunk/src/org/kahina/core/gui/icons/back.png" /></a></td><td><strong>Back:</strong> Goes back one step in the selection history. This button is already active during the first step of a parse or compilation, since it is always possible to go back to the top-level [query] node. If no manual selection was carried out yet, the button can be used to inspect the trace in reverse.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/forward.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/forward.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/forward.png" title="source:trunk/src/org/kahina/core/gui/icons/forward.png" /></a></td><td><strong>Forward:</strong> Goes one step forward in the selection history, which is only possible if a past selection was revisited using the <strong>Back</strong> button, and no other means of selection was used since the last back step in the history.
+</td></tr></table>
+<h3 id="FindingProblemsusingPost-MortemInspection">Finding Problems using Post-Mortem Inspection</h3>
+<p>
+Now that we are more familiar with the different methods of expecting the step database, let us return to our failed parse and learn how to systematically determine what went wrong. First of all, let us select the failed topmost call to <tt>lc/6</tt>, where we would find the results of a successful parse.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step001.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step001.png" /></a>
+</p>
+<p>
+The detail view for this node tells us that QType has successfully retrieved a lexical entry for the word <em>uther</em>. Inspecting the successful call to <tt>check_link/2</tt> reveals that the currently selected branch of the search tree tries to build a structure of type <tt>s</tt>. This is the category we would expect for <em>uther sleep</em>, so let us descend further into this branch of the search tree. We see that the subsequent call to <tt>lc_complete/6</tt> has failed, so let us find out why.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step002.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step002.png" /></a>
+</p>
+<p>
+After selecting the failed <tt>lc_complete/6</tt> step, the detail view now shows us the computations involved in this failure. We see that the search tree branches directly under this call because QType non-deterministically selected a rule for prediction. So let us find out which rule was explored in the current branch. Selecting the <tt>db_rule/4</tt> call, we see in the source code view that QType selected the sentence formation rule first. Note that this will be the case in any situation where we try to complete an {{{s}} constituent, since QType will always try out rules in the order in which they are declared in the grammar.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step003.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step003.png" /></a>
+</p>
+<p>
+The goal display shows us a feature structure representation of the retrieved rule. Note that the rule states how a constituent of type <tt>s</tt> can be assembled from a noun phrase and a verb phrase with that noun phrase on its subcat list. Since this is the rule we would expect to work out, we again now that we are exploring the right branch of the search tree. Otherwise, we would have had to flip through the rules now using the little arrows next to the <tt>db_rule/4</tt> call.
+</p>
+<p>
+In the next step, <tt>lc_complete/6</tt> attempts to unify the current constituent with the head of the selected rule. Inspecting the corresponding call to <tt>unify/2</tt> in the detail view, we see in the goal display that the rule's head was successfully unified with our lexical entry for <em>uther</em>. If you are interested in the internals of the unification process, you can inspect some of the steps below this node in the call tree.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step004.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step004.png" /></a>
+</p>
+<p>
+The last subgoal of this <tt>lc_complete/6</tt> invocation is another corner-stone node: a call to <tt>lc_list/5</tt> with the task of recursively parsing the left-corner sisters predicted by the selected rule. As we see, this call to <tt>lc_list/5</tt> has failed, so let us select this step for inspection:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step005.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step005.png" /></a>
+</p>
+<p>
+Since the <tt>lc_list/5</tt> node was not marked with bold font in the overview tree, it is not surprising that we do not see anything additional in the detail view now. In the goal view, we see that this call has tried to parse <em>sleep</em> as verb phrase which has the already parsed structure for <em>uther</em> as a complement. From the step tree, we know that the reason for the failure of <tt>lc_list/5</tt> is that this subparse has failed.
+</p>
+<p>
+If we select the <tt>lc/6</tt> child node, the detail tree shows us that QType successfully retrieved a lexical entry for <em>sleep</em>. An inspection of the <tt>db_word/4</tt> step gives us the retrieved feature structure in the second argument of the goal view:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step006.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step006.png" /></a>
+</p>
+<p>
+Taking a closer look at this feature structure, the <tt>base</tt> value of the feature <tt>HEAD:FORM</tt> tells us that in this branch of the search tree, <em>sleep</em> is treated as a base form. We could follow through this branch to find out why this interpretation ultimately isn't successful, but the more interesting case is covered by the sister branch which we can access by flipping through the possible lexical entries for the form <em>sleep</em>. A click on the arrow to the right next to the <tt>db_word/4</tt> step in the detail tree carries us to a search branch which builds on a slightly different feature structure for <em>sleep</em>:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step007.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step007.png" /></a>
+</p>
+<p>
+Here, the <tt>HEAD:FORM</tt> feature has the value <tt>finite</tt>, and the <tt>nsem</tt> structure on the argument list has a <tt>NUM</tt> value of <tt>pl</tt>, indicating that <em>sleep</em> is now interpreted as a plural form. The step tree shows us that also with this choice, the recursive call to <tt>lc_complete/8</tt> fails. Selecting this node, we find that again multiple rules were tried out, all of which failed to yield a <tt>vpc</tt> parse of <em>sleep</em> with <em>uther</em> as the subject. 
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step008.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step008.png" /></a>
+</p>
+<p>
+The third alternatives is the most interesting case here, because it tries to build a trivial verb phrase without further complements:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step009.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step009.png" /></a>
+</p>
+<p>
+In this case, we can go on because the <tt>iv</tt> structure derived for the word <em>sleep</em> unifies with the head of the trivial verb phrase rule:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step010.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step010.png" /></a>
+</p>
+<p>
+We descend further into this branch by selecting the case where <tt>lc_list/5</tt> was successful over the empty list. In a successful parse, for the subsequent recursive call to <tt>lc_complete/8</tt> we would now expect the base case to work out, causing us to flip backwards through the alternatives for <tt>lc_complete/8</tt> until the first one, where the base case clause was selected. At this point we have isolated the problem, since the necessary unification for the base case fails. An inspection of the failed <tt>unify/2</tt> step shows us the problem in the goal view. Since <tt>vpc</tt> and <tt>vp</tt> are compatible types, the problem must have been caused by the value clash between <tt>sg</tt> and <tt>pl</tt> at the path <tt>SUBCAT:HEAD:SEM:NUM</tt>, accurately representing the lack of agreement which makes this sentence ungrammatical.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step011.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step011.png" /></a>
+</p>
+<p>
+The reader may find it instructive to continue browsing the search tree around and beyond this point. The non-terminating clauses of the last <tt>lc_complete/8</tt> have of course been tried next, and this has involved throwing in further rule applications. Further exploring this part of the search tree, the reader will see how QType unsuccessfully attempted to derive another noun phrase, and how an attempt to find a verb phrase with a complement failed because the input had already been consumed.
+</p>
+<h3 id="ChartDisplay">Chart Display</h3>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial3/uther-sleeps-complete-chart.png.html"><img src="../raw-attachment/wiki/QTypeTutorial3/uther-sleeps-complete-chart.png" style="float:left" /></a>
+</p>
+<p>
+A recent addition to Kahina for QType is a <strong>chart display</strong> whose main purpose is to give a bird's eye overview of the parse by visualizing all attempts to parse constituents, and how these attempts are interrelated. Unlike in other grammar engineering systems, QType's left-corner parser does not use a chart for dynamic programming, which means that the chart presented in this view is virtual, it merely symbolizes the parsing steps taken by QType's parser, including all the steps that would be redundant if a real chart were used.
+</p>
+<p>
+The <strong>edges</strong> on this chart represent predictions as well as attempted complete operations in QType's overall left-corner parsing strategy. 
+Edges range over parts of the input sentence, and are grouped in a hierarchical structure that mirrors the structure of the parsing process.
+The <strong>color coding</strong> for the edges on the chart reflects the colors used in the step tree to symbolize successful and failed predicate calls. Edges that correspond to failed parsing steps are colored in red, and successful parsing steps are represented by edges colored in dark green.
+Each edge is linked to the step where its success or failure was determined, making the chart a powerful tool for quick access to the relevant portions of the step tree. In practice, you are much more likely to navigate the step tree via the chart instead of the manual approach we introduced so far.
+</p>
+<p>
+The image to the left displays the complete chart for our example sentence "uther sleeps" after the parse has been processed. For ease of discussion, every edge in the chart has a numeric ID next to the edge label. Because these internal IDs do not contain any interesting information, the release version of Kahina for QType does not display them by default. In the example chart, edge 35 has been selected and is therefore displayed in a brighter color.
+</p>
+<p>
+So let us consider in detail how the parsing process we have inspected post mortem in this tutorial is mapped to the chart display. There are four different types of edges in the display, each of which corresponds to one of the QType parser's internal predicates. We start with the bottom row of the chart display, which displays the result of the initial <tt>lexentry_existence</tt> check. The two green edges with the captions <tt>name:uther</tt> and <tt>iv:sleeps</tt> indicate that this initial check was successful. The two edges are linked to the respective <tt>db_word/4</tt> steps in the step tree, allowing you to inspect the retrieved lexical entries in the feature structure view.
+</p>
+<p>
+These two edges are instances of the first type of edge that we will introduce, they are <strong>lexicon edges</strong>. A lexicon edge is created every time a <tt>db_word/4</tt> goal is called. The caption of a lexical edge is of the form <em>cat:word</em>, displaying the category assigned to the respective word. The category value is defined as the type of the feature structure that was retrieved in the corresponding <tt>db_word/4</tt> step. Edges that result from the part of the parsing process which builds on this structure are always placed above the corresponding lexicon edge. When a <tt>db_word/4</tt> step is redone, another lexicon edge (possibly with a different category) is created above these edges. Examples of lexicon edges in the example chart are the edges with IDs 3, 7, and 36.
+</p>
+<p>
+Let us proceed by considering the overall process of chart construction. Calls to the <tt>lc/2</tt> and <tt>lc/5</tt> predicates are represented by L-shaped <strong>parse edges</strong>. Parse edges are labeled in the format <tt>parse cat</tt>, where <tt>cat</tt> is the category of the expected category. The topmost <tt>lc/2</tt> call corresponds to the successful parse edge with ID 2 that wraps around the entire chart except for the bottom line. This topmost parse edge always carries the label <tt>parse top</tt>. The other two parse edges in our small example chart, i.e. edges 6 and 35, correspond to <tt>lc/5</tt> steps, and we will clarify their role after discussing the remaining two edge types.
+</p>
+<p>
+The next type of edge that we encounter is a <strong>rule edge</strong>. These edges correspond to calls of the <tt>db_rule/4</tt> predicate, and have labels of the form <tt>mother -&gt; dtr1 dtr2 ...</tt>, where <tt>mother</tt> is the top-level category of the feature structure on the rule's LHS, and the <tt>dtr</tt>s are the top-level categories of all the feature structures on the rule's RHS. In our example chart, we see that the first rule that is attempted (edge 4) attempts to scan the input range between positions 0 and 2 (i.e. the entire sentence) as a sentence (s) consisting of a noun phrase (np) and a verb phrase complement (vpc). The position of this rule edge just above the lexicon edge 3 indicates that this rule was attempted while trying to integrate the structure for "uther" of type <tt>name</tt> into a complete parse of the sentence. The green color shows that this attempt was successful, and the edges contained within the span of the rule edge's inverted L-shape show how this parse was executed.
+</p>
+<p>
+The fourth and last edge type becomes relevant when we take a look at these execution details. The next edge that is constructed (edge 5) is a <strong>unify edge</strong> with the label format <tt>np~name</tt>, indicating that a structure of type <tt>name</tt> was successfully unified with a structure of type <tt>np</tt>. Inspecting the step details for the corresponding <tt>unify/2</tt> step, we see that the structure of type <tt>name</tt> is actually the lexical entry for <em>uther</em> whose retrieval was symbolized by edge 3, and that the structure of type <tt>np</tt> is the first daughter of the rule whose application is mirrored by edge 4. This is the pattern for all unify edges in the QType chart representation: the expected category is on the left side, and the category of the structure to be integrated is on the right side of the tilde sign.
+</p>
+<p>
+In the call structure, the rule retrieval leading to edge 4 and the unify step represented by edge 5 is a child of a <tt>lc_complete</tt> call that attempts to establish a constituent starting with the structure of the lexicon edge 3, and is followed by an <tt>lc_list</tt> call that attempts to complete the RHS of the selected rule. This leads to an <tt>lc/5</tt> subgoal that tries to establish the <tt>vpc</tt> category for the remaining input symbol. This step is represented by the parse edge 6, and is successful as well, as the green color indicates. Note that the step detail view for parse edges includes representations of the established feature and constituent structures in addition to the goal representations at the call and exit ports. In this case, the constituent structure shows us that QType has managed to analyse "sleeps" as an intransitive verb (iv), which can be analyzed as a complete verb phrase (vp), which in turn qualifies as a vpc. 
+</p>
+<p>
+So let us take a look at the internals of this parse edge. QType first retrieves a lexical entry for "sleeps" of category iv (edge 7), attempts and fails to directly unify this entry with the missing constituent (edge 8), and therefore starts to attempt rule applications. Parsing "sleeps" as a sentence fails (edge 9) because an intransitive verb cannot be analyzed as a noun phrase (edge 10), but parsing it as a vp (edge 11) succeeds because the iv structure turns out to be unifiable with the right-hand side of the unary rule <tt>vp -&gt; v</tt> (edge 12). Building on this success, we manage to unify the resulting vp structure with the desired vp constituent (edge 13), causing our rule application (edge 5) to succeed. The remaining children of the parse edge 6 (edges 21-28) are created later while searching for alternative parses, and try to build a larger constituent around the vp structure we established in edge 13. At this stage, the simple case of the top-level <tt>lc_complete</tt> predicate applies again, successfully unifying the derived structure of type s with the predicted sentence structure (edge 14). This completes our first successful parse of the sentence.
+</p>
+<p>
+All the remaining edges in our example chart are created during backtracking, where QType attempts to derive additional parses for the input sentence. At this point, the reader is encouraged to experiment with the interplay between the chart display and the step tree branches until a complete understanding of the chart view as a tool for post-mortem parse process inspection is achieved. Often, the step detail view will be needed to recognize the differences between parts of the chart that seem to be duplicated at first sight. Bear in mind that the chart is a simple and direct representation of what QType does under the hood, and does not try to abstract from or even optimize the internal processes, so that any superfluous step you may encounter is actually carried out by the underlying system as well. A more general description of the chart display can be found in the <a class="wiki" href="QTypeChart.html">QType chart section</a> of this user's manual.
+</p>
+<h3 id="SearchingforPatterns">Searching for Patterns</h3>
+<p>
+In future versions of Kahina, we are planning to support searching for interesting steps in various ways.
+This includes searching over string patterns in the message console as well as searching through the
+step database for steps associated with a given source code line.
+These features are expected to make post-mortem inspection a lot more efficient and enjoyable,
+as well as accessible to users without much knowledge of the QType system.
+</p>
+<h3 id="FurtherSteps">Further Steps</h3>
+<p>
+If you found the tracing process too slow or tedious so far, it is time to become acquainted with the more advanced features of Kahina.
+The easiest way to approach these is by following the introduction to Kahina's control agent system in <a class="wiki" href="QTypeTutorial4.html">QTypeTutorial4</a>.
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/QTypeTutorial3?action=diff&amp;version=78" title="Version 78 by jd">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2013-05-20T20%3A12%3A10%2B02%3A00&amp;precision=second" title="See timeline at May 20, 2013, 8:12:10 PM">6 years ago</a></span>
+            <span class="trac-print">Last modified on May 20, 2013, 8:12:10 PM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(14)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-result.png.html" title="View attachment">uther-sleep-result.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-result.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="78902 bytes">77.1 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A50%3A42%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:50:42 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/control-panel.png.html" title="View attachment">control-panel.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/control-panel.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5511 bytes">5.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A50%3A53%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:50:53 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step001.png.html" title="View attachment">uther-sleep-inspection-step001.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step001.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="90471 bytes">88.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A51%3A06%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:51:06 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step002.png.html" title="View attachment">uther-sleep-inspection-step002.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step002.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="103325 bytes">100.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A51%3A23%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:51:23 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step003.png.html" title="View attachment">uther-sleep-inspection-step003.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step003.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="115569 bytes">112.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A51%3A40%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:51:40 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step004.png.html" title="View attachment">uther-sleep-inspection-step004.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step004.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="107211 bytes">104.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A52%3A04%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:52:04 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step005.png.html" title="View attachment">uther-sleep-inspection-step005.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step005.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="96074 bytes">93.8 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A52%3A20%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:52:20 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step006.png.html" title="View attachment">uther-sleep-inspection-step006.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step006.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="98236 bytes">95.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A52%3A30%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:52:30 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step007.png.html" title="View attachment">uther-sleep-inspection-step007.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step007.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="98308 bytes">96.0 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A52%3A43%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:52:43 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step008.png.html" title="View attachment">uther-sleep-inspection-step008.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step008.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="106267 bytes">103.8 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-06T11%3A53%3A01%2B02%3A00&amp;precision=second" title="See timeline at Oct 6, 2012, 11:53:01 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step009.png.html" title="View attachment">uther-sleep-inspection-step009.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step009.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="122511 bytes">119.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T14%3A47%3A44%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 2:47:44 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step010.png.html" title="View attachment">uther-sleep-inspection-step010.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step010.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="134893 bytes">131.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T14%3A47%3A56%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 2:47:56 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step011.png.html" title="View attachment">uther-sleep-inspection-step011.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleep-inspection-step011.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="116850 bytes">114.1 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-07T14%3A48%3A07%2B02%3A00&amp;precision=second" title="See timeline at Oct 7, 2012, 2:48:07 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial3/uther-sleeps-complete-chart.png.html" title="View attachment">uther-sleeps-complete-chart.png</a><a href="../raw-attachment/wiki/QTypeTutorial3/uther-sleeps-complete-chart.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="26914 bytes">26.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2013-05-19T22%3A28%3A28%2B02%3A00&amp;precision=second" title="See timeline at May 19, 2013, 10:28:28 PM">6 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/QTypeTutorial3/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/QTypeTutorial3?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

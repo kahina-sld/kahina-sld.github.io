@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      TreeView – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/TreeView?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="TreeView.html" title="View TreeView">TreeView</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/TreeView?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h2 id="TheControlFlowTree">The Control Flow Tree</h2>
+<p>
+The control flow tree visualization is Kahina's default mechanism to display connections between computation steps. Its behavior can be configured freely depending on the application.
+</p>
+<p>
+In logic and constraint programming visualizations, the control flow tree is used to visualize how search spaces are explored via backtracking. For Prolog and related languages, it visualizes the call structure and backtracking at the same time. The overall tree layout of the branches represents the <strong>search tree</strong> which branches out at choice points. The indentations represent a secondary tree structure, the <strong>call tree</strong>. This is explained in detail in the <a class="wiki" href="SICStusPrologTutorial.html#Tracing">SICStus Prolog tutorial</a>.
+</p>
+<h3 id="CollapsingTreeNodes">Collapsing Tree Nodes</h3>
+<p>
+To temporarily hide some detail in the tree, you can collapse all the structure below some node by double-clicking on it. Collapsed nodes are marked by <strong>bold font</strong>. All nodes can be collapsed independently, and Kahina will remember which nodes had been collapsed even after switching to a different view.
+</p>
+<table class="wiki">
+<tr><td><a style="padding:0; border:none" href="../attachment/wiki/TreeView/example-collapse-before.png.html"><img src="../raw-attachment/wiki/TreeView/example-collapse-before.png" /></a></td><td> </td><td><a style="padding:0; border:none" href="../attachment/wiki/TreeView/example-collapse-secondary-after.png.html"><img src="../raw-attachment/wiki/TreeView/example-collapse-secondary-after.png" /></a>
+</td></tr><tr><td> <em>TRALE example before collapsing the marked node.</em> </td><td> </td><td> <em>After a double click, the node is collapsed.</em> 
+</td></tr></table>
+<p>
+By default, collapsing operates on the secondary tree structure, i.e. the dimension expressed by indentation. As in the example, only more deeply indented children will be hidden from the tree. Collapsing of the primary tree structure is also possible. This functionality is accessible via the context menu, where you can choose between collapsing the secondary dimension (which is the default behavior we have just seen), no collapsing at all (useful to avoid confusion caused by double-clicking on nodes by accident), and collapsing the primary dimension:
+</p>
+<table class="wiki">
+<tr><td> <a style="padding:0; border:none" href="../attachment/wiki/TreeView/example-collapse-menu.png.html"><img src="../raw-attachment/wiki/TreeView/example-collapse-menu.png" /></a> 
+</td></tr><tr><td> <em>Switching from secondary to primary collapse mode.</em> 
+</td></tr></table>
+<p>
+In our example, collapsing the primary dimension leads to the following behavior:
+</p>
+<table class="wiki">
+<tr><td><a style="padding:0; border:none" href="../attachment/wiki/TreeView/example-collapse-before.png.html"><img src="../raw-attachment/wiki/TreeView/example-collapse-before.png" /></a></td><td> </td><td><a style="padding:0; border:none" href="../attachment/wiki/TreeView/example-collapse-primary-after.png.html"><img src="../raw-attachment/wiki/TreeView/example-collapse-primary-after.png" /></a>
+</td></tr><tr><td> <em>TRALE example before primary collapsing of he marked node. </em> </td><td> </td><td> <em>In this mode, the whole branch under the collapsed node is hidden.</em> 
+</td></tr></table>
+<p>
+The two collapsing modes work independently of each other, and the nodes collapsed in each mode will be stored even if the mode was changed in between. 
+</p>
+<h3 id="ColorCodes">Color Codes</h3>
+<h3 id="TheLayeringSystem">The Layering System</h3>
+<p>
+In order to provide a better overview, the Kahina tree visualizations can be configured to split the tree into layers according to levels of detail. The interactions between the different layers of a visualization can become somewhat intricate, yet they allow the experienced user to survey computations that consist of thousands of steps.
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/TreeView?action=diff&amp;version=15" title="Version 15 by ke: removed sample run, added link to SP tutorial where the tree view is explained in detail">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-07-31T14%3A30%3A52%2B02%3A00&amp;precision=second" title="See timeline at Jul 31, 2011, 2:30:52 PM">8 years ago</a></span>
+            <span class="trac-print">Last modified on Jul 31, 2011, 2:30:52 PM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(26)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree4.png.html" title="View attachment">tree4.png</a><a href="../raw-attachment/wiki/TreeView/tree4.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="1753 bytes">1.7 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A24%3A01%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:24:01 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree5.png.html" title="View attachment">tree5.png</a><a href="../raw-attachment/wiki/TreeView/tree5.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="2401 bytes">2.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A25%3A08%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:25:08 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree6.png.html" title="View attachment">tree6.png</a><a href="../raw-attachment/wiki/TreeView/tree6.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="2748 bytes">2.7 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A25%3A16%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:25:16 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree7.png.html" title="View attachment">tree7.png</a><a href="../raw-attachment/wiki/TreeView/tree7.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="3182 bytes">3.1 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A25%3A24%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:25:24 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree8.png.html" title="View attachment">tree8.png</a><a href="../raw-attachment/wiki/TreeView/tree8.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="3616 bytes">3.5 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A25%3A31%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:25:31 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree9.png.html" title="View attachment">tree9.png</a><a href="../raw-attachment/wiki/TreeView/tree9.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="3716 bytes">3.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A25%3A43%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:25:43 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree10.png.html" title="View attachment">tree10.png</a><a href="../raw-attachment/wiki/TreeView/tree10.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="3747 bytes">3.7 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A26%3A01%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:26:01 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree11.png.html" title="View attachment">tree11.png</a><a href="../raw-attachment/wiki/TreeView/tree11.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4364 bytes">4.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A26%3A37%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:26:37 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree12.png.html" title="View attachment">tree12.png</a><a href="../raw-attachment/wiki/TreeView/tree12.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4451 bytes">4.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A26%3A48%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:26:48 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree13.png.html" title="View attachment">tree13.png</a><a href="../raw-attachment/wiki/TreeView/tree13.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4901 bytes">4.8 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A28%3A07%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:28:07 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree14.png.html" title="View attachment">tree14.png</a><a href="../raw-attachment/wiki/TreeView/tree14.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5117 bytes">5.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A28%3A14%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:28:14 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree15.png.html" title="View attachment">tree15.png</a><a href="../raw-attachment/wiki/TreeView/tree15.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5164 bytes">5.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A28%3A21%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:28:21 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree16.png.html" title="View attachment">tree16.png</a><a href="../raw-attachment/wiki/TreeView/tree16.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5025 bytes">4.9 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A28%3A31%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:28:31 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree17.png.html" title="View attachment">tree17.png</a><a href="../raw-attachment/wiki/TreeView/tree17.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4705 bytes">4.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A28%3A39%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:28:39 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree18.png.html" title="View attachment">tree18.png</a><a href="../raw-attachment/wiki/TreeView/tree18.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5205 bytes">5.1 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A28%3A46%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:28:46 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree19.png.html" title="View attachment">tree19.png</a><a href="../raw-attachment/wiki/TreeView/tree19.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4760 bytes">4.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A28%3A56%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:28:56 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree20.png.html" title="View attachment">tree20.png</a><a href="../raw-attachment/wiki/TreeView/tree20.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4569 bytes">4.5 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A29%3A03%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:29:03 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree21.png.html" title="View attachment">tree21.png</a><a href="../raw-attachment/wiki/TreeView/tree21.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5077 bytes">5.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A29%3A10%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:29:10 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree22.png.html" title="View attachment">tree22.png</a><a href="../raw-attachment/wiki/TreeView/tree22.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5276 bytes">5.2 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A29%3A16%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:29:16 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree23.png.html" title="View attachment">tree23.png</a><a href="../raw-attachment/wiki/TreeView/tree23.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5217 bytes">5.1 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A29%3A23%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:29:23 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree24.png.html" title="View attachment">tree24.png</a><a href="../raw-attachment/wiki/TreeView/tree24.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4969 bytes">4.9 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A29%3A32%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:29:32 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/tree25.png.html" title="View attachment">tree25.png</a><a href="../raw-attachment/wiki/TreeView/tree25.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4530 bytes">4.4 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-05-12T00%3A29%3A38%2B02%3A00&amp;precision=second" title="See timeline at May 12, 2011, 12:29:38 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/example-collapse-before.png.html" title="View attachment">example-collapse-before.png</a><a href="../raw-attachment/wiki/TreeView/example-collapse-before.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="12715 bytes">12.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-07-18T01%3A16%3A00%2B02%3A00&amp;precision=second" title="See timeline at Jul 18, 2011, 1:16:00 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/example-collapse-secondary-after.png.html" title="View attachment">example-collapse-secondary-after.png</a><a href="../raw-attachment/wiki/TreeView/example-collapse-secondary-after.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="11327 bytes">11.1 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-07-18T01%3A17%3A01%2B02%3A00&amp;precision=second" title="See timeline at Jul 18, 2011, 1:17:01 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/example-collapse-menu.png.html" title="View attachment">example-collapse-menu.png</a><a href="../raw-attachment/wiki/TreeView/example-collapse-menu.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="24226 bytes">23.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-07-18T01%3A18%3A40%2B02%3A00&amp;precision=second" title="See timeline at Jul 18, 2011, 1:18:40 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/TreeView/example-collapse-primary-after.png.html" title="View attachment">example-collapse-primary-after.png</a><a href="../raw-attachment/wiki/TreeView/example-collapse-primary-after.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="11000 bytes">10.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-07-18T01%3A18%3A51%2B02%3A00&amp;precision=second" title="See timeline at Jul 18, 2011, 1:18:51 AM">8 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/TreeView/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/TreeView?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

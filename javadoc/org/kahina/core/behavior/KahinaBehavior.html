@@ -20,7 +20,7 @@
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="topNav"><a name="navbar_top">
 <!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+</a><a href="KahinaBehavior.html#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -36,10 +36,10 @@
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../org/kahina/core/behavior/KahinaDAGBehavior.html" title="class in org.kahina.core.behavior"><span class="strong">Next Class</span></a></li>
+<li><a href="KahinaDAGBehavior.html" title="class in org.kahina.core.behavior"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../index.html?org/kahina/core/behavior/KahinaBehavior.html" target="_top">Frames</a></li>
+<li><a href="http://kahina.org/javadoc/index.html?org/kahina/core/behavior/KahinaBehavior.html" target="_top">Frames</a></li>
 <li><a href="KahinaBehavior.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -61,15 +61,15 @@
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="KahinaBehavior.html#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="KahinaBehavior.html#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="KahinaBehavior.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="KahinaBehavior.html#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="KahinaBehavior.html#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="KahinaBehavior.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_top">
@@ -79,7 +79,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">org.kahina.core.behavior</div>
-<h2 title="Class KahinaBehavior" class="title">Class KahinaBehavior&lt;T extends <a href="../../../../org/kahina/core/data/KahinaObject.html" title="class in org.kahina.core.data">KahinaObject</a>&gt;</h2>
+<h2 title="Class KahinaBehavior" class="title">Class KahinaBehavior&lt;T extends <a href="../data/KahinaObject.html" title="class in org.kahina.core.data">KahinaObject</a>&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -93,30 +93,30 @@
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
-<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - a subclass of <a href="../../../../org/kahina/core/data/KahinaObject.html" title="class in org.kahina.core.data"><code>KahinaObject</code></a></dd></dl>
+<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - a subclass of <a href="../data/KahinaObject.html" title="class in org.kahina.core.data"><code>KahinaObject</code></a></dd></dl>
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../org/kahina/core/control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></dd>
+<dd><a href="../control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../org/kahina/core/behavior/KahinaDAGBehavior.html" title="class in org.kahina.core.behavior">KahinaDAGBehavior</a>, <a href="../../../../org/kahina/core/behavior/KahinaTreeBehavior.html" title="class in org.kahina.core.behavior">KahinaTreeBehavior</a></dd>
+<dd><a href="KahinaDAGBehavior.html" title="class in org.kahina.core.behavior">KahinaDAGBehavior</a>, <a href="KahinaTreeBehavior.html" title="class in org.kahina.core.behavior">KahinaTreeBehavior</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public class <span class="strong">KahinaBehavior&lt;T extends <a href="../../../../org/kahina/core/data/KahinaObject.html" title="class in org.kahina.core.data">KahinaObject</a>&gt;</span>
+<pre>public class <span class="strong">KahinaBehavior&lt;T extends <a href="../data/KahinaObject.html" title="class in org.kahina.core.data">KahinaObject</a>&gt;</span>
 extends java.lang.Object
-implements <a href="../../../../org/kahina/core/control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></pre>
+implements <a href="../control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></pre>
 <div class="block">The generic ancestor class of all behavior classes.
  <p>
  Behaviors are Kahina's way of defining the application-specific behavior of complex components such as trees.
- They usually determine how a complex object is constructed and how it reacts to incoming <a href="../../../../org/kahina/core/control/KahinaEvent.html" title="class in org.kahina.core.control"><code>KahinaEvent</code></a>s.
- A typical use case is <a href="../../../../org/kahina/lp/behavior/LogicProgrammingTreeBehavior.html" title="class in org.kahina.lp.behavior"><code>LogicProgrammingTreeBehavior</code></a> for control flow trees in logic programming.
+ They usually determine how a complex object is constructed and how it reacts to incoming <a href="../control/KahinaEvent.html" title="class in org.kahina.core.control"><code>KahinaEvent</code></a>s.
+ A typical use case is <a href="../../lp/behavior/LogicProgrammingTreeBehavior.html" title="class in org.kahina.lp.behavior"><code>LogicProgrammingTreeBehavior</code></a> for control flow trees in logic programming.
  <p>
- This class is generic and can be specialized for any subclass of <a href="../../../../org/kahina/core/data/KahinaObject.html" title="class in org.kahina.core.data"><code>KahinaObject</code></a>.
+ This class is generic and can be specialized for any subclass of <a href="../data/KahinaObject.html" title="class in org.kahina.core.data"><code>KahinaObject</code></a>.
  <p>
- In an application, the user will usually want to inherit from a specialized variant such as <a href="../../../../org/kahina/core/behavior/KahinaTreeBehavior.html" title="class in org.kahina.core.behavior"><code>KahinaTreeBehavior</code></a>.
- By default, a KahinaBehavior implements the <a href="../../../../org/kahina/core/control/KahinaListener.html" title="interface in org.kahina.core.control"><code>KahinaListener</code></a> interface, but it does not register itself with the event system.
+ In an application, the user will usually want to inherit from a specialized variant such as <a href="KahinaTreeBehavior.html" title="class in org.kahina.core.behavior"><code>KahinaTreeBehavior</code></a>.
+ By default, a KahinaBehavior implements the <a href="../control/KahinaListener.html" title="interface in org.kahina.core.control"><code>KahinaListener</code></a> interface, but it does not register itself with the event system.
  For that purpose, implementations should use the <code>KahinaRunner.getControl().registerListener</code> mechanism.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>jd</dd></dl>
@@ -139,14 +139,14 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/core/behavior/KahinaBehavior.html#kahina">kahina</a></strong></code>
+<td class="colFirst"><code>protected <a href="../KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a></code></td>
+<td class="colLast"><code><strong><a href="KahinaBehavior.html#kahina">kahina</a></strong></code>
 <div class="block">The KahinaInstance this behavior is connected to</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../../org/kahina/core/behavior/KahinaBehavior.html" title="type parameter in KahinaBehavior">T</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/core/behavior/KahinaBehavior.html#object">object</a></strong></code>
+<td class="colFirst"><code>protected <a href="KahinaBehavior.html" title="type parameter in KahinaBehavior">T</a></code></td>
+<td class="colLast"><code><strong><a href="KahinaBehavior.html#object">object</a></strong></code>
 <div class="block">The KahinaObject that is being controlled by this behavior</div>
 </td>
 </tr>
@@ -165,8 +165,8 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../org/kahina/core/behavior/KahinaBehavior.html#KahinaBehavior(T,%20org.kahina.core.KahinaInstance)">KahinaBehavior</a></strong>(<a href="../../../../org/kahina/core/behavior/KahinaBehavior.html" title="type parameter in KahinaBehavior">T</a>&nbsp;object,
-              <a href="../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&nbsp;kahina)</code>
+<td class="colOne"><code><strong><a href="KahinaBehavior.html#KahinaBehavior(T,%20org.kahina.core.KahinaInstance)">KahinaBehavior</a></strong>(<a href="KahinaBehavior.html" title="type parameter in KahinaBehavior">T</a>&nbsp;object,
+              <a href="../KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&nbsp;kahina)</code>
 <div class="block">Class constructor specifying the controlled object and the KahinaInstance that it is connected to.</div>
 </td>
 </tr>
@@ -187,7 +187,7 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/kahina/core/behavior/KahinaBehavior.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></strong>(<a href="../../../../org/kahina/core/control/KahinaEvent.html" title="class in org.kahina.core.control">KahinaEvent</a>&nbsp;e)</code>
+<td class="colLast"><code><strong><a href="KahinaBehavior.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></strong>(<a href="../control/KahinaEvent.html" title="class in org.kahina.core.control">KahinaEvent</a>&nbsp;e)</code>
 <div class="block">Does not react to any event by default; is overridden by implementations.</div>
 </td>
 </tr>
@@ -219,7 +219,7 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>object</h4>
-<pre>protected&nbsp;<a href="../../../../org/kahina/core/behavior/KahinaBehavior.html" title="type parameter in KahinaBehavior">T</a> extends <a href="../../../../org/kahina/core/data/KahinaObject.html" title="class in org.kahina.core.data">KahinaObject</a> object</pre>
+<pre>protected&nbsp;<a href="KahinaBehavior.html" title="type parameter in KahinaBehavior">T</a> extends <a href="../data/KahinaObject.html" title="class in org.kahina.core.data">KahinaObject</a> object</pre>
 <div class="block">The KahinaObject that is being controlled by this behavior</div>
 </li>
 </ul>
@@ -229,7 +229,7 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <ul class="blockListLast">
 <li class="blockList">
 <h4>kahina</h4>
-<pre>protected&nbsp;<a href="../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a> kahina</pre>
+<pre>protected&nbsp;<a href="../KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a> kahina</pre>
 <div class="block">The KahinaInstance this behavior is connected to</div>
 </li>
 </ul>
@@ -249,8 +249,8 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <ul class="blockListLast">
 <li class="blockList">
 <h4>KahinaBehavior</h4>
-<pre>public&nbsp;KahinaBehavior(<a href="../../../../org/kahina/core/behavior/KahinaBehavior.html" title="type parameter in KahinaBehavior">T</a>&nbsp;object,
-              <a href="../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&nbsp;kahina)</pre>
+<pre>public&nbsp;KahinaBehavior(<a href="KahinaBehavior.html" title="type parameter in KahinaBehavior">T</a>&nbsp;object,
+              <a href="../KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&nbsp;kahina)</pre>
 <div class="block">Class constructor specifying the controlled object and the KahinaInstance that it is connected to.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>object</code> - the KahinaObject of type T that is going to be controlled by the new instance</dd><dd><code>kahina</code> - the KahinaInstance that this behavior will belong to and communicate with</dd></dl>
 </li>
@@ -269,11 +269,11 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <ul class="blockListLast">
 <li class="blockList">
 <h4>processEvent</h4>
-<pre>public&nbsp;void&nbsp;processEvent(<a href="../../../../org/kahina/core/control/KahinaEvent.html" title="class in org.kahina.core.control">KahinaEvent</a>&nbsp;e)</pre>
+<pre>public&nbsp;void&nbsp;processEvent(<a href="../control/KahinaEvent.html" title="class in org.kahina.core.control">KahinaEvent</a>&nbsp;e)</pre>
 <div class="block">Does not react to any event by default; is overridden by implementations.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../org/kahina/core/control/KahinaListener.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/kahina/core/control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></code></dd>
+<dd><code><a href="../control/KahinaListener.html#processEvent(org.kahina.core.control.KahinaEvent)">processEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../control/KahinaListener.html" title="interface in org.kahina.core.control">KahinaListener</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -287,7 +287,7 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar_bottom">
 <!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+</a><a href="KahinaBehavior.html#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -303,10 +303,10 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../org/kahina/core/behavior/KahinaDAGBehavior.html" title="class in org.kahina.core.behavior"><span class="strong">Next Class</span></a></li>
+<li><a href="KahinaDAGBehavior.html" title="class in org.kahina.core.behavior"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../index.html?org/kahina/core/behavior/KahinaBehavior.html" target="_top">Frames</a></li>
+<li><a href="http://kahina.org/javadoc/index.html?org/kahina/core/behavior/KahinaBehavior.html" target="_top">Frames</a></li>
 <li><a href="KahinaBehavior.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
@@ -328,15 +328,15 @@ implements <a href="../../../../org/kahina/core/control/KahinaListener.html" tit
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="KahinaBehavior.html#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="KahinaBehavior.html#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="KahinaBehavior.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="KahinaBehavior.html#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="KahinaBehavior.html#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="KahinaBehavior.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_bottom">

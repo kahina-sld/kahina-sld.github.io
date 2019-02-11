@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      QTypeTutorial6 – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/QTypeTutorial6?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="QTypeTutorial6.html" title="View QTypeTutorial6">QTypeTutorial6</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/QTypeTutorial6?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="KahinaforQTypeTutorialPart6:DefiningProjectsandBehavior">Kahina for QType Tutorial Part 6: Defining Projects and Behavior</h1>
+<p>
+This tutorial presupposes that you have worked through <a class="wiki" href="QTypeTutorial5.html">QTypeTutorial5</a>. It represents your last essential step towards complete knowledge of Kahina's core components. You will learn how to create and administer projects, how to handle control agent profiles, and how to define your own control agents by editing sensors in the control agent profile editor. For reasons of brevity, we will refrain from giving complete example walkthroughs throughout this tutorial. Instead, the reader is expected to put the freshly acquired knowledge into practice by playing around with the new concepts and features.
+</p>
+<h3 id="CreatingaNewProject">Creating a New Project</h3>
+<p>
+While the previous tutorials were built on predefined projects, you will now learn how to create a new project from scratch. Minimally, a QType project consists of a path to a QType grammar file and a string identifier. You will be required to specify both as soon as you start creating a new project by clicking on the menu item <strong>Project -&gt; New Project</strong>. First, you will be asked to enter a name for the project in a simple prompt. Then, a file chooser allows you to select the grammar file the project will refer to.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/new-project.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/new-project.png" /></a>
+</p>
+<p>
+In this tutorial, it will not be relevant which name or grammar file you choose here. In the screenshots, we simply took one of the largest grammars distributed with QType: an HPSG fragment implemented by Petra Barg which provides lexical entries for some aspects of human physiology, and which resides in the grammar file <tt>hpsg_test.qrm</tt> in the <tt>GRM</tt> folder of your QType distribution. Whichever grammar file you choose, you have just created a (trivial) new QType project, on which we will now build to learn how the most relevant parts of a project can be modified.
+</p>
+<h3 id="SavingandLoadingProjects">Saving and Loading Projects</h3>
+<p>
+To make it possible to restore a project, it needs to be stored in a project configuration file. For the moment, projects are stored in a rather ad-hoc XML format in order to make project properties easily editable from outside Kahina. Saving a project works via the <strong>Project -&gt; Save Project As ...</strong> menu option. Selecting this menu entry will open a standard save file dialogue. We recommend giving the project file the suffix ".xml", although this is not strictly necessary. Project files can be stored anywhere you find it convenient, but in most cases you will want to put project files into a new folder in the directory where your grammar files reside.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/save-project.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/save-project.png" /></a>
+</p>
+<p>
+In the current version, not all project properties can be edited from inside Kahina once a project was created. If you want to change the name of a project or the path to the grammar file after you created it, you will need to manually edit the project file instead. For this reason, we now have a quick look at the structure of the project files. If you open the project file in your favourite XML or text editor, you will see that the root element <tt>kahina:project</tt> has two relevant attributes. The <tt>kahina:appid</tt> attribute needs to have the value <tt>qtype</tt> for any QType project, since it is used by Kahina's project loader to ensure that the project was defined for the correct application. The <tt>kahina:name</tt> attribute stores the name of the project. At the moment, it should have the value you specified when you created the project. If you want to rename the project, you can change the value of this attribute to any other string.
+</p>
+<p>
+The root element contains a <tt>kahina:mainFile</tt> child element, which stores the path to the grammar file in its only attribute <tt>kahina:path</tt>. The value of this attribute should be the absolute path of the grammar file you specified when you created the project.
+The <tt>kahina:path</tt> attribute also supports relative paths, but Kahina's save project option will always spell out the absolute path to the grammar file in the project file it creates. If you want to make project files portable, you need to manually edit the <tt>kahina:path</tt> values for now.
+</p>
+<p>
+The project XML file contains two other major parts. The contents of the <tt>kahina:perspective</tt> element determines the layout and behavior of the various view components, representing an entire window arrangement as well as view configurations just as explained in the upcoming <a class="missing wiki">QTypeTutorial7?</a>. The <tt>kahina:controlAgentProfiles</tt> element allows you to store control agent profiles together with the project. These settings are normally handled from inside Kahina as described in the next section.
+</p>
+<p>
+To load a saved project from a file, Kahina provides the menu entry <strong>Project -&gt; Open Project -&gt; Load Project ...</strong>. A standard file chooser dialogue will appear, allowing you to select the project file to be loaded. Project import is not yet very robust against invalid project files, so you best pay some attention to avoid accidentally loading a file which is not in the Kahina for QType project XML format, as unpredictable behavior such as crashes can result.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/load-project.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/load-project.png" /></a>
+</p>
+<p>
+Once the project file was successfully loaded, you will see that the compile option in the grammar menu gets activated. If you have defined a project for our large example grammar, be warned that skipping over the compilation might take quite some time. Even in skip mode, you can still determine the progress of the compilation via QType's console output which still appears on the console from which you started Kahina.
+</p>
+<h3 id="HandlingControlAgentProfiles">Handling Control Agent Profiles</h3>
+<p>
+Projects would not be of much use if their only purpose were to assign some name to a grammar file. As you have seen in <a class="wiki" href="QTypeTutorial4.html">QTypeTutorial4</a> and <a class="wiki" href="QTypeTutorial5.html">QTypeTutorial5</a>, projects can also define control agent profiles to influence tracing behavior.  Note that in the current version of Kahina, the current project settings will not automatically be saved to the project file if you close Kahina. Therefore, if you want to keep control agents across sessions, you will need to explicitly save the project to an XML file again. If you do so, any control agents defined will be stored in the <tt>kahina:controlAgentProfiles</tt> element of the project XML file.
+</p>
+<p>
+It is of course possible to define an entirely new set of control agents for each new project. However, you will often need standard sets of control agents which would be tedious to define multiple times. Such commonly used agents can be grouped together stored in separate control agent profile files. QType is distributed with some profile files which provide us with commonly used agents. Let us see how we can load these predefined profiles using the example of the creep agent profile. Agent profiles can be loaded via the <strong>Load</strong> button in the leftmost panel of each control agent profile editor instance. Switch to the creep agent profile, and click on this button:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/load-profile-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/load-profile-step1.png" /></a>
+</p>
+<p>
+This will open a standard open file dialogue. The predefined control agent profiles reside in the <tt>kahina-settings/agents</tt> directory of your QType distribution. Let us open the predefined creep agent profile by opening the file <tt>creep-agent-profile-standard.xml</tt>.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/load-profile-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/load-profile-step2.png" /></a>
+</p>
+<p>
+After opening the file, you should see the two familiar creep agents from <a class="wiki" href="QTypeTutorial4.html">QTypeTutorial4</a> appear in the control agent list. Selecting the one named <em>creep db_rule</em>, you see that the sensor is defined in exactly the same way as in the tutorial project. Note that the the actuators are not specified in control agent profile files, the behavior of your agents will depend on the control agent profile editor instance into which they are loaded.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/load-profile-step3.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/load-profile-step3.png" /></a>
+</p>
+<p>
+You may want to repeat this process by also loading the standard skip agent and complete agent profiles. If you find this process too tedious, it is also possible to add all three standard control agent profiles to your project by copying the <tt>kahina:controlAgentProfiles</tt> element from the tutorial project into your project XML file.
+</p>
+<p>
+Sometimes you load some standard control agent profile, but only need some of the predefined agents, or you accidentally create one agent too much. As an example, assume you have loaded the standard skip agent profile, but you decide that you will never want to skip over executions of the <tt>mgu</tt> predicate.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/agent-removal-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/agent-removal-step1.png" /></a>
+</p>
+<p>
+In such cases, you can remove a control agent from a profile via the agent list's context menu. Select the agent you want to remove, and open its context menu with a right click. The menu will contain a <strong>Remove</strong> option, which you can click to remove the agent. At the moment, no confirmation of this action is required, so be careful with using this option.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/agent-removal-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/agent-removal-step2.png" /></a>
+</p>
+<p>
+After the agent's removal, our skip agent profile has only one skip agent left:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/agent-removal-step3.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/agent-removal-step3.png" /></a>
+</p>
+<p>
+If you know that you will need your current control agent profile in other projects as well, you can also create your own control agent profile files. From inside Kahina, this is done via the <strong>Save</strong> button in the leftmost panel of the control agent profile editor: 
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/save-profile-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/save-profile-step1.png" /></a>
+</p>
+<p>
+Again, you will see a standard save file dialogue. Since control agent profiles are stored in another XML format, we recommend the <tt>.xml</tt> extension for these files as well. Let us store the modified skip agent profile under a new name in the <tt>kahina-settings/agents</tt> directory:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/save-profile-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/save-profile-step2.png" /></a>
+</p>
+<p>
+This will create a new control agent profile file which can be loaded in exactly the same way as the predefined ones.
+</p>
+<h3 id="DefiningSimpleSensors">Defining Simple Sensors</h3>
+<p>
+So far, you have only learned how to group together predefined control agents. In <a class="wiki" href="QTypeTutorial5.html">QTypeTutorial5</a>, you have created control points, but you do not yet know how to create other types of control agents. This functionality is what we will introduce in the remaining two sections of this tutorial. For a start, it is important to note that when you create a new control agent, you will in fact only define a sensor, the actuator will already be defined by the control agent profile as part of which you create the new agent.
+</p>
+<p>
+We will now learn how to define control agents of the type you have seen in the predefined control agent profiles. To create such an agent, you need to click on the <strong>New</strong> button above the list of control agents in the tab of the desired actuator type. Let us do this for a new break agent:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/new-agent-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/new-agent-step1.png" /></a>
+</p>
+<p>
+You will see a new entry in the control agent list, with a name consisting of "Control agent" and the number which is used for internal identification. Select the new break agent, and you will see some content in the sensor editor panel to the right of the agent list:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/new-agent-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/new-agent-step2.png" /></a>
+</p>
+<p>
+Apart from the <strong>hint panel</strong> which will try to make helpful suggestions while you are editing the sensor pattern, the sensor editor consists of a boolean operations panel which you will later need for defining complex patterns, and the <strong>pattern panel</strong> which currently only displays an empty <strong>elementary pattern</strong>. An elementary pattern consists of a pattern type, a relation and a value. A typical <strong>pattern type</strong> builds on a specific step property, and the pattern so defined is checked by the sensor by determining whether the step's property value stands in the specified <strong>relation</strong> to the pattern's <strong>value</strong>. The available relations are different for numeric and string-based step properties, meaning that the three parts of an elementary pattern should be defined from left to right.
+</p>
+<p>
+So let us begin to define our first elementary pattern. For the pattern type, we have the choice between a pattern referring to a step's label, and a pattern referring to a step's ascending numerical ID. For the moment, let us choose the first variant by clicking on the first chooser in the elementary pattern, and selecting the <strong>step label</strong> option:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/define-pattern-type.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/define-pattern-type.png" /></a>
+</p>
+<p>
+This pattern type gives us a choice between different string relations for the pattern. These range from string equality to pattern matching against a full-blown regular expression. Here, we will select the relation you will probably use most often: the <strong>contains</strong> relation provides a simple way to check whether a step relates to some Prolog predicate.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/define-pattern-relation.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/define-pattern-relation.png" /></a>
+</p>
+<p>
+As the last step, we click into the third chooser to define the pattern's value. Unlike for the other parts of the pattern, we are allowed to enter any string here. Let us enter the string "db_rule" in order for our sensor to match any step whose label contains that string.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/define-pattern-value.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/define-pattern-value.png" /></a>
+</p>
+<p>
+From now on, this newly defined break agent will cause leap operations to pause whenever an instance of <tt>db_rule/4</tt> is called. Note that this type of pattern is more general than that of a control point, as it matches all calls to the <tt>db_rule/4</tt> predicate, not only the ones associated with a given source code line.
+</p>
+<p>
+The predefined control agents of previous chapters had informative names in order to make them easier to identify on the message console. But the control agent we just defined still has the not very helpful name "Control Agent 4". In the last tutorial, you have already seen how control agents can be renamed via the context menu. Alternatively, Kahina offers the option of generating a name which represents the defined sensor pattern. This option is also accessible via the context menu, via a menu entry called <strong>Suggest Name</strong>:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/suggest-name.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/suggest-name.png" /></a>
+</p>
+<p>
+A click on this menu entry will replace the control agent's name with a concise, but full description of the sensor. Note that the suggested name "ca.contains(db_rule)" informs us about the type ("ca" stands for "caption"), the relation, and the value of the sensor's pattern, but it does not tell us anything about the agent's actuator. This is sensible because the agent type can be seen as part of the console messages anyway. However, you might still want to give your new control agent a different name, as the auto-generated names may be too long or appear too much like terms of a programming language.
+</p>
+<h3 id="DefiningComplexSensors">Defining Complex Sensors</h3>
+<p>
+Now that you know how to define elementary patterns for creating custom sensors, it is time to advance to the possibilities for defining more complex sensors. The most important mechanism offered by the current version of Kahina for this purpose consists in <strong>boolean combinations</strong> of elementary patterns. The sensor editor panel includes a simple, yet powerful editor for manipulating such boolean combinations.
+</p>
+<p>
+To get to know this editor, we first learn how to add additional elementary patterns. This is done by clicking on the <strong>add pattern button</strong> marked with a green plus sign next to an existing elementary pattern: 
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/add-simple-pattern-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/add-simple-pattern-step1.png" /></a>
+</p>
+<p>
+This will add a new pattern definition just below the one where you clicked the add pattern button. Note that to the left of the two definition lines, a node marked with a logical AND symbol connects the two squares protruding from the definition lines. This is the way in which the sensor editor displays the tree of boolean connectives over the elementary patterns. Kahina enforces that multiple elementary patterns are always connected by a tree structure, such that the contents of the sensor editor define a valid step pattern at any point. By default, elementary patterns are connected via conjunction.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/add-simple-pattern-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/add-simple-pattern-step2.png" /></a>
+</p>
+<p>
+Just like the single definition line of a newly created sensor, the new pattern definition line contains the three choosers for pattern type, relation, and value. In our example, we again choose the type <strong>step label</strong> and the relation <strong>contains</strong>. For the value, we choose <strong>db_word</strong>, so that your first complex pattern will match steps whose label contains both the string <em>db_rule</em> and the string <em>db_word</em>:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/add-simple-pattern-step3.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/add-simple-pattern-step3.png" /></a>
+</p>
+<p>
+This is of course not a very useful pattern. We want the pattern to match occurrences of both predicates, so what we need is a disjunction, not a conjunction, of the two elementary patterns we have defined. Changing the type of a binary connective is very simple and can be done with a few clicks. First, you need to select the connective whose type you want to change, which will cause the node and its outgoing edges to be highlighted in red:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/change-connective-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/change-connective-step1.png" /></a>
+</p>
+<p>
+In this state, you can change the type of the connective by clicking again on the selected node. The first click will transform the conjunction into the desired disjunction, the AND symbol is replaced by an OR symbol on the connective:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/change-connective-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/change-connective-step2.png" /></a>
+</p>
+<p>
+This modified pattern does exactly what we want. You may want to try clicking on the connective node again to shuffle through the other types of binary connectives available. Note that the implication occurs in two variants because of its non-commutative nature. After three clicks, you should be back at the AND operator, and one more click brings you back to the disjunction.
+</p>
+<p>
+To demonstrate the more advanced features for editing boolean combinations of elementary patterns, we need at least three elementary patterns. Let us add another elementary pattern, a constraint on the ID range of matching steps. Click on the plus symbol again to add another pattern, and select <strong>step id</strong> as the pattern type and <strong>&gt;=</strong> as the relation. With the value 500, the pattern will match steps whose internal ID is larger or equal to 500.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/third-pattern.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/third-pattern.png" /></a>
+</p>
+<p>
+Note that the new elementary pattern was connected to the existing disjunction by a new top-level conjunction. This is the predefined behavior because we assume that in most cases, you will add new elementary patterns in contexts where you want to impose additional constraints. We are considering to make this behavior user-configurable in future versions of Kahina.
+</p>
+<p>
+The sensor we have just built matches any step which involves one of the predicates <tt>db_rule/4</tt> and <tt>db_word/4</tt> after the 500th step. Such a breakpoint would be useful if you already know the first steps of a trace very well because you explored it multiple times, and you only want to leap through the occurrences of the two predicates in the later parts of the trace which you haven't seen so often.
+</p>
+<p>
+Assume that you nevertheless want to shift your attention back to <tt>db_rule</tt> and <tt>db_word</tt> occurrences early in the trace. In this situation like in many others, you will find it desirable to express negation in step patterns you define. This will be our first case for the <strong>boolean operations</strong> panel in the upper-left corner of the sensor editor. Negation is a simple use case because it is a unary operation for which only one argument needs to be specified. To negate the third elementary pattern, we first select the corresponding node in the boolean structure by clicking on the little square protruding from the respective line, causing it to be highlighted in red.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/negate-simple-pattern-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/negate-simple-pattern-step1.png" /></a>
+</p>
+<p>
+If you now click on the <strong>not button</strong> in the boolean operations panel, you will see that a new unary node is inserted above the elementary pattern, with the negation sign displayed on it. As you might expect, the resulting pattern matches all calls to <tt>db_rule</tt> or <tt>db_word</tt> with step IDs lower than 500.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/negate-simple-pattern-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/negate-simple-pattern-step2.png" /></a>
+</p>
+<p>
+We will now learn how to restructure a complex pattern by reshaping the tree of boolean connectives. Assume you have decided that the current bracketing of the three elementary conditions is wrong, and that you want the step ID constraint to only apply to the <tt>db_word</tt> calls. In this situation, you would want to reshape the tree by introducing a new binary operation which connects the second and the third elementary pattern. 
+</p>
+<p>
+Such binary connectives are introduced in infix style by selecting the first argument, clicking on the button for the desired operator in the boolean operations panel, and selecting the second argument. In our example, we first need to select the second elementary pattern:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/add-connective-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/add-connective-step1.png" /></a>
+</p>
+<p>
+If you now click on the <strong>and button</strong> in the boolean operations panel, the pattern editor assumes that you want to establish a conjunction between the selected node and a second node which still needs to be specified. The hint panel therefore prompts you to select a second child for the new conjunction node.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/add-connective-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/add-connective-step2.png" /></a>
+</p>
+<p>
+If you now click on the negation node, you will see that a new conjunction node is created which groups together the second elementary pattern and the negated third pattern. At the same time, the disjunction which connected the first two pattern before has vanished. The dangling first pattern replaces the deleted disjunction node as the upper child of the topmost conjunction node. In this way, we arrive at a valid pattern even after an operation which destroyed parts of the boolean expression.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/add-connective-step3.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/add-connective-step3.png" /></a>
+</p>
+<p>
+Note that the resulting pattern does not make much sense, since it requires the label of a matching step to contain both <tt>db_word</tt> and <tt>db_rule</tt> as substrings, which will not happen during the execution of any parse. To repair the pattern, you could e.g. click on the topmost connective to change it into a disjunction.
+</p>
+<p>
+But let us instead assume that in this situation, you decide that you are not interested in applications of <tt>db_word/4</tt> after all, but that you would still like to keep the constraint on the step number. The easiest way to make the corresponding edit is to remove the undesired elementary pattern by clicking on the <strong>remove button</strong> of that line, which is marked with a red cross:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/remove-simple-pattern-step1.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/remove-simple-pattern-step1.png" /></a>
+</p>
+<p>
+You will observe that the elementary pattern you removed will vanish, and that the boolean connective it was part of rearranges to form a valid pattern. In this case, the boolean AND node which connected the second and the first pattern is removed together with the deleted elementary pattern:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/QTypeTutorial6/remove-simple-pattern-step2.png.html"><img src="../raw-attachment/wiki/QTypeTutorial6/remove-simple-pattern-step2.png" /></a>
+</p>
+<p>
+As a rule, the pattern editor will always remove the lowest binary parent of the removed leaf node in the formula tree, and use the other child of the deleted parent to fill the gap in the grandparent connective. This behavior might take some time to get used to, but it makes the reshaping of boolean pattern combinations robust and fast.
+</p>
+<h3 id="FurtherSteps">Further Steps</h3>
+<p>
+You have now been introduced to all the essential components of Kahina for QType. What still remains open is the wide area of view layout customization and view options. An introduction to the concepts of Kahina's window manager and the principles of defining your own view and window arrangements will soon appear in the form of <a class="missing wiki">QTypeTutorial7?</a>. For information about the configuration possibilities of individual view components, the reader is referred to the corresponding chapters of the forthcoming handbook. 
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/QTypeTutorial6?action=diff&amp;version=40" title="Version 40 by ke">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-17T01%3A00%3A09%2B02%3A00&amp;precision=second" title="See timeline at Oct 17, 2012, 1:00:09 AM">6 years ago</a></span>
+            <span class="trac-print">Last modified on Oct 17, 2012, 1:00:09 AM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(30)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/new-project.png.html" title="View attachment">new-project.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/new-project.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="34194 bytes">33.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T09%3A33%3A04%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 9:33:04 AM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/add-connective-step1.png.html" title="View attachment">add-connective-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/add-connective-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="18153 bytes">17.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A52%3A55%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:52:55 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/add-connective-step2.png.html" title="View attachment">add-connective-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/add-connective-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="17918 bytes">17.5 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A53%3A31%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:53:31 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/add-connective-step3.png.html" title="View attachment">add-connective-step3.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/add-connective-step3.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="18123 bytes">17.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A53%3A42%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:53:42 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/add-simple-pattern-step1.png.html" title="View attachment">add-simple-pattern-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/add-simple-pattern-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="14940 bytes">14.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A53%3A51%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:53:51 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/add-simple-pattern-step2.png.html" title="View attachment">add-simple-pattern-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/add-simple-pattern-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="15919 bytes">15.5 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A54%3A00%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:54:00 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/add-simple-pattern-step3.png.html" title="View attachment">add-simple-pattern-step3.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/add-simple-pattern-step3.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="16290 bytes">15.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A54%3A09%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:54:09 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/agent-removal-step1.png.html" title="View attachment">agent-removal-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/agent-removal-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="13262 bytes">13.0 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A54%3A18%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:54:18 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/agent-removal-step2.png.html" title="View attachment">agent-removal-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/agent-removal-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="16356 bytes">16.0 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A54%3A29%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:54:29 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/agent-removal-step3.png.html" title="View attachment">agent-removal-step3.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/agent-removal-step3.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8449 bytes">8.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A54%3A40%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:54:40 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/change-connective-step1.png.html" title="View attachment">change-connective-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/change-connective-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="16483 bytes">16.1 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A54%3A48%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:54:48 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/change-connective-step2.png.html" title="View attachment">change-connective-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/change-connective-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="16472 bytes">16.1 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A54%3A56%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:54:56 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/define-pattern-relation.png.html" title="View attachment">define-pattern-relation.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/define-pattern-relation.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4981 bytes">4.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A55%3A05%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:55:05 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/define-pattern-type.png.html" title="View attachment">define-pattern-type.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/define-pattern-type.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="3109 bytes">3.0 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A55%3A14%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:55:14 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/load-profile-step1.png.html" title="View attachment">load-profile-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/load-profile-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8561 bytes">8.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A55%3A37%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:55:37 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/load-profile-step2.png.html" title="View attachment">load-profile-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/load-profile-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="16801 bytes">16.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A55%3A47%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:55:47 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/load-profile-step3.png.html" title="View attachment">load-profile-step3.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/load-profile-step3.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="13481 bytes">13.2 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A55%3A56%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:55:56 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/load-project.png.html" title="View attachment">load-project.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/load-project.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="25331 bytes">24.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A56%3A06%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:56:06 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/negate-simple-pattern-step1.png.html" title="View attachment">negate-simple-pattern-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/negate-simple-pattern-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="17992 bytes">17.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A56%3A15%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:56:15 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/negate-simple-pattern-step2.png.html" title="View attachment">negate-simple-pattern-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/negate-simple-pattern-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="18778 bytes">18.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A56%3A24%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:56:24 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/new-agent-step1.png.html" title="View attachment">new-agent-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/new-agent-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8773 bytes">8.6 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A56%3A33%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:56:33 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/new-agent-step2.png.html" title="View attachment">new-agent-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/new-agent-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="12021 bytes">11.7 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A56%3A42%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:56:42 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/remove-simple-pattern-step1.png.html" title="View attachment">remove-simple-pattern-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/remove-simple-pattern-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="18764 bytes">18.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A56%3A51%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:56:51 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/remove-simple-pattern-step2.png.html" title="View attachment">remove-simple-pattern-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/remove-simple-pattern-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="15805 bytes">15.4 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A57%3A01%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:57:01 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/save-profile-step1.png.html" title="View attachment">save-profile-step1.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/save-profile-step1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="9090 bytes">8.9 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A57%3A12%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:57:12 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/save-profile-step2.png.html" title="View attachment">save-profile-step2.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/save-profile-step2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="17233 bytes">16.8 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A57%3A21%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:57:21 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/save-project.png.html" title="View attachment">save-project.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/save-project.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="18732 bytes">18.3 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A57%3A40%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:57:40 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/suggest-name.png.html" title="View attachment">suggest-name.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/suggest-name.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="17943 bytes">17.5 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A57%3A50%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:57:50 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/third-pattern.png.html" title="View attachment">third-pattern.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/third-pattern.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="17944 bytes">17.5 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-15T14%3A57%3A58%2B02%3A00&amp;precision=second" title="See timeline at Oct 15, 2012, 2:57:58 PM">6 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/QTypeTutorial6/define-pattern-value.png.html" title="View attachment">define-pattern-value.png</a><a href="../raw-attachment/wiki/QTypeTutorial6/define-pattern-value.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="2154 bytes">2.1 KB</span>) -
+      added by <em>jd</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2012-10-16T14%3A11%3A14%2B02%3A00&amp;precision=second" title="See timeline at Oct 16, 2012, 2:11:14 PM">6 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/QTypeTutorial6/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/QTypeTutorial6?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

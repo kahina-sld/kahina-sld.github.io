@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      QTypeStatus – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/QTypeStatus?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="QTypeStatus.html" title="View QTypeStatus">QTypeStatus</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/QTypeStatus?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h2 id="KahinaforQTypestatuspage">Kahina for QType status page</h2>
+<p>
+A Kahina-based graphical debugger is currently being developed for the grammar development system QType (see <a class="ext-link" href="http://user.phil-fak.uni-duesseldorf.de/~rumpf/talks/index_talks.htm"><span class="icon">​</span>http://user.phil-fak.uni-duesseldorf.de/~rumpf/talks/index_talks.htm</a> for some talks about it). This page is for keeping track of the progress of certain individual features. It is not meant to be a complete overview of all features. Since QType is not publicly available, this page is presumably of little interest to the general public.
+</p>
+<h3 id="Grammar-basedsourcecodeeditor">Grammar-based source code editor</h3>
+<p>
+Done.
+</p>
+<p>
+Kahina's source code editor highlights lines in source code files for corresponding execution steps. At present, most of the steps highlight corresponding lines in QType's Prolog source code. Steps corresponding to the lookup of lexical entries, lexical rules, grammar rules, macros, constraints and examples will in the future be associated with lines in the QType grammar (QTG) file that is being compiled or used for parsing.
+</p>
+<table class="wiki">
+<tr><td> </td><td>Lexical entries</td><td>Lexical rules</td><td>Grammar rules</td><td>Macros<strong></td><td>Constraints</td><td>Examples
+</td></tr><tr><td>QTG parser stores line numbers with uncompiled entities</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔
+</td></tr><tr><td>Lookup calls of uncompiled entities are being traced as Kahina steps associated with line number</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔
+</td></tr><tr><td>Compiler stores line numbers with compiled entities</td><td>✔</td><td>in last argument of db:lexrule/4</td><td>✔</td><td>✔</td><td>✔</strong><strong></td><td>N/A</strong>*
+</td></tr><tr><td>Lookup calls of compiled entities are being traced as Kahina steps associated with line number</td><td>in lexrule:apply_lexrules/4 and in parser:lc/5</td><td>in lexrule:apply_lexrules/4<strong></strong>*</td><td>in parser:lc_complete/8</td><td>in descr:save_call_macro/7 etc.</td><td>✔<strong></strong></td><td>N/A
+</td></tr><tr><td>Lookup steps tested in practice and deemed useful in their context</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔
+</td></tr></table>
+<p>
+<strong> Synonyms: sorts, relational constraints
+</strong></p>
+<p>
+<strong>* Examples are not compiled, so there is just grammar:lexample/2, no separate database predicate, grammar:db_example/_.
+</strong></p>
+<p>
+<strong></strong> All constraints for each type are compiled to a single bunch of Prolog code; we introduced descr:start_constraint/1 calls into this bunch that mark the beginning of each new constraint and carry the line number information.
+</p>
+<p>
+<strong></strong>* Not visible during parsing, the new grammar:db_word/4 entries created by applying lexical rules still carry the line number of the original word.
+</p>
+<h3 id="Selectionofpredicatestotraceasstepslayering">Selection of predicates to trace as steps, layering</h3>
+<p>
+Done.
+</p>
+<p>
+Initial selection of predicates (automatically generated from QType source code): those with at least one clause that contains a msg/3 call. Minus some very frequent and not very informative ones, plus some important ones (e.g. lookup calls for grammar entities, see above, and all the predicates that make up the core of the LC parser).
+</p>
+<p>
+Layering (defined in org.kahina.qtype.data.tree.QTypeLayerDecider): Everything is on level 1, except for selected cornerstones that are on level 0 unless they are already dominated in the call tree by a step with layer &gt; 0. These are:
+</p>
+<ul><li>steps whose predicate has arity 0 (QTypes's compile process is coarsely divided into such predicates)
+</li><li>steps whose predicates is of arity &gt; 0 and whose functor is one of compile_grammar, lc, lc_complete, lc_list, lexentry_existence, tokenize_and_parse_the_external_syntax
+</li></ul><h3 id="Featurestructuredisplay">Feature structure display</h3>
+<p>
+Done.
+</p>
+<ul><li>understand QType's internal feature structure representation ✔
+</li><li>write predicates to generate Grisu strings from it ✔
+</li><li>test and debug them ✔
+</li><li>extend Kahina's data structures and view components for Prolog terms to display FSs ✔
+</li><li>transmit Grisu strings to GUI ✔
+</li></ul><h3 id="ChartdisplayforLeft-CornerParsing">Chart display for Left-Corner Parsing</h3>
+<p>
+Done.
+ 
+</p>
+<ul><li>make the chart display more freely configurable ✔
+</li><li>specialized variant for Left-Corner Parsing instead of Bottom-Up-Parsing ✔
+</li><li>support export of charts for purposes of analysis and comparison ✔
+</li></ul><h3 id="Reworkingofcontrolflowdisplay">Reworking of control flow display</h3>
+<p>
+Done.
+</p>
+<ul><li>optimization of user interface and display options for QType-specific control flow patterns  ✔
+</li><li>experiment with more dynamic ways of handling the layering, aiming towards increased intuitiveness  ✔
+</li></ul><h3 id="UIworkflowintegration">UI/workflow integration</h3>
+<p>
+Done.
+</p>
+<ul><li>The new commands trace/notrace allow to switch graphical tracing with Kahina on/off from the QType prompt. ✔
+</li><li>As long as tracing isn't used, there should be no dependency on Kahina: <a class="ext-link" href="../ticket/75.html"><span class="icon">​</span>http://kahina.org/trac/ticket/75</a> ✔
+</li><li>possibility to start Kahina from QType (both from prompt and on startup via command line) without tracing a specific command ✔
+</li><li>possibility to start compilation and left-corner parsing from GUI ✔
+</li><li>define QType-specific feedback information for the message console ✔
+</li><li>context-dependent control components for QType ✔
+</li></ul><h3 id="Architectureextensions">Architecture extensions</h3>
+<p>
+Done.
+</p>
+<ul><li>Exposure of interfaces to provide more flexibility and allow for more behavior ✔
+</li><li>Harmonizing and systematizing the central interfaces for more maintainability ✔
+</li></ul><h3 id="Extensionstothecontrolagentsystem">Extensions to the control agent system</h3>
+<p>
+Done.
+</p>
+<ul><li>Definition and administration of control agent profiles.  ✔
+</li><li>Predefined QType-specific control agents.  ✔
+</li></ul><h3 id="Documentation">Documentation</h3>
+<p>
+In Progress.
+</p>
+<ul><li>Writing a tutorial for easy access.  ✔
+</li><li>Documentation of the adapted view components.
+</li><li>User's manual documenting the entire resulting debugging system.
+</li></ul></div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/QTypeStatus?action=diff&amp;version=42" title="Version 42 by jd">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2013-05-18T23%3A34%3A09%2B02%3A00&amp;precision=second" title="See timeline at May 18, 2013, 11:34:09 PM">6 years ago</a></span>
+            <span class="trac-print">Last modified on May 18, 2013, 11:34:09 PM</span>
+          </div>
+        
+        
+      </div>
+      
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/QTypeStatus?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

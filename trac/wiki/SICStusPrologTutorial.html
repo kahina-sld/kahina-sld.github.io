@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      SICStusPrologTutorial – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/SICStusPrologTutorial?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="SICStusPrologTutorial.html" title="View SICStusPrologTutorial">SICStusPrologTutorial</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/SICStusPrologTutorial?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="KahinaforSICStusPrologtutorial">Kahina for SICStus Prolog tutorial</h1>
+<p>
+Kahina for SICStus Prolog is a graphical tracer for <a class="ext-link" href="http://www.sics.se/isl/sicstuswww/site/index.html"><span class="icon">​</span>SICStus Prolog</a> 3 (SP3). It is a tool for visualizing and better understanding the execution of Prolog programs. What sets Kahina apart from other graphical tracers is its open, extensible architecture and the possibility to store and visualize the whole execution across backtracking, not only the currently active branch, providing valuable insights into the functioning of programs that use backtracking extensively.
+</p>
+<p>
+This tutorial will walk you through the essential functionality for graphically tracing a small Prolog program. Advanced functionality, such as breakpoints, execution profiling, or customizing the GUI, are not part of this tutorial. For them, please refer to the corresponding sections of the manual.
+</p>
+<h2 id="FirstSteps">First Steps</h2>
+<p>
+After <a class="wiki" href="InstallSICStusProlog.html">installing Kahina for SICStus Prolog</a>, start an SP3 process (most commonly done by typing <tt>sicstus</tt> or <tt>sicstus3</tt> on the command line).
+</p>
+<p>
+First, make the <tt>ktrace</tt> module available by issuing the following query. If you want to use the graphical debugger frequently, you might want to add this line to your <tt>.sicstusrc</tt> resp. <tt>.sicstus.ini</tt> so the <tt>ktrace</tt> module is made available automatically on startup. In both cases, you need to adapt the path according to the location of your Kahina installation:
+</p>
+<pre class="wiki">| ?- use_module('/home/ke/opt/kahina/kahinasicstus/ktrace').
+</pre><p>
+Now is the time to consult the program that we wish to trace. For this tutorial, we use the <tt>example.pl</tt> program shipped with Kahina (again, adapt the path):
+</p>
+<pre class="wiki">| ?- ['/home/ke/opt/kahina/kahinasicstus/examples/example.pl'].
+</pre><p>
+This is what the example program looks like. It is not particularly useful in itself, it just serves for illustration:
+</p>
+<pre class="wiki">a(X) :-
+  b(X),
+  c(X).
+
+b(1).
+b(2).
+b(3).
+
+c(1) :-
+  false.
+c(2) :-
+  d.
+c(3) :-
+  d.
+
+d.
+</pre><p>
+Now enable tracing with Kahina like this:
+</p>
+<pre class="wiki">| ?- ktrace.
+</pre><p>
+To avoid weird interactions, this will first disable all breakpoints that may be enabled. Then, a special breakpoint is created which catches almost everything and executes special code to call Kahina. On asking a query, Kahina's GUI will now appear and allow you to trace the program graphically. So let's ask the following query:
+</p>
+<pre class="wiki">| ?- a(X).
+</pre><h2 id="TheGUI">The GUI</h2>
+<p>
+You will immediately notice that the GUI has many different components, called <strong>views</strong>. The most central view is the control view:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/ControlPanel/ControlPanel.png.html"><img src="../raw-attachment/wiki/ControlPanel/ControlPanel.png" /></a>
+</p>
+<p>
+The control view contains the buttons that are used to control the execution of the program being traced, step by step.
+</p>
+<table class="wiki">
+<tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/creep.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/creep.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/creep.png" title="source:trunk/src/org/kahina/core/gui/icons/creep.png" /></a></td><td><strong>Creep:</strong> The smallest possible step. If you keep clicking the creep button, you step through the execution of a program in all available detail. Depending on the state of the program, creep leeds to the creation of a new node with status <strong>called</strong> or <strong>redone</strong>, or to an existing node changing its status to <strong>failed</strong>, <strong>exited nondeterministically</strong>, <strong>exited deterministically</strong> or <strong>exception</strong>. In both cases, this node is automatically selected.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/roundskip.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/roundskip.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/roundskip.png" title="source:trunk/src/org/kahina/core/gui/icons/roundskip.png" /></a></td><td><strong>Auto-complete:</strong> Makes sense when the currently selected node has status <strong>called</strong> or <strong>redone</strong>: auto-complete will fast-forward, i.e. execution will keep creeping, until that node changes its status, i.e. its execution completes with success, failure or an exception.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/pause.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/pause.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/pause.png" title="source:trunk/src/org/kahina/core/gui/icons/pause.png" /></a></td><td><strong>Pause:</strong> Clicking this button interrupts a running auto-complete, i.e. the fast-forward stops, but the step being autocompleted is remembered. When pause is clicked again, auto-complete of this step is resumed.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/skip.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/skip.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/skip.png" title="source:trunk/src/org/kahina/core/gui/icons/skip.png" /></a></td><td><strong>Skip:</strong> Like auto-complete, but done on the Prolog side, i.e. the underlying Prolog debugger is told to skip execution of the step whose <strong>call</strong> or <strong>redo</strong> port was just seen. This has the advantage of being much more efficient since substeps are not transmitted to Kahina. This is of course also a disadvantage: the descendant steps of the skipped step are never shown, so use this with care. Skip cannot be paused. Also, it is only possible to skip the most recently called or redone step, not arbitrarily selected steps.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/reject.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/reject.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/reject.png" title="source:trunk/src/org/kahina/core/gui/icons/reject.png" /></a></td><td><strong>Fail:</strong> Forces the step just called or redone to fail without execution. Can be useful to test parts of a program that would not normally be executed.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/leap.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/leap.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/leap.png" title="source:trunk/src/org/kahina/core/gui/icons/leap.png" /></a></td><td><strong>Leap:</strong> Fast-forwards until creep, pause or stop is clicked. Can be useful for letting (large parts of) a program execute completely to inspect the execution later.
+</td></tr><tr><td><a style="padding:0; border:none" href="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/stop.png"><img src="http://kahina.org/trac/browser/trunk/src/org/kahina/core/gui/icons/stop.png?format=raw" alt="source:trunk/src/org/kahina/core/gui/icons/stop.png" title="source:trunk/src/org/kahina/core/gui/icons/stop.png" /></a></td><td><strong>Stop:</strong> Stops auto-completing or leaping. The difference to pause is that auto-completing cannot be resumed afterwards.
+</td></tr></table>
+<p>
+For the following, it suffices to keep clicking the creep button to go through all the steps one by one. But feel free to try the other buttons out for yourself!
+</p>
+<p>
+The <strong>Control flow tree</strong> view is also very central, second only to the control view, since it always shows the whole program execution so far. More precisely, it shows a tree visualization of that execution. The execution of a program is broken down into many steps, visualized by little boxes that are nodes in the tree. Steps can be <strong>selected</strong> by clicking on the nodes in the tree view. The other two views depend on that selection, they always show information pertaining to the currently selected step. They are: the <strong>bindings</strong> view, which shows Prolog variable bindings, and the <strong>codeLocation</strong> view, which shows the Prolog source code and highlights the relevant line for each step....
+</p>
+<h2 id="Tracing">Tracing</h2>
+<p>
+Let's creep through the execution of our <tt>a(X)</tt> query and see what each view shows at each step:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png" /></a> 
+</p>
+<p>
+The control flow tree begins with a <strong>virtual root</strong> labeled <tt>0 [query]</tt> that represents the query the user made. Its first child appears immediately, representing a call to the <tt>a/1</tt> predicate. It bears the ID of the first <strong>step</strong> of the execution. In Prolog debugger terminology, a step is called an <strong>invocation box</strong>. The node is further labeled with the goal that is being called, in this case <tt>a(_430)</tt>. If the goal was longer, it might be truncated in the tree view, so you might want to refer to the other views. The node is white, meaning that it has been called but not exited or failed yet, i.e. execution of step 1 is currently under way. Finally note the yellow border of the node, which indicates that it is the currently <strong>selected</strong> node. It is the data associated with the currently selected node that are displayed in the other views (that is, in <strong>dynamic views</strong> – <strong>snapshot views</strong> are different, but we won't turn to them until much later is this manual). Any node can be selected at any time by clicking on it. Also, whenever a node is newly created or changes its status (we will see a what a status change is in a second) during the execution of a program, it is automatically selected, as has just happened with this node.
+</p>
+<p>
+No codeLocation is shown at this point yet because although we have a goal <tt>a(X)</tt>, we haven't chosen a clause yet. It would arguably make sense to highlight the first clause of <tt>a/1</tt>. We're working on it.
+</p>
+<p>
+Unfortunately, we cannot currently display query variables either, so we have an empty bindings view although it should say <tt>X _463</tt>. But it's easy enough at this point to see what's going on. 
+</p>
+<p>
+We click on the <strong>creep</strong> button and get to the next state:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2.png" /></a> 
+</p>
+<p>
+The <tt>b/1</tt> predicate is called from within the only clause of the <tt>a/1</tt> predicate, which creates step <tt>2</tt>, which creates a new node in the control flow tree with that ID, which is automatically selected. Note that it is <strong>below</strong> the previous node because it was created after it, and <strong>indented</strong> to the right wrt. the previous node because it is the <tt>a/1</tt> clause in which <tt>b/1</tt> is called.
+</p>
+<p>
+We are now in the first and only <tt>a/1</tt> clause and are calling the first subgoal, <tt>b(X)</tt>. This goal is highlighted in the codeLocation view.
+</p>
+<p>
+There is one variable name in this goal, <tt>X</tt>. Within the <tt>a/1</tt> clause, <tt>X</tt> refers to a variable which is not bound at this point, so the bindings view displays a variable identifier like <tt>_463</tt>. Note that this value is in the <strong>Before</strong> column, as in “before executing the present goal, this is the state of the variable referred to by <tt>X</tt>”. If the goal binds the variable and succeeds, we will later see the value in the <strong>After</strong> column.
+</p>
+<p>
+Let's creep on:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2b.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2b.png" /></a> 
+</p>
+<p>
+The first <tt>b/1</tt> clause succeeds immediately with the solution <tt>X=1</tt> (which we see in the bindings view), thus the corresponding step reaches an <strong>exit</strong> port and we see the first <strong>status change</strong>: the status of the corresponding node changes from <strong>called</strong> to <strong>exited nondeterministically</strong> – nondeterministically because <tt>b/1</tt> has further clauses and thus there may be further solutions. Statuses are by default represented by node colors. In this case, the node changes from white to light green.     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-3.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-3.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-3.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-3.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-3.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-3.png" /></a> 
+</p>
+<p>
+The <tt>a/1</tt> clause has one more subgoal that remains to be called, so the <tt>b/1</tt> node gets a <strong>sibling</strong> in the <strong>call tree</strong>, visualized by the fact that both are indented at the same level and connected with lines to the <strong>parent</strong> <tt>a/1</tt> node in the same way. Note how the configuration of the three nodes mirrors the formatting of the <tt>a/1</tt> clause in the source code, making the relations between goals and subgoals clear. The new node is of course white and selected because it has just been called. The variable <tt>X</tt>, and thus the argument of the <tt>b/1</tt> goal, is already bound to <tt>1</tt>, as can be seen in the node label and in the bindings view. So there is only one <tt>c/1</tt> clause that can be chosen here.     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-4.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-4.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-4.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-4.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-4.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-4.png" /></a> 
+</p>
+<p>
+And it has <tt>false</tt> as a subgoal! This goal does not contain any variables, so the bindings view is empty.  
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-4b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-4b.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-4.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-4.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-4.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-4.png" /></a> 
+</p>
+<p>
+<tt>false</tt> fails immediately, of course. The corresponding node changes its status to <strong>failed</strong> and turns red.     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-3b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-3b.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-3.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-3.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-3.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-3.png" /></a> 
+</p>
+<p>
+So does the parent. Here we see control flow go back up in the call tree, causing a node recreated earlier to be selected again. Although execution of the goal <tt>c(X)</tt> (with <tt>X=1</tt>) has completed, the <strong>After</strong> column in the bindings view is empty since the goal has failed and therefore does not contribute any variable bindings.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2c.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2c.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2c.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2c.png" /></a> 
+</p>
+<p>
+So this attempt to satisfy the goal <tt>a(X)</tt> has failed, but step <tt>2</tt> is still an open choicepoint, visualized by the light green node, to which Prolog now automatically backtracks. At this moment, the visualization of the execution, which until now has been a straight line of steps (albeit indented to reflect the structure of the call tree), forks! Step <tt>2</tt> reaches the <strong>redo</strong> port, i.e. it is executed anew, so to speak. This is visualized by a new node with step ID 2 which is created. Its status is <strong>redone</strong>, the color is orange. It is placed next to the first node of step <tt>2</tt>, as a sibling in the <strong>search tree</strong>. We see that the tree view visualizes not one, but two trees: the call tree we already know, it is visualized by indentation and lines, the "Windows Explorer" style tree visualization. The search tree is visualized by a larger structure, where sibling nodes are placed next to each other and below their parents (the parent is the <tt>1</tt> node in this case). This is the most common style for visualizing trees e.g. in computer science and linguistics, except that by default Kahina does not draw the edges of the search tree. The search tree primarily serves to visualize backtracking – where it branches, backtracking has taken place. It is one of the key features setting Kahina apart from simpler GUI tracers that only show the current callstack. Finally, note that the first node of step <tt>2</tt> has become dark green, which stands for the status <strong>exited deterministically</strong>. While this is not yet really true for step <tt>2</tt> (<tt>b/1</tt> has one more clause), the design decision that only the most recent node of a step should indicate nondeterminacy was taken to facilitate getting a quick overview of active choicepoints.
+</p>
+<p>
+In the bindings view, the <strong>Before</strong> column does not differ from what we saw when we first called this goal, because when we redo a goal, all the bindings its previous execution contributed are undone and we start from square one. However, the <strong>After</strong> column still has the value from the previous execution of step <tt>2</tt> which we already saw when we hit its exit port. This value may change during re-execution and is merely displayed as a reminder at the redo port.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2d.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2d.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2d.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2d.png" /></a> 
+</p>
+<p>
+The second clause of <tt>b/1</tt> succeeds immediately, step <tt>2</tt> thus reaches the exit port and the new node turns light green – step <tt>2</tt> is still an active choicepoint, and its newest node as taken over the burden of marking that.
+</p>
+<p>
+And we see that we have a new binding for <tt>X</tt>: <tt>2</tt>.
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-5.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-5.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-5.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-5.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-5.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-5.png" /></a> 
+</p>
+<p>
+Again, <tt>c/1</tt> is called with the argument already bound by <tt>b/1</tt>, this time to <tt>2</tt>. Note how this creates a new step (<tt>5</tt>) rather than a new node for the old step <tt>3</tt> since that step came <em>after</em> the choicepoint and is part of a branch that has failed. We are now in the second clause of <tt>c/1</tt>, which does not fail, ...     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-6.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-6.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-6.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-6.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-6.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-6.png" /></a> 
+</p>
+<p>
+...but just calls <tt>d/0</tt>...     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-6b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-6b.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-6.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-6.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-6.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-6.png" /></a> 
+</p>
+<p>
+...which succeeds, ...     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-5b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-5b.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-5.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-5.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-5b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-5b.png" /></a> 
+</p>
+<p>
+...so does the parent step (note that in this case, there is a variable binding, but it hasn't changed during execution of the goal)...  
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1b.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png" /></a> 
+</p>
+<p>
+...and, for the first time, step <tt>1</tt>. Since its substep <tt>2</tt> is still an active choicepoint, <tt>1</tt> is also marked as exited nonderterministically since redoing step <tt>2</tt> would also mean to redo step <tt>1</tt>. At this point, the solution found for the query, <tt>X=2</tt>, is presented at the Prolog prompt, and you can either accept that solution by hitting Return, or let Prolog search for another one, by entering a semicolon (<tt>;</tt>). Let's do the latter...     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1c.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1c.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png" /></a> 
+</p>
+<p>
+...causing Prolog to go through the redo ports of all ancestors of the most recent active choicepoint (in this case, there is just one ancestor), causing Kahina to create new orange nodes along the way...     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2e.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2e.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2e.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2e.png" /></a> 
+</p>
+<p>
+...until the choicepoint is reached. We are now in the last clause of <tt>b/1</tt>, which binds <tt>X</tt> to <tt>3</tt>.     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2f.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2f.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2f.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2f.png" /></a> 
+</p>
+<p>
+With that, step <tt>2</tt> has run out of choice points and the corresponding node is marked as exited deterministically right away.     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-7.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-7.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-7.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-7.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-7.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-7.png" /></a> 
+</p>
+<p>
+This is a binding that <tt>c/1</tt> accepts in the same way as it did <tt>X=2</tt>, so the rest is basically a repetition of what we already saw...     
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-8.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-8.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-8.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-8.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-8.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-8.png" /></a> 
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-8b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-8b.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-8.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-8.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-8.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-8.png" /></a> 
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-7b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-7b.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-7.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-7.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-7b.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-7b.png" /></a> 
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1d.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1d.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png" /></a> <a style="padding:0; border:none" href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png.html"><img src="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png" /></a> 
+</p>
+<p>
+...only that since there are now no active choicepoints among its call tree descendants, step <tt>1</tt>, too, exits deterministically. All two solutions have been found, no further choicepoints are open. Control returns to the Prolog prompt again, for a new query.     
+</p>
+<h2 id="Abortingatrace">Aborting a trace</h2>
+<p>
+You can abort the tracing process at any time by just closing Kahina's GUI.
+</p>
+<h2 id="Disablinggraphicaltracing">Disabling graphical tracing</h2>
+<p>
+To continue using Prolog without graphical tracing, issue:
+</p>
+<pre class="wiki">| ?- noktrace.
+</pre></div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/SICStusPrologTutorial?action=diff&amp;version=31" title="Version 31 by ke: adapted icon paths to new repository structure">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-07-17T23%3A26%3A29%2B02%3A00&amp;precision=second" title="See timeline at Jul 17, 2011, 11:26:29 PM">8 years ago</a></span>
+            <span class="trac-print">Last modified on Jul 17, 2011, 11:26:29 PM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(45)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png.html" title="View attachment">Screenshot-bindings-1.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4112 bytes">4.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A38%3A26%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:38:26 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2.png.html" title="View attachment">Screenshot-bindings-2.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4702 bytes">4.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A38%3A39%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:38:39 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2b.png.html" title="View attachment">Screenshot-bindings-2b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4745 bytes">4.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A38%3A46%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:38:46 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2c.png.html" title="View attachment">Screenshot-bindings-2c.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2c.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4745 bytes">4.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A38%3A54%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:38:54 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2d.png.html" title="View attachment">Screenshot-bindings-2d.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2d.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4819 bytes">4.7 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A39%3A00%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:39:00 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2e.png.html" title="View attachment">Screenshot-bindings-2e.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2e.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4827 bytes">4.7 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A39%3A09%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:39:09 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2f.png.html" title="View attachment">Screenshot-bindings-2f.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-2f.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4741 bytes">4.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A39%3A20%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:39:20 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-3.png.html" title="View attachment">Screenshot-bindings-3.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-3.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4379 bytes">4.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A39%3A27%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:39:27 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-4.png.html" title="View attachment">Screenshot-bindings-4.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-4.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4112 bytes">4.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A39%3A34%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:39:34 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-5.png.html" title="View attachment">Screenshot-bindings-5.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-5.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4462 bytes">4.4 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A39%3A39%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:39:39 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-5b.png.html" title="View attachment">Screenshot-bindings-5b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-5b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4496 bytes">4.4 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A39%3A45%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:39:45 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-6.png.html" title="View attachment">Screenshot-bindings-6.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-6.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4112 bytes">4.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A39%3A56%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:39:56 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-7.png.html" title="View attachment">Screenshot-bindings-7.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-7.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4470 bytes">4.4 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A01%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:01 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-7b.png.html" title="View attachment">Screenshot-bindings-7b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-7b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4502 bytes">4.4 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A13%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:13 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-8.png.html" title="View attachment">Screenshot-bindings-8.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-bindings-8.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4120 bytes">4.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A18%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:18 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png.html" title="View attachment">Screenshot-codeLocation-2.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7198 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A25%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:25 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-3.png.html" title="View attachment">Screenshot-codeLocation-3.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-3.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7212 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A37%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:37 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-4.png.html" title="View attachment">Screenshot-codeLocation-4.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-4.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7145 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A45%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:45 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-5.png.html" title="View attachment">Screenshot-codeLocation-5.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-5.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7212 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A49%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:49 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-6.png.html" title="View attachment">Screenshot-codeLocation-6.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-6.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7161 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A53%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:53 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-7.png.html" title="View attachment">Screenshot-codeLocation-7.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-7.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7213 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A40%3A59%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:40:59 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-8.png.html" title="View attachment">Screenshot-codeLocation-8.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-8.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7165 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T17%3A41%3A05%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 5:41:05 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1.png.html" title="View attachment">Screenshot-Control flow tree-1.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="5644 bytes">5.5 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A17%3A47%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:17:47 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png.html" title="View attachment">Screenshot-codeLocation-1.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-codeLocation-1.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4151 bytes">4.1 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A25%3A36%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:25:36 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1b.png.html" title="View attachment">Screenshot-Control flow tree-1b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8078 bytes">7.9 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A42%3A41%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:42:41 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1c.png.html" title="View attachment">Screenshot-Control flow tree-1c.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1c.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8528 bytes">8.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A42%3A48%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:42:48 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1d.png.html" title="View attachment">Screenshot-Control flow tree-1d.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-1d.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8464 bytes">8.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A42%3A58%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:42:58 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2.png.html" title="View attachment">Screenshot-Control flow tree-2.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="6004 bytes">5.9 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A03%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:03 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2b.png.html" title="View attachment">Screenshot-Control flow tree-2b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="6372 bytes">6.2 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A09%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:09 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2c.png.html" title="View attachment">Screenshot-Control flow tree-2c.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2c.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7757 bytes">7.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A14%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:14 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2d.png.html" title="View attachment">Screenshot-Control flow tree-2d.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2d.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7833 bytes">7.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A18%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:18 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2e.png.html" title="View attachment">Screenshot-Control flow tree-2e.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2e.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8804 bytes">8.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A23%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:23 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2f.png.html" title="View attachment">Screenshot-Control flow tree-2f.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-2f.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8578 bytes">8.4 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A27%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:27 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-3.png.html" title="View attachment">Screenshot-Control flow tree-3.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-3.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="6749 bytes">6.6 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A32%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:32 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-3b.png.html" title="View attachment">Screenshot-Control flow tree-3b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-3b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7204 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A37%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:37 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-4.png.html" title="View attachment">Screenshot-Control flow tree-4.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-4.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7179 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A43%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:43 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-4b.png.html" title="View attachment">Screenshot-Control flow tree-4b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-4b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="7192 bytes">7.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A49%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:49 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-5.png.html" title="View attachment">Screenshot-Control flow tree-5.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-5.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8286 bytes">8.1 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A43%3A56%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:43:56 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-5b.png.html" title="View attachment">Screenshot-Control flow tree-5b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-5b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8471 bytes">8.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A44%3A06%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:44:06 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-6.png.html" title="View attachment">Screenshot-Control flow tree-6.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-6.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8531 bytes">8.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A44%3A12%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:44:12 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-6b.png.html" title="View attachment">Screenshot-Control flow tree-6b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-6b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8527 bytes">8.3 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A44%3A17%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:44:17 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-7.png.html" title="View attachment">Screenshot-Control flow tree-7.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-7.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8976 bytes">8.8 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A44%3A22%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:44:22 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-8.png.html" title="View attachment">Screenshot-Control flow tree-8.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-8.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="9225 bytes">9.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A44%3A30%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:44:30 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-8b.png.html" title="View attachment">Screenshot-Control flow tree-8b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-8b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="9168 bytes">9.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A44%3A35%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:44:35 PM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-7b.png.html" title="View attachment">Screenshot-Control flow tree-7b.png</a><a href="../raw-attachment/wiki/SICStusPrologTutorial/Screenshot-Control&#32;flow&#32;tree-7b.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="8926 bytes">8.7 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-06-04T18%3A46%3A12%2B02%3A00&amp;precision=second" title="See timeline at Jun 4, 2011, 6:46:12 PM">8 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/SICStusPrologTutorial/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/SICStusPrologTutorial?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -20,7 +20,7 @@
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="topNav"><a name="navbar_top">
 <!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+</a><a href="TreeAutomaton.html#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -35,11 +35,11 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../../org/kahina/core/data/agent/patterns/PatternFormatException.html" title="class in org.kahina.core.data.agent.patterns"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomatonRule.html" title="class in org.kahina.core.data.agent.patterns"><span class="strong">Next Class</span></a></li>
+<li><a href="PatternFormatException.html" title="class in org.kahina.core.data.agent.patterns"><span class="strong">Prev Class</span></a></li>
+<li><a href="TreeAutomatonRule.html" title="class in org.kahina.core.data.agent.patterns"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../../../index.html?org/kahina/core/data/agent/patterns/TreeAutomaton.html" target="_top">Frames</a></li>
+<li><a href="http://kahina.org/javadoc/index.html?org/kahina/core/data/agent/patterns/TreeAutomaton.html" target="_top">Frames</a></li>
 <li><a href="TreeAutomaton.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -62,14 +62,14 @@
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="TreeAutomaton.html#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="TreeAutomaton.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="TreeAutomaton.html#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="TreeAutomaton.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_top">
@@ -102,10 +102,10 @@ extends java.lang.Object</pre>
  This special kind of bottom-up tree automaton operates on a tree it is monitoring.
  It does not only annotate a static tree to determine whether it matches the encoded pattern,
  but is also able to adapt to changes to the tree without recalculating everything,
- if the component controlling changes in the tree structure (usually a subclass of <a href="../../../../../../org/kahina/core/behavior/KahinaTreeBehavior.html" title="class in org.kahina.core.behavior"><code>KahinaTreeBehavior</code></a>) announces the changes.
+ if the component controlling changes in the tree structure (usually a subclass of <a href="../../../behavior/KahinaTreeBehavior.html" title="class in org.kahina.core.behavior"><code>KahinaTreeBehavior</code></a>) announces the changes.
  <p>
- A tree automaton is usually compiled from a <a href="../../../../../../org/kahina/core/data/agent/KahinaBreakpoint.html" title="class in org.kahina.core.data.agent"><code>KahinaBreakpoint</code></a>, which contains
- If the associated breakpoint is active, the automaton will dispatch a <a href="../../../../../../org/kahina/core/data/agent/patterns/KahinaTreeMatchEvent.html" title="class in org.kahina.core.data.agent.patterns"><code>KahinaTreeMatchEvent</code></a> to its <code>KahinaController</code> as soon as the encoded pattern is found in the tree it monitors.</div>
+ A tree automaton is usually compiled from a <a href="../KahinaBreakpoint.html" title="class in org.kahina.core.data.agent"><code>KahinaBreakpoint</code></a>, which contains
+ If the associated breakpoint is active, the automaton will dispatch a <a href="KahinaTreeMatchEvent.html" title="class in org.kahina.core.data.agent.patterns"><code>KahinaTreeMatchEvent</code></a> to its <code>KahinaController</code> as soon as the encoded pattern is found in the tree it monitors.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>jd</dd></dl>
 </li>
@@ -126,7 +126,7 @@ extends java.lang.Object</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#TreeAutomaton(org.kahina.core.data.agent.KahinaBreakpoint)">TreeAutomaton</a></strong>(<a href="../../../../../../org/kahina/core/data/agent/KahinaBreakpoint.html" title="class in org.kahina.core.data.agent">KahinaBreakpoint</a>&nbsp;bp)</code>
+<td class="colOne"><code><strong><a href="TreeAutomaton.html#TreeAutomaton(org.kahina.core.data.agent.KahinaBreakpoint)">TreeAutomaton</a></strong>(<a href="../KahinaBreakpoint.html" title="class in org.kahina.core.data.agent">KahinaBreakpoint</a>&nbsp;bp)</code>
 <div class="block">Class constructor specifying the breakpoint to be associated with the new automaton.</div>
 </td>
 </tr>
@@ -147,71 +147,71 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#addAcceptingState(int)">addAcceptingState</a></strong>(int&nbsp;state)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#addAcceptingState(int)">addAcceptingState</a></strong>(int&nbsp;state)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#addRule(org.kahina.core.data.agent.patterns.TreeAutomatonRule)">addRule</a></strong>(<a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomatonRule.html" title="class in org.kahina.core.data.agent.patterns">TreeAutomatonRule</a>&nbsp;rule)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#addRule(org.kahina.core.data.agent.patterns.TreeAutomatonRule)">addRule</a></strong>(<a href="TreeAutomatonRule.html" title="class in org.kahina.core.data.agent.patterns">TreeAutomatonRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#addState(int)">addState</a></strong>(int&nbsp;state)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#addState(int)">addState</a></strong>(int&nbsp;state)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#annotate(int,%20int)">annotate</a></strong>(int&nbsp;nodeID,
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#annotate(int,%20int)">annotate</a></strong>(int&nbsp;nodeID,
         int&nbsp;stateID)</code>
 <div class="block">Annotates a single node in the tree with some state ID and checks whether this resulted in a change.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.util.Set&lt;java.lang.Integer&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#getAnnotations(int)">getAnnotations</a></strong>(int&nbsp;nodeID)</code>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#getAnnotations(int)">getAnnotations</a></strong>(int&nbsp;nodeID)</code>
 <div class="block">Retrieves the current annotations for a single tree node.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>java.util.Set&lt;java.lang.Integer&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#getChildAnnotations(int)">getChildAnnotations</a></strong>(int&nbsp;nodeID)</code>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#getChildAnnotations(int)">getChildAnnotations</a></strong>(int&nbsp;nodeID)</code>
 <div class="block">Retrieves the current annotations for all the children of a single tree node.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&lt;?,?,?,?&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#getKahina()">getKahina</a></strong>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&lt;?,?,?,?&gt;</code></td>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#getKahina()">getKahina</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#nextStateNumber()">nextStateNumber</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#nextStateNumber()">nextStateNumber</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#process(int)">process</a></strong>(int&nbsp;nodeID)</code>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#process(int)">process</a></strong>(int&nbsp;nodeID)</code>
 <div class="block">Annotates a tree node with all possible labels according to the rules and
  recursively reannotates parents if it triggers a change in annotation.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#setConstellationMatch(boolean)">setConstellationMatch</a></strong>(boolean&nbsp;constellationMatch)</code>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#setConstellationMatch(boolean)">setConstellationMatch</a></strong>(boolean&nbsp;constellationMatch)</code>
 <div class="block">Determine whether the automaton reports matches directly above new nodes twice.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#setKahina(org.kahina.core.KahinaInstance)">setKahina</a></strong>(<a href="../../../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&lt;?,?,?,?&gt;&nbsp;kahina)</code>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#setKahina(org.kahina.core.KahinaInstance)">setKahina</a></strong>(<a href="../../../KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&lt;?,?,?,?&gt;&nbsp;kahina)</code>
 <div class="block">Sets the Kahina instance this automaton is to inform about matches.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#setTree(org.kahina.core.data.tree.KahinaTree)">setTree</a></strong>(<a href="../../../../../../org/kahina/core/data/tree/KahinaTree.html" title="class in org.kahina.core.data.tree">KahinaTree</a>&nbsp;tree)</code>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#setTree(org.kahina.core.data.tree.KahinaTree)">setTree</a></strong>(<a href="../../tree/KahinaTree.html" title="class in org.kahina.core.data.tree">KahinaTree</a>&nbsp;tree)</code>
 <div class="block">Sets or changes the tree this automaton is monitoring.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomaton.html#toString()">toString</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="TreeAutomaton.html#toString()">toString</a></strong>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -241,7 +241,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>TreeAutomaton</h4>
-<pre>public&nbsp;TreeAutomaton(<a href="../../../../../../org/kahina/core/data/agent/KahinaBreakpoint.html" title="class in org.kahina.core.data.agent">KahinaBreakpoint</a>&nbsp;bp)</pre>
+<pre>public&nbsp;TreeAutomaton(<a href="../KahinaBreakpoint.html" title="class in org.kahina.core.data.agent">KahinaBreakpoint</a>&nbsp;bp)</pre>
 <div class="block">Class constructor specifying the breakpoint to be associated with the new automaton.
  The first thing to be called by a <code>KahinaBreakpoint</code> when compiled.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>bp</code> - the breakpoint object to be associated with the new automaton</dd></dl>
@@ -261,7 +261,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setTree</h4>
-<pre>public&nbsp;void&nbsp;setTree(<a href="../../../../../../org/kahina/core/data/tree/KahinaTree.html" title="class in org.kahina.core.data.tree">KahinaTree</a>&nbsp;tree)</pre>
+<pre>public&nbsp;void&nbsp;setTree(<a href="../../tree/KahinaTree.html" title="class in org.kahina.core.data.tree">KahinaTree</a>&nbsp;tree)</pre>
 <div class="block">Sets or changes the tree this automaton is monitoring.
  The automaton will silently recompute its annotations in bottom-up manner.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>tree</code> - the tree model to be monitored by this automaton</dd></dl>
@@ -285,7 +285,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getKahina</h4>
-<pre>public&nbsp;<a href="../../../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&lt;?,?,?,?&gt;&nbsp;getKahina()</pre>
+<pre>public&nbsp;<a href="../../../KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&lt;?,?,?,?&gt;&nbsp;getKahina()</pre>
 </li>
 </ul>
 <a name="setKahina(org.kahina.core.KahinaInstance)">
@@ -294,7 +294,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setKahina</h4>
-<pre>public&nbsp;void&nbsp;setKahina(<a href="../../../../../../org/kahina/core/KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&lt;?,?,?,?&gt;&nbsp;kahina)</pre>
+<pre>public&nbsp;void&nbsp;setKahina(<a href="../../../KahinaInstance.html" title="class in org.kahina.core">KahinaInstance</a>&lt;?,?,?,?&gt;&nbsp;kahina)</pre>
 <div class="block">Sets the Kahina instance this automaton is to inform about matches.
  Default is <code>null</code>, an instance must be determined for the breakpoint system to work.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>kahina</code> - the Kahina instance this automaton is to inform about matches</dd></dl>
@@ -382,7 +382,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>addRule</h4>
-<pre>public&nbsp;void&nbsp;addRule(<a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomatonRule.html" title="class in org.kahina.core.data.agent.patterns">TreeAutomatonRule</a>&nbsp;rule)</pre>
+<pre>public&nbsp;void&nbsp;addRule(<a href="TreeAutomatonRule.html" title="class in org.kahina.core.data.agent.patterns">TreeAutomatonRule</a>&nbsp;rule)</pre>
 </li>
 </ul>
 <a name="toString()">
@@ -408,7 +408,7 @@ extends java.lang.Object</pre>
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar_bottom">
 <!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+</a><a href="TreeAutomaton.html#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -423,11 +423,11 @@ extends java.lang.Object</pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../../org/kahina/core/data/agent/patterns/PatternFormatException.html" title="class in org.kahina.core.data.agent.patterns"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../../org/kahina/core/data/agent/patterns/TreeAutomatonRule.html" title="class in org.kahina.core.data.agent.patterns"><span class="strong">Next Class</span></a></li>
+<li><a href="PatternFormatException.html" title="class in org.kahina.core.data.agent.patterns"><span class="strong">Prev Class</span></a></li>
+<li><a href="TreeAutomatonRule.html" title="class in org.kahina.core.data.agent.patterns"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../../../index.html?org/kahina/core/data/agent/patterns/TreeAutomaton.html" target="_top">Frames</a></li>
+<li><a href="http://kahina.org/javadoc/index.html?org/kahina/core/data/agent/patterns/TreeAutomaton.html" target="_top">Frames</a></li>
 <li><a href="TreeAutomaton.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
@@ -450,14 +450,14 @@ extends java.lang.Object</pre>
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="TreeAutomaton.html#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="TreeAutomaton.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="TreeAutomaton.html#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="TreeAutomaton.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_bottom">

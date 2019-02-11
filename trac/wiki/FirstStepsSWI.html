@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      FirstStepsSWI – Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/FirstStepsSWI?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="FirstStepsSWI.html" title="View FirstStepsSWI">FirstStepsSWI</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/FirstStepsSWI?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="FirstStepswithKahinaforSWI-Prolog">First Steps with Kahina for SWI-Prolog</h1>
+<p>
+After completing the <a class="wiki" href="InstallSWIProlog.html">installation</a>, why not get started with Kahina for SWI-Prolog by tracing a little example program, provided as <tt>kahina/kahinaswi/examples/example.pl</tt>.
+</p>
+<p>
+After starting SWI-Prolog, first load the example program, like this (adapt the path):
+</p>
+<pre class="wiki">['/path/to/kahina/kahinaswi/examples/example'].
+</pre><p>
+Then, enable Kahina for SWI-Prolog by issuing the following query (again, adapt the path):
+</p>
+<pre class="wiki">use_module('/path/to/kahina/kahinaswi/kahinaswi').
+</pre><p>
+This module hooks into SWI-Prolog's own tracer, so to actually use it, you need to activate the tracer:
+</p>
+<pre class="wiki">trace.
+</pre><p>
+The query entered after that will be debugged graphically. On the next query after that, or when the first query has multiple solutions, or under any circumstances for that matter, the system is likely to crash or to exhibit erratic behavior, what with this being experimental software and all. Have fun anyway! :-)
+</p>
+<p>
+For understanding the use of Kahina's graphical tracing GUI, the <a class="wiki" href="SICStusPrologTutorial.html">tutorial for Kahina for SICStus Prolog</a> may be useful.
+</p>
+<p>
+Tracing the query <tt>main.</tt> should result in the following <a class="missing wiki">ControlFlowTree?</a>:
+</p>
+<p>
+<a style="padding:0; border:none" href="../attachment/wiki/FirstStepsSWI/kahinaswi-test-tree.png.html"><img src="../raw-attachment/wiki/FirstStepsSWI/kahinaswi-test-tree.png" /></a>
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/FirstStepsSWI?action=diff&amp;version=3" title="Version 3 by ke">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-12-12T22%3A02%3A08%2B01%3A00&amp;precision=second" title="See timeline at Dec 12, 2011, 10:02:08 PM">7 years ago</a></span>
+            <span class="trac-print">Last modified on Dec 12, 2011, 10:02:08 PM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/FirstStepsSWI/kahinaswi-test-tree.png.html" title="View attachment">kahinaswi-test-tree.png</a><a href="../raw-attachment/wiki/FirstStepsSWI/kahinaswi-test-tree.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="11800 bytes">11.5 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2011-12-12T21%3A37%3A33%2B01%3A00&amp;precision=second" title="See timeline at Dec 12, 2011, 9:37:33 PM">7 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/FirstStepsSWI/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/FirstStepsSWI?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

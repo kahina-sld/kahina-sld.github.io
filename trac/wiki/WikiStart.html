@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      Kahina
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="TracGuide.html" />
+        <link rel="alternate" href="http://kahina.org/trac/wiki/WikiStart?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search Kahina" />
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../index.html"><img src="../chrome/site/kahina-logo.png" alt="Kahina" height="68" width="195" /></a>
+      </div>
+      <form id="search" action="../search.html" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://kahina.org/trac/login">Login</a></li><li><a href="TracGuide.html">Help/Guide</a></li><li><a href="../about.html">About Trac</a></li><li class="last"><a href="../prefs.html">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li><a href="../report.html">View Tickets</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="../wiki.html">wiki:</a><a class="pathentry" href="WikiStart.html" title="View WikiStart">WikiStart</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><a href="WikiStart.html">Start Page</a></li><li><a href="TitleIndex.html">Index</a></li><li class="last"><a href="http://kahina.org/trac/wiki/WikiStart?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="Welcometokahina.org">Welcome to kahina.org</h1>
+<p>
+For imperative programming languages like C or Java there exist powerful debuggers that visualize the execution of programs in much detail and dramatically ease searching for bugs. For logic programming languages like Prolog, such graphical tools are hardly available. The aim of our project is to develop a framework for graphical debugging that not only visualizes the complex processes in executing logic programs, but also provides facilities for post-mortem analysis.
+</p>
+<p>
+Our primary use case is the development of unification-based grammars, mathematically precise models of natural language that assign syntactic structure and meaning representations to words and sentences. Using software like <a class="ext-link" href="http://www.sfs.uni-tuebingen.de/hpsg/archive/projects/trale/"><span class="icon">​</span>TRALE</a> and QType, they can be implemented as logic programs. Since the analysis (parsing) of even short sentences can easily comprise several thousand computation steps, there is an urgent need for a graphical debugger that makes parsing processes more easily traceable.
+</p>
+<p>
+<a class="wiki" href="AboutKahina.html">General information</a> about the system, such as a list of contributors and supporters. There also is a summary of all available information about the current state of <a class="wiki" href="Development.html">development</a>.
+</p>
+<p>
+Four debuggers based on the Kahina framework are currently being developed:
+</p>
+<h2 id="KahinaforSWI-Prolog">Kahina for SWI-Prolog</h2>
+<ul><li><a class="wiki" href="DownloadSWI.html">Download</a>
+</li><li><a class="wiki" href="UsersManualSWI.html">User's Manual</a>
+</li></ul><h2 id="KahinaforSICStusProlog">Kahina for SICStus Prolog</h2>
+<ul><li><a class="wiki" href="DownloadSICStus.html">Download</a>
+</li><li><a class="wiki" href="UsersManualSICStus.html">User's Manual</a>
+</li></ul><h2 id="KahinaforTRALE">Kahina for TRALE</h2>
+<ul><li><a class="missing wiki">Download?</a> (coming soon)
+</li><li><a class="wiki" href="UsersManualTRALE.html">User's Manual</a>
+</li><li>Our <a class="attachment" href="../attachment/wiki/WikiStart/kahina-hpsg2010-poster.pdf.html" title="Attachment 'kahina-hpsg2010-poster.pdf' in WikiStart">poster</a><a class="trac-rawlink" href="../raw-attachment/wiki/WikiStart/kahina-hpsg2010-poster.pdf" title="Download">​</a> presented at <a class="ext-link" href="http://hpsg2010.linguist.univ-paris-diderot.fr/"><span class="icon">​</span>HPSG 2010</a> and a 5-page <a class="attachment" href="../attachment/wiki/WikiStart/kahina-hpsg2010-extendedabstract.pdf.html" title="Attachment 'kahina-hpsg2010-extendedabstract.pdf' in WikiStart">extended abstract</a><a class="trac-rawlink" href="../raw-attachment/wiki/WikiStart/kahina-hpsg2010-extendedabstract.pdf" title="Download">​</a> describing the system
+</li><li>Our <a class="attachment" href="../attachment/wiki/WikiStart/kahina-hmge2013.pdf.html" title="Attachment 'kahina-hmge2013.pdf' in WikiStart">paper</a><a class="trac-rawlink" href="../raw-attachment/wiki/WikiStart/kahina-hmge2013.pdf" title="Download">​</a> presented at <a class="ext-link" href="http://www.univ-orleans.fr/lifo/evenements/HMGE13/"><span class="icon">​</span>HMGE 2013</a>
+</li></ul><h2 id="KahinaforQType">Kahina for QType</h2>
+<ul><li><a class="wiki" href="DownloadQType.html">Download</a> (final release, see <a class="wiki" href="QTypeStatus.html">status page</a> for a list of features).
+</li><li><a class="wiki" href="UsersManualQType.html">User's Manual</a>
+</li></ul><h2 id="TheFrameworkKahinaCore">The Framework (Kahina Core)</h2>
+<ul><li>The only documentation available for now is our <a class="ext-link" href="../../javadoc.html"><span class="icon">​</span>Javadoc</a>
+</li><li>A hackers' manual is planned for the future. If you want to explore on your own how an application in the Kahina framework works, <a class="ext-link" href="http://kahina.org/trac/browser/trunk/src/org/kahina/tralesld/TraleSLDInstance.java"><span class="icon">​</span>org.kahina.tralesld.TraleSLDInstance</a> is a good starting point. Please note that the API is still subject to, possibly radical, change.
+</li></ul></div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="http://kahina.org/trac/wiki/WikiStart?action=diff&amp;version=43" title="Version 43 by ke">Last modified</a> <a class="timeline" href="http://kahina.org/trac/timeline?from=2017-12-10T10%3A16%3A49%2B01%3A00&amp;precision=second" title="See timeline at Dec 10, 2017, 10:16:49 AM">14 months ago</a></span>
+            <span class="trac-print">Last modified on Dec 10, 2017, 10:16:49 AM</span>
+          </div>
+        
+        
+      </div>
+      
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(3)</span></h3>
+        <div>
+          <ul>
+              <li>
+    <a href="../attachment/wiki/WikiStart/kahina-hpsg2010-poster.pdf.html" title="View attachment">kahina-hpsg2010-poster.pdf</a><a href="../raw-attachment/wiki/WikiStart/kahina-hpsg2010-poster.pdf" class="trac-rawlink" title="Download">​</a>
+       (<span title="324636 bytes">317.0 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-14T07%3A05%3A58%2B01%3A00&amp;precision=second" title="See timeline at Nov 14, 2010, 7:05:58 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/WikiStart/kahina-hpsg2010-extendedabstract.pdf.html" title="View attachment">kahina-hpsg2010-extendedabstract.pdf</a><a href="../raw-attachment/wiki/WikiStart/kahina-hpsg2010-extendedabstract.pdf" class="trac-rawlink" title="Download">​</a>
+       (<span title="255478 bytes">249.5 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2010-11-14T07%3A06%3A45%2B01%3A00&amp;precision=second" title="See timeline at Nov 14, 2010, 7:06:45 AM">8 years ago</a>.
+              </li>
+              <li>
+    <a href="../attachment/wiki/WikiStart/kahina-hmge2013.pdf.html" title="View attachment">kahina-hmge2013.pdf</a><a href="../raw-attachment/wiki/WikiStart/kahina-hmge2013.pdf" class="trac-rawlink" title="Download">​</a>
+       (<span title="468052 bytes">457.1 KB</span>) -
+      added by <em>ke</em> <a class="timeline" href="http://kahina.org/trac/timeline?from=2013-07-22T13%3A04%3A04%2B02%3A00&amp;precision=second" title="See timeline at Jul 22, 2013, 1:04:04 PM">6 years ago</a>.
+              </li>
+          </ul>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="../zip-attachment/wiki/WikiStart/index.html">.zip</a>
+          </p>
+        </div>
+    </div>
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://kahina.org/trac/wiki/WikiStart?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="../about.html"><strong>Trac 1.0.9</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>
